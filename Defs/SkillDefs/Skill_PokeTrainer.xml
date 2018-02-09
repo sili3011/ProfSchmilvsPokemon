@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<SkillDef>
+		<defName>Pokemon</defName>
+	    <description>Knowledge about and everything linked to Pokémon.</description>
+	    <skillLabel>pokemon</skillLabel>
+	 </SkillDef>
+
+</Defs>

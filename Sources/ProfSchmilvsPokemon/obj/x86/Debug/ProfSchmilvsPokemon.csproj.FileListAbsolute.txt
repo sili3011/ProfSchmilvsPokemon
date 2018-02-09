@@ -1,0 +1,5 @@
+D:\Programme\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.csprojResolveAssemblyReference.cache
+D:\Programme\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Assemblies\ProfSchmilvsPokemon.dll
+D:\Programme\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Assemblies\ProfSchmilvsPokemon.pdb
+D:\Programme\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.dll
+D:\Programme\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.pdb

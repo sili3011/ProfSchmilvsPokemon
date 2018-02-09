@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Professor Schmilv's Pokemon</name>
+	<author>Skili</author>
+	<targetVersion>0.18.0</targetVersion>
+	<description>v0.1
+    Features:
+    	-Apricorn trees as growable crops
+    	-Harvesting Apricorns from Apricorn trees
+    	-Crafting three different kinds of Pokeballs from Apricorns at a Pokeball crafting table
+    	-Equip and throw Pokeballs
+    	-The skill "Pokemon" (knowledge about and everything linked to Pokemon)
+    	-The worktype "Pokemon handling" (needed for crafting Pokeballs)
+        -3 kinds of Pokemon (more to come):
+            -> Mareep, Flaaffy, Ampharos
+            -> Houndour, Houndoom
+            -> Larvitar, Pupitar, Tyranitar
+        -Catching Pokemon by throwing Pokeballs at them
+        -Captured Pokemon get stored in Pokeballs
+        -Captured Pokemon belong to the Pokeball thrower
+
+    To do:
+    	-Inventory for carrying more than one Pokeball
+    	-More Pokemon
+        -Redo textures
+		</description>
+</ModMetaData>

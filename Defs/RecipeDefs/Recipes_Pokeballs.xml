@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef Name="CraftPokeballBase" Abstract="True">
+		<fixedIngredientFilter>
+			<categories>
+				<li>Apricorn</li>
+			</categories>
+			<disallowedSpecialFilters>
+			</disallowedSpecialFilters>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>Apricorn</li>
+			</categories>
+			<exceptedCategories>
+			</exceptedCategories>
+			<exceptedThingDefs>
+			</exceptedThingDefs>
+		</defaultIngredientFilter>
+		<workSkill>Pokemon</workSkill>
+	</RecipeDef>
+
+	<RecipeDef Name="CraftPokeball" ParentName="CraftPokeballBase">
+	    <defName>CraftPokeball</defName>
+	    <label>craft Pokéball</label>
+	    <description>Craft a Pokéball from one Apricorn.</description>
+	    <jobString>Craft a Pokéball.</jobString>
+	    <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+	    <requiredGiverWorkType>PokemonHandling</requiredGiverWorkType>
+	    <!--<effectWorking>Pokemon</effectWorking>-->
+	    <soundWorking>Recipe_CookMeal</soundWorking>
+	    <ingredients>
+	      <li>
+	        <filter>
+	          <categories>
+	            <li>Apricorn</li>
+	          </categories>
+	        </filter>
+	        <count>1</count>
+	      </li>
+	      <li>
+	        <filter>
+	        	<thingDefs>
+					<li>Component</li>
+				</thingDefs>
+			</filter>
+	        <count>1</count>
+	      </li>
+	    </ingredients>
+			<products>
+				<Pokeball>1</Pokeball>
+			</products>
+	    <workSkill>Pokemon</workSkill>
+	    <recipeUsers>
+	        <li>TablePokeball</li>
+	    </recipeUsers>
+  	</RecipeDef>
+
+ 	<RecipeDef Name="CraftGreatball" ParentName="CraftPokeballBase">
+	    <defName>CraftGreatball</defName>
+	    <label>craft Greatball</label>
+	    <description>Craft a Greatball from one Apricorn. Has higher catch chance then a Pokéball.</description>
+	    <jobString>Craft a Greatball.</jobString>
+	    <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+	    <requiredGiverWorkType>PokemonHandling</requiredGiverWorkType>
+	    <!--<effectWorking>Pokemon</effectWorking>-->
+	    <soundWorking>Recipe_CookMeal</soundWorking>
+	    <ingredients>
+	      <li>
+	        <filter>
+	          <categories>
+	            <li>Apricorn</li>
+	          </categories>
+	        </filter>
+	        <count>5</count>
+	      </li>
+	      <li>
+	        <filter>
+	        	<thingDefs>
+					<li>Component</li>
+				</thingDefs>
+			</filter>
+	        <count>1</count>
+	      </li>
+	    </ingredients>
+			<products>
+				<Greatball>1</Greatball>
+			</products>
+	    <workSkill>Pokemon</workSkill>
+	    <recipeUsers>
+	        <li>TablePokeball</li>
+	    </recipeUsers>
+  	</RecipeDef>
+
+  	<RecipeDef Name="CraftUltraball" ParentName="CraftPokeballBase">
+	    <defName>CraftUltraball</defName>
+	    <label>craft Ultraball</label>
+	    <description>Craft a Ultraball from one Apricorn. Has higher catch chance then a Greatball.</description>
+	    <jobString>Craft a Ultraball.</jobString>
+	    <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+	    <requiredGiverWorkType>PokemonHandling</requiredGiverWorkType>
+	    <!--<effectWorking>Pokemon</effectWorking>-->
+	    <soundWorking>Recipe_CookMeal</soundWorking>
+	    <ingredients>
+	      <li>
+	        <filter>
+	          <categories>
+	            <li>Apricorn</li>
+	          </categories>
+	        </filter>
+	        <count>10</count>
+	      </li>
+	      <li>
+	      	<filter>
+	        	<thingDefs>
+					<li>Component</li>
+				</thingDefs>
+			</filter>
+	        <count>1</count>
+	      </li>
+	    </ingredients>
+			<products>
+				<Ultraball>1</Ultraball>
+			</products>
+	    <workSkill>Pokemon</workSkill>
+	    <recipeUsers>
+	        <li>TablePokeball</li>
+	    </recipeUsers>
+  	</RecipeDef>
+
+</Defs>

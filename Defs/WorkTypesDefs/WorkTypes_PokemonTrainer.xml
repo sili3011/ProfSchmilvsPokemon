@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkTypeDef>
+    <defName>PokemonHandling</defName>
+    <labelShort>Pokémon</labelShort>
+    <pawnLabel>Pokémon handler</pawnLabel>
+    <gerundLabel>handling Pokémon</gerundLabel>
+    <description>Tame, train, harvest resources from and slaughter Pokémon. Also crafting Items linked to Pokémon.</description>
+    <verb>Train</verb>
+    <naturalPriority>1075</naturalPriority>
+    <relevantSkills>
+      <li>Pokemon</li>
+    </relevantSkills>
+    <workTags>
+      <li>Crafting</li>
+      <li>Animals</li>
+      <li>ManualSkilled</li>
+    </workTags>
+  </WorkTypeDef>
+
+</Defs>

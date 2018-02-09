@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>Root</defName>
+    <label>root</label>
+  </ThingCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>ResourcesRaw</defName>
+    <label>raw resources</label>
+    <parent>Root</parent>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+    <iconPath>UI/Icons/ThingCategories/ResourcesRaw</iconPath>
+  </ThingCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>Manufactured</defName>
+    <label>manufactured</label>
+    <parent>Root</parent>
+    <iconPath>UI/Icons/ThingCategories/Manufactured</iconPath>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+  </ThingCategoryDef>
+
+  <!-- RawMaterial -->
+  
+  <ThingCategoryDef>
+    <defName>Apricorn</defName>
+    <label>apricorn</label>
+    <parent>ResourcesRaw</parent>
+    <iconPath>UI/Icons/ThingCategories/Manufactured</iconPath>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+  </ThingCategoryDef>
+
+  <!-- Manufactured -->
+
+  <ThingCategoryDef>
+    <defName>TypePokeball</defName>
+    <label>pokéball</label>
+    <parent>Manufactured</parent>
+    <iconPath>UI/Icons/ThingCategories/Manufactured</iconPath>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+  </ThingCategoryDef>
+
+</Defs>

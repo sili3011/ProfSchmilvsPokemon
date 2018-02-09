@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- empty -->
+
+  <ThingDef ParentName="PokeballBase">
+    <defName>Pokeball</defName>
+    <label>pokéball</label>
+    <description>A simple Ball for catching Pokémon. Average chance on breaking upon missing.</description>
+    <graphicData>
+      <texPath>Things/Items/Ball/Pokeballs</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>5</MarketValue>
+      <WorkToMake>1000</WorkToMake>
+      <Beauty>1</Beauty>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="GreatballBase">
+    <defName>Greatball</defName>
+    <label>greatball</label>
+    <description>A mediocre Ball for catching Pokémon. Better catch chance than a Pokéball. Low chance on breaking upon missing.</description>
+    <graphicData>
+      <texPath>Things/Items/Ball/Greatballs</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>50</MarketValue>
+      <WorkToMake>3000</WorkToMake>
+      <Beauty>3</Beauty>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="UltraballBase">
+    <defName>Ultraball</defName>
+    <label>ultraball</label>
+    <description>A highend Ball for catching Pokémon. Better catch chance than a Greatball. Very low chance on breaking upon missing.</description>
+    <graphicData>
+      <texPath>Things/Items/Ball/Ultraballs</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <WorkToMake>10000</WorkToMake>
+      <Beauty>5</Beauty>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball" ParentName="BasePokeballProjectile">
+    <defName>PokeballProjectile</defName>
+    <label>pokéball</label>
+    <graphicData>
+      <texPath>Things/Items/Ball/Pokeball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Pokelaser</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>25</speed>
+    </projectile>
+    <thingClass>ProfSchmilvsPokemon.Projectile_Pokeball</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball" ParentName="BasePokeballProjectile">
+    <defName>GreatballProjectile</defName>
+    <label>greatball</label>
+    <graphicData>
+      <texPath>Things/Items/Ball/Greatball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Pokelaser</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>25</speed>
+    </projectile>
+    <thingClass>ProfSchmilvsPokemon.Projectile_Pokeball</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball" ParentName="BasePokeballProjectile">
+    <defName>UltraballProjectile</defName>
+    <label>ultraball</label>
+    <graphicData>
+      <texPath>Things/Items/Ball/Ultraball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Pokelaser</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>25</speed>
+    </projectile>
+    <thingClass>ProfSchmilvsPokemon.Projectile_Pokeball</thingClass>
+  </ThingDef>
+
+  <!-- full -->
+
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball_Full" ParentName="PokeballFullBase">
+    <defName>Pokeball_Full</defName>
+    <label>pokéball</label>
+    <description>A Pokéball with a Pokémon in it. Throw to release caught Pokémon.</description>
+    <tradeability>Never</tradeability>
+    <graphicData>
+      <texPath>Things/Items/Ball/Pokeball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>5</MarketValue>
+      <WorkToMake>1000</WorkToMake>
+      <Beauty>1</Beauty>
+    </statBases>
+    <thingClass>ProfSchmilvsPokemon.Weapon_Pokeball_Full</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball_Full" ParentName="GreatballFullBase">
+    <defName>Greatball_Full</defName>
+    <label>greatball</label>
+    <description>A Greatball with a Pokémon in it. Throw to release caught Pokémon.</description>
+    <graphicData>
+      <texPath>Things/Items/Ball/Greatball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>50</MarketValue>
+      <WorkToMake>3000</WorkToMake>
+      <Beauty>3</Beauty>
+    </statBases>
+    <thingClass>ProfSchmilvsPokemon.Weapon_Pokeball_Full</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball_Full" ParentName="UltraballFullBase">
+    <defName>Ultraball_Full</defName>
+    <label>ultraball</label>
+    <description>An Ultraball with a Pokémon in it. Throw to release caught Pokémon.</description>
+    <graphicData>
+      <texPath>Things/Items/Ball/Ultraball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <WorkToMake>10000</WorkToMake>
+      <Beauty>5</Beauty>
+    </statBases>
+    <thingClass>ProfSchmilvsPokemon.Weapon_Pokeball_Full</thingClass>
+  </ThingDef>
+
+  <!-- ====================== BASES ===================== -->
+
+  <!-- empty -->
+
+  <ThingDef Name="PokeballBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+			<Mass>0.44</Mass>
+			<DeteriorationRate>0</DeteriorationRate>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+		</statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>50</stackLimit>
+    <tickerType>Rare</tickerType>
+    <techLevel>Industrial</techLevel>
+    <equipmentType>Primary</equipmentType>
+    <thingCategories>
+      <li>TypePokeball</li>
+    </thingCategories>
+    <alwaysHaulable>true</alwaysHaulable>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <label>throw Pokéball</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>12.9</range>
+        <forcedMissRadius>1.0</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>PokeballProjectile</defaultProjectile>
+      </li>
+    </verbs>
+    <pathCost>15</pathCost>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+
+  <ThingDef Name="GreatballBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+      <Mass>0.44</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>50</stackLimit>
+    <tickerType>Rare</tickerType>
+    <techLevel>Industrial</techLevel>
+    <equipmentType>Primary</equipmentType>
+    <thingCategories>
+      <li>TypePokeball</li>
+    </thingCategories>
+    <alwaysHaulable>true</alwaysHaulable>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <label>throw Greatball</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>12.9</range>
+        <forcedMissRadius>1.0</forcedMissRadius>
+        <warmupTime>1.4</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>GreatballProjectile</defaultProjectile>
+      </li>
+    </verbs>
+    <pathCost>15</pathCost>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+
+  <ThingDef Name="UltraballBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+      <Mass>0.44</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>50</stackLimit>
+    <tickerType>Rare</tickerType>
+    <techLevel>Industrial</techLevel>
+    <equipmentType>Primary</equipmentType>
+    <thingCategories>
+      <li>TypePokeball</li>
+    </thingCategories>
+    <alwaysHaulable>true</alwaysHaulable>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <label>throw Ultraball</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>12.9</range>
+        <forcedMissRadius>1.0</forcedMissRadius>
+        <warmupTime>1.25</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>UltraballProjectile</defaultProjectile>
+      </li>
+    </verbs>
+    <pathCost>15</pathCost>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+
+  <!-- full -->
+
+  <ThingDef Name="PokeballFullBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+      <Mass>0.44</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>1</stackLimit>
+    <tickerType>Rare</tickerType>
+    <techLevel>Industrial</techLevel>
+    <equipmentType>Primary</equipmentType>
+    <thingCategories>
+      <li>TypePokeball</li>
+    </thingCategories>
+    <alwaysHaulable>true</alwaysHaulable>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <label>throw Pokéball</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>12.9</range>
+        <forcedMissRadius>1.0</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>PokeballProjectile</defaultProjectile>
+      </li>
+    </verbs>
+    <pathCost>15</pathCost>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+
+  <ThingDef Name="GreatballFullBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+      <Mass>0.44</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>1</stackLimit>
+    <tickerType>Rare</tickerType>
+    <techLevel>Industrial</techLevel>
+    <equipmentType>Primary</equipmentType>
+    <thingCategories>
+      <li>TypePokeball</li>
+    </thingCategories>
+    <alwaysHaulable>true</alwaysHaulable>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <label>throw Pokéball</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>12.9</range>
+        <forcedMissRadius>1.0</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>GreatballProjectile</defaultProjectile>
+      </li>
+    </verbs>
+    <pathCost>15</pathCost>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+
+  <ThingDef Name="UltraballFullBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0.0</Flammability>
+      <Mass>0.44</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>1</stackLimit>
+    <tickerType>Rare</tickerType>
+    <techLevel>Industrial</techLevel>
+    <equipmentType>Primary</equipmentType>
+    <thingCategories>
+      <li>TypePokeball</li>
+    </thingCategories>
+    <alwaysHaulable>true</alwaysHaulable>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <label>throw Pokéball</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>12.9</range>
+        <forcedMissRadius>1.0</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>UltraballProjectile</defaultProjectile>
+      </li>
+    </verbs>
+    <pathCost>15</pathCost>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+
+  <ThingDef Name="BasePokeballProjectile" Abstract="True">
+    <category>Projectile</category>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <thingClass>Projectile_Explosive</thingClass>
+    <label>projectile</label>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+    <projectile>
+      <explosionRadius>1.5</explosionRadius>
+      <explosionDelay>75</explosionDelay>
+      <flyOverhead>false</flyOverhead>
+    </projectile>
+  </ThingDef>
+
+
+
+</Defs>

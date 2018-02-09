@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="PlantBase">
+    <defName>PlantApricorn</defName>
+    <label>apricorn plant</label>
+    <description>Yields Apricorn, a versatile material used to make Pokéballs.</description>
+    <statBases>
+      <MaxHitPoints>185</MaxHitPoints>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/CottonPlant</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>100</pathCost>
+    <ingestible>
+      <nutrition>0.01</nutrition>
+    </ingestible>
+    <plant>
+			<fertilitySensitivity>1.0</fertilitySensitivity>
+			<growDays>3</growDays>
+			<dieIfLeafless>false</dieIfLeafless>
+      <reproduces>true</reproduces>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>Apricorn</harvestedThingDef>
+      <harvestYield>2</harvestYield>
+      <sowTags>
+        <li>Ground</li>
+      </sowTags>
+      <topWindExposure>0.1</topWindExposure>
+      <immatureGraphicPath>Things/Plant/CottonImmature</immatureGraphicPath>
+      <visualSizeRange>
+        <min>0.3</min>
+        <max>1.05</max>
+      </visualSizeRange>
+    </plant>
+  </ThingDef>
+
+  <!-- ====================== BASES ===================== -->
+
+  <ThingDef Name="PlantBase" Abstract="True">
+    <category>Plant</category>
+    <thingClass>Plant</thingClass>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <Flammability>0.8</Flammability>
+    </statBases>
+    <tickerType>Long</tickerType>
+    <selectable>False</selectable>
+    <neverMultiSelect>True</neverMultiSelect>
+    <drawerType>MapMeshOnly</drawerType>
+    <pathCostIgnoreRepeat>false</pathCostIgnoreRepeat>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutPlant</shaderType>
+    </graphicData>
+    <ingestible>
+      <foodType>Plant</foodType>
+      <preferability>RawBad</preferability>
+    </ingestible>
+    <plant>
+      <fertilityMin>0.5</fertilityMin>
+      <fertilitySensitivity>1.0</fertilitySensitivity>
+      <soundHarvesting>Harvest_Standard</soundHarvesting>
+      <soundHarvestFinish>Harvest_Standard_Finish</soundHarvestFinish>
+      <harvestWork>190</harvestWork>
+      <sowWork>260</sowWork>
+      <topWindExposure>0.1</topWindExposure>
+      <visualSizeRange>
+        <min>0.3</min>
+        <max>1.00</max>
+      </visualSizeRange>
+    </plant>
+  </ThingDef>
+
+</Defs>

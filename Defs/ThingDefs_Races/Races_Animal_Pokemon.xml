@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Pokemon_Mareep</defName>
+    <label>mareep</label>
+    <description>A medium-sized sheep like electro Pokemon. Clothing made from Mareep's fleece is easily charged with static electricity, so a special process is used on it.</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <ComfyTemperatureMin>-18</ComfyTemperatureMin>
+      <MarketValue>400</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>left hoof</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right hoof</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.85</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_Shearable">
+        <woolDef>WoolAlpaca</woolDef>
+        <shearIntervalDays>15</shearIntervalDays>
+        <woolAmount>100</woolAmount>
+      </li>
+    </comps>
+    <race>
+      <body>QuadrupedAnimalWithHooves</body>
+      <herdAnimal>true</herdAnimal>
+      <packAnimal>false</packAnimal>
+      <baseBodySize>1.0</baseBodySize>
+			<baseHealthScale>1.0</baseHealthScale>
+			<baseHungerRate>0.45</baseHungerRate>
+			<foodType>VegetarianRoughAnimal</foodType>
+      <leatherColor>(237,216,174)</leatherColor>
+      <leatherLabel>alpacahide</leatherLabel>
+      <leatherInsulation>1.1</leatherInsulation>
+      <wildness>0</wildness>
+      <nuzzleMtbHours>120</nuzzleMtbHours>
+      <gestationPeriodDays>25</gestationPeriodDays>
+      <lifeExpectancy>25</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>MareepStage</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>FlaaffyStage</def>
+          <minAge>10</minAge>
+        </li>
+        <li>
+          <def>AmpharosStage</def>
+          <minAge>15</minAge>
+          <soundWounded>Pawn_Elk_Wounded</soundWounded>
+          <soundDeath>Pawn_Elk_Death</soundDeath>
+          <soundCall>Pawn_Elk_Call</soundCall>
+          <soundAngry>Pawn_Elk_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <!-- <wildBiomes>
+       <TemperateForest>0.1</TemperateForest>
+       <TropicalRainforest>0.1</TropicalRainforest>
+       <AridShrubland>0.1</AridShrubland>
+       <Desert>0.1</Desert>
+       <ExtremeDesert>0.1</ExtremeDesert>
+       <Tundra>0.1</Tundra>
+       <BorealForest>0.1</BorealForest>
+      </wildBiomes> -->
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Mareep</defName>
+    <label>mareep</label>
+    <baseRecruitDifficulty>0.05</baseRecruitDifficulty>
+    <race>Pokemon_Mareep</race>
+    <combatPower>65</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>1</wildSpawn_EcoSystemWeight>
+    <wildSpawn_GroupSizeRange>
+      <min>3</min>
+      <max>9</max>
+    </wildSpawn_GroupSizeRange>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Mareep/Mareep</texPath>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <label>flaaffy</label>
+        <labelPlural>flaffy</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Flaaffy/Flaaffy</texPath>
+          <drawSize>1.8</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.3, 0.3)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>2.25</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <label>ampharos</label>
+        <labelPlural>ampharos</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Ampharos/Ampharos</texPath>
+          <drawSize>1.9</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+            <offset>(0,0,-0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+   <!-- ========================== Wolvelike ================================= -->
+
+  <ThingDef Name="ThingBaseWolf" ParentName="AnimalThingBase" Abstract="True">
+    <statBases>
+      <MoveSpeed>5.25</MoveSpeed>
+      <ComfyTemperatureMin>-50</ComfyTemperatureMin>
+      <MarketValue>370</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2.1</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <race>
+      <body>QuadrupedAnimalWithPawsAndTail</body>
+      <predator>true</predator>
+      <petness>0.1</petness>
+      <baseBodySize>0.85</baseBodySize>
+      <baseHungerRate>0.18</baseHungerRate>
+      <baseHealthScale>0.99</baseHealthScale>
+      <foodType>CarnivoreAnimal</foodType>
+      <leatherInsulation>1.0</leatherInsulation>
+      <gestationPeriodDays>22.5</gestationPeriodDays>
+      <nameOnTameChance>1</nameOnTameChance>
+      <trainableIntelligence>Advanced</trainableIntelligence>
+      <wildness>0.75</wildness>
+      <nuzzleMtbHours>120</nuzzleMtbHours>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0.018</manhunterOnTameFailChance>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(2, 1.7)</li>
+          <li>(3, 0.7)</li>
+          <li>(3.5, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>18</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>1</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>6</minAge>
+          <soundWounded>Pawn_Dog_Injured</soundWounded>
+          <soundDeath>Pawn_Dog_Death</soundDeath>
+          <soundCall>Pawn_Dog_Call</soundCall>
+          <soundAngry>Pawn_Dog_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>StandardAnimal</li>
+      <li>BadassAnimal</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase" Name="AnimalKindBaseWolf" Abstract="True">
+    <combatPower>75</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0.9</wildSpawn_EcoSystemWeight>
+  </PawnKindDef>
+
+  <ThingDef ParentName="ThingBaseWolf">
+    <defName>Pokemon_Houndour</defName>
+    <label>houndour</label>
+    <description>It cooperates with others skillfully. When it becomes your partner, it's very loyal to you as its Trainer and will obey your orders.</description>
+    <race>
+      <leatherColor>(200,200,200)</leatherColor>
+      <leatherLabel>arctic wolfskin</leatherLabel>
+      <leatherInsulation>1.25</leatherInsulation>
+      <useMeatFrom>WolfTimber</useMeatFrom>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBaseWolf">
+    <defName>Pokemon_Houndour</defName>
+    <label>houndour</label>
+    <labelPlural>houndours</labelPlural>
+    <race>Pokemon_Houndour</race>
+    <baseRecruitDifficulty>0.01</baseRecruitDifficulty>
+    <lifeStages>
+      <li>
+        <label>houndour puppy</label>
+        <labelPlural>houndour puppies</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Houndour/Houndour</texPath>
+          <drawSize>0.85</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.05</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <label>houndour</label>
+        <labelPlural>houndours</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Houndour/Houndour</texPath>
+          <drawSize>1.05</drawSize>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <label>houndoom</label>
+        <labelPlural>houndooms</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Houndoom/Houndoom</texPath>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.95</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ========================== Bearlike ================================= -->
+
+  <ThingDef Abstract="True" ParentName="AnimalThingBase" Name="BaseBear">
+    <statBases>
+      <MoveSpeed>4.3</MoveSpeed>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <MarketValue>700</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>2.0</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>21</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>2.0</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>21</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>21</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <race>
+      <herdAnimal>false</herdAnimal>
+      <predator>true</predator>
+      <body>QuadrupedAnimalWithPaws</body>
+      <baseHungerRate>0.35</baseHungerRate>
+      <baseBodySize>2.15</baseBodySize>
+      <baseHealthScale>2.5</baseHealthScale>
+      <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+      <gestationPeriodDays>30</gestationPeriodDays>
+      <wildness>0.80</wildness>
+      <lifeExpectancy>150</lifeExpectancy>
+      <trainableIntelligence>Advanced</trainableIntelligence>
+      <manhunterOnTameFailChance>0.018</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>15</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>40</minAge>
+          <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>StandardAnimal</li>
+      <li>BadassAnimal</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <PawnKindDef Abstract="True" ParentName="AnimalKindBase" Name="BearBase">
+    <combatPower>200</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0.3</wildSpawn_EcoSystemWeight>
+  </PawnKindDef>
+
+
+
+
+  <ThingDef ParentName="BaseBear">
+    <defName>Pokemon_Larvitar</defName>
+    <label>larvitar</label>
+    <description> Born underground, it eats its way through dirt to the surface, where its parents are. It doesn't deal well with the bright light it finds there.</description>
+    <race>
+      <wildness>0.80</wildness>
+      <leatherColor>(112,82,65)</leatherColor>
+      <leatherInsulation>1.0</leatherInsulation>
+      <leatherLabel>bearskin</leatherLabel>
+      <meatLabel>bear meat</meatLabel>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BearBase">
+    <defName>Pokemon_Larvitar</defName>
+    <label>larvitar</label>
+    <race>Pokemon_Larvitar</race>
+    <baseRecruitDifficulty>0.001</baseRecruitDifficulty>
+     <lifeStages>
+      <li>
+        <label>larvitar</label>
+        <labelPlural>larvitars</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Larvitar/Larvitar</texPath>
+          <drawSize>1.00</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.05</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <label>pupitar</label>
+        <labelPlural>pupitars</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Pupitar/Pupitar</texPath>
+          <drawSize>1.2</drawSize>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <label>tyranitar</label>
+        <labelPlural>tyranitars</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Tyranitar/Tyranitar</texPath>
+          <drawSize>4.00</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.95</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ====================== BASES ===================== -->
+
+  <ThingDef Name="BasePawn" Abstract="True">
+    <thingClass>Pawn</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <soundImpactDefault>BulletImpactFlesh</soundImpactDefault>
+    <statBases>
+      <Mass>70</Mass>
+    </statBases>
+    <inspectorTabs>
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_Character</li>
+      <li>ITab_Pawn_Training</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Guest</li>
+      <li>ITab_Pawn_Prisoner</li>
+      <li>ITab_Pawn_Social</li>
+      <li>ITab_Pawn_Combat</li>
+    </inspectorTabs>
+    <comps>
+      <li>
+        <compClass>CompAttachBase</compClass>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+
+  <ThingDef ParentName="BasePawn" Name="AnimalThingBase" Abstract="True">
+    <statBases>
+      <Flammability>1.0</Flammability>
+      <LeatherAmount>25</LeatherAmount>
+    </statBases>
+    <race>
+      <thinkTreeMain>Animal</thinkTreeMain>
+      <thinkTreeConstant>AnimalConstant</thinkTreeConstant>
+      <hasGenders>true</hasGenders>
+      <nameGenerator>NamerAnimalGenericMale</nameGenerator>
+      <nameGeneratorFemale>NamerAnimalGenericFemale</nameGeneratorFemale>
+      <manhunterOnDamageChance>0.0125</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0.003</manhunterOnTameFailChance>
+      <nameOnNuzzleChance>0.5</nameOnNuzzleChance>
+      <hediffGiverSets>
+        <li>OrganicStandard</li>
+      </hediffGiverSets>
+    </race>
+    <recipes>
+      <li>ExciseCarcinoma</li>
+      <li>AdministerMechSerumHealer</li>
+      <li>RemoveBodyPart</li>
+      <li>Euthanize</li>
+      <li>Anesthetize</li>
+    </recipes>
+  </ThingDef>
+
+  <PawnKindDef Name="AnimalKindBase" Abstract="True">
+  </PawnKindDef>
+  
+</Defs>

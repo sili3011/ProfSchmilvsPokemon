@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Apricorn</defName>
+    <label>apricorn</label>
+    <description>Apricorn from apricorn trees. Only used for crafting Pokéballs.</description>
+    <graphicData>
+      <texPath>Things/Items/Apricorn</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Wood_Drop</soundInteract>
+    <soundDrop>Wood_Drop</soundDrop>
+    <statBases>
+      <MarketValue>1.2</MarketValue>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>0.4</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <stuffProps>
+      <stuffAdjective>wooden</stuffAdjective>
+      <categories>
+        <li>Woody</li>
+      </categories>
+      <commonality>1.00</commonality>
+      <!--<color>(133,97,67)</color>-->
+      <constructEffect>ConstructWood</constructEffect>
+      <appearance>Planks</appearance>
+      <statFactors>
+        <MaxHitPoints>0.4</MaxHitPoints>
+        <Beauty>1</Beauty>
+        <Flammability>1</Flammability>
+        <WorkToMake>0.7</WorkToMake>
+				<WorkToBuild>0.7</WorkToBuild>
+        <DoorOpenSpeed>1.2</DoorOpenSpeed>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Apricorn</li>
+    </thingCategories>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <!-- ====================== BASES ===================== -->
+
+  <ThingDef Name="ResourceBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>75</stackLimit>
+    <statBases>
+      <Beauty>-4</Beauty>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+  </ThingDef>
+
+</Defs>

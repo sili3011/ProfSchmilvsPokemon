@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============= Pokemon handling ============= -->
+
+  <WorkGiverDef>
+    <defName>DoBillsPokeballs</defName>
+    <label>craft pokeballs at table</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>PokemonHandling</workType>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>TablePokeball</li>
+    </fixedBillGiverDefs>
+    <verb>craft pokeball</verb>
+    <gerund>craft at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+</Defs>
