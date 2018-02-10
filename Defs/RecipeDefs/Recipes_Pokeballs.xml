@@ -88,6 +88,9 @@
 				<Greatball>1</Greatball>
 			</products>
 	    <workSkill>Pokemon</workSkill>
+	    <skillRequirements>
+	    	<Pokemon>3</Pokemon>
+	    </skillRequirements>
 	    <recipeUsers>
 	        <li>TablePokeball</li>
 	    </recipeUsers>
@@ -124,6 +127,9 @@
 				<Ultraball>1</Ultraball>
 			</products>
 	    <workSkill>Pokemon</workSkill>
+		<skillRequirements>
+	    	<Pokemon>6</Pokemon>
+	    </skillRequirements>
 	    <recipeUsers>
 	        <li>TablePokeball</li>
 	    </recipeUsers>
