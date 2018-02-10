@@ -42,10 +42,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HarmonyPatches.cs" />
     <Compile Include="ThingDef_Pokeball.cs" />
     <Compile Include="Projectile_Pokeball.cs" />
     <Compile Include="ThingDef_Pokeball_Full.cs" />
     <Compile Include="Weapon_Pokeball_Full.cs" />
+    <Compile Include="HarmonyPatches.cs" />
   </ItemGroup>
 </Project>
