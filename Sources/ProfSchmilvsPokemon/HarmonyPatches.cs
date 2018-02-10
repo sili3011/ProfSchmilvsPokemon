@@ -8,6 +8,8 @@ using Verse;
 
 namespace ProfSchmilvsPokemon
 {
+
+	//thanks to roxxploxx! https://github.com/roxxploxx/RimWorldModGuide/wiki/SHORTTUTORIAL:-Harmony
 	[StaticConstructorOnStartup]
 	public static class HarmonyPatches
 	{

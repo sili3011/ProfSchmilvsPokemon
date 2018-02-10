@@ -47,5 +47,8 @@
     <Compile Include="ThingDef_Pokeball_Full.cs" />
     <Compile Include="Weapon_Pokeball_Full.cs" />
     <Compile Include="HarmonyPatches.cs" />
+    <Compile Include="Pokemon_Mareep.cs" />
+    <Compile Include="ThingDef_Mareep.cs" />
+    <Compile Include="CompPowerPlantMareep.cs" />
   </ItemGroup>
 </Project>

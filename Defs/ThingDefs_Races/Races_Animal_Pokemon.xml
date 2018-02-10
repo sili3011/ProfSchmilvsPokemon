@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   
-  <ThingDef ParentName="AnimalThingBase">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Mareep" ParentName="AnimalThingBase">
     <defName>Pokemon_Mareep</defName>
     <label>mareep</label>
     <description>A medium-sized sheep like electro Pokemon. Clothing made from Mareep's fleece is easily charged with static electricity, so a special process is used on it.</description>
@@ -106,6 +106,7 @@
     <tradeTags>
       <li>StandardAnimal</li>
     </tradeTags>
+    <thingClass>ProfSchmilvsPokemon.Pokemon_Mareep</thingClass>
   </ThingDef>
 
   <PawnKindDef ParentName="AnimalKindBase">
@@ -122,6 +123,8 @@
     </wildSpawn_GroupSizeRange>
     <lifeStages>
       <li>
+        <label>mareep</label>
+        <labelPlural>mareeps</labelPlural>
         <bodyGraphicData>
           <texPath>Things/Pawn/Pokemon/Mareep/Mareep</texPath>
           <drawSize>1.4</drawSize>
