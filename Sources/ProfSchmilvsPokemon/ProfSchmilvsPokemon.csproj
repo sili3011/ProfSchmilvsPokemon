@@ -50,5 +50,9 @@
     <Compile Include="Pokemon_Mareep.cs" />
     <Compile Include="ThingDef_Mareep.cs" />
     <Compile Include="CompPowerPlantMareep.cs" />
+    <Compile Include="ThingDef_Magnemite.cs" />
+    <Compile Include="Pokemon_Magnemite.cs" />
+    <Compile Include="HediffDefOf.cs" />
+    <Compile Include="SkillDefOf.cs" />
   </ItemGroup>
 </Project>

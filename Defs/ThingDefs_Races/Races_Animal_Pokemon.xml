@@ -476,15 +476,6 @@
       <li>BadassAnimal</li>
     </tradeTags>
   </ThingDef>
-  
-  <PawnKindDef Abstract="True" ParentName="AnimalKindBase" Name="BearBase">
-    <combatPower>200</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0.3</wildSpawn_EcoSystemWeight>
-  </PawnKindDef>
-
-
-
 
   <ThingDef ParentName="BaseBear">
     <defName>Pokemon_Larvitar</defName>
@@ -498,6 +489,12 @@
       <meatLabel>bear meat</meatLabel>
     </race>
   </ThingDef>
+
+  <PawnKindDef Abstract="True" ParentName="AnimalKindBase" Name="BearBase">
+    <combatPower>200</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0.3</wildSpawn_EcoSystemWeight>
+  </PawnKindDef>
 
   <PawnKindDef ParentName="BearBase">
     <defName>Pokemon_Larvitar</defName>
@@ -548,6 +545,115 @@
           <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
           <drawSize>1.95</drawSize>
         </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ========================== Mechanoid ================================= -->
+
+   <!-- <ThingDef ParentName="AnimalThingBase" Name="BaseMechanoidPokemon" Abstract="True">
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <statBases>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+    </statBases>
+    <race>
+      <fleshType>Mechanoid</fleshType>
+    </race>
+  </ThingDef> -->
+
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Magnemite" ParentName="AnimalThingBase">
+    <defName>Pokemon_Magnemite</defName>
+    <label>magnemite</label>
+    <description>It's frequently the cause of power outages, which is why some power plants send out electrical signals that it can't stand.</description>
+    <statBases>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MoveSpeed>7</MoveSpeed>
+      <MarketValue>800</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <race>
+      <trainableIntelligence>Advanced</trainableIntelligence>
+      <body>MechanicalCentipede</body>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <herdAnimal>false</herdAnimal>
+      <packAnimal>false</packAnimal>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0.0</baseHungerRate>
+      <foodType>None</foodType>
+      <wildness>0</wildness>
+      <gestationPeriodDays>25</gestationPeriodDays>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>MagnemiteStage</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+      <!-- <wildBiomes>
+       <TemperateForest>0.1</TemperateForest>
+       <TropicalRainforest>0.1</TropicalRainforest>
+       <AridShrubland>0.1</AridShrubland>
+       <Desert>0.1</Desert>
+       <ExtremeDesert>0.1</ExtremeDesert>
+       <Tundra>0.1</Tundra>
+       <BorealForest>0.1</BorealForest>
+      </wildBiomes> -->
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+    </race>
+    <recipes>
+      <li>RemoveMechanoidBodyPart</li>
+      <li>ShutDownMechanoid</li>
+    </recipes>
+    <butcherProducts>
+      <Steel>10</Steel>
+      <Component>1</Component>
+    </butcherProducts>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+    <thingClass>ProfSchmilvsPokemon.Pokemon_Magnemite</thingClass>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Magnemite</defName>
+    <label>magnemite</label>
+    <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
+    <race>Pokemon_Magnemite</race>
+    <combatPower>65</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>1</wildSpawn_EcoSystemWeight>
+    <lifeStages>
+      <li>
+        <label>magnemite</label>
+        <labelPlural>magnemites</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Magnemite/Magnemite</texPath>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
       </li>
     </lifeStages>
   </PawnKindDef>

@@ -48,5 +48,16 @@
     <milkable>false</milkable>
     <shearable>false</shearable>
   </LifeStageDef>
+
+  <!-- Magnemite, Magneton, Magnezone -->
   
+<LifeStageDef>
+    <defName>MagnemiteStage</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <milkable>false</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+
 </Defs>
