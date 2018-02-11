@@ -45,6 +45,12 @@ namespace ProfSchmilvsPokemon
 		//
 		#endregion Properties
 
+		public override void ExposeData()
+		{
+			base.ExposeData ();
+			Scribe_Deep.Look<Pawn>(ref this.Poke, "pokemon", new object[0]);
+		}
+
 		private Pawn Poke;
 		private bool isEmpty = false;
 

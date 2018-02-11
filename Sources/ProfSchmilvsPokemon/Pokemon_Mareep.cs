@@ -63,9 +63,10 @@ namespace ProfSchmilvsPokemon
 
 							if (GenSight.LineOfSight (this.Position, intVec, base.Map, false, null, 0, 0)) {
 
+								Pawn pDummy = (Pawn)thing;
 								string d = thing.def.defName.ToString ();
 
-								if (d.Equals ("Pokemon_Mareep")) {
+								if (d.Equals ("Pokemon_Mareep") && pDummy.ageTracker.CurLifeStage.defName.ToString().Equals("MareepStage")) {
 
 									++mareepCount;
 
@@ -176,16 +177,17 @@ namespace ProfSchmilvsPokemon
 			this.wickSustainer = SoundDefOf.HissSmall.TrySpawnSustainer(info);
 		}
 
+		public override void ExposeData()
+		{
+			base.ExposeData ();
+			Scribe_Values.Look<float>(ref this.StoredEnergy, "storedEnergy", 0f);
+		}
+
 		public Building closestDischarger = null;
-
 		public Sustainer wickSustainer;
-
 		private static readonly Vector2 BarSize = new Vector2(0.6f, 0.05f);
-
 		private static readonly Material BatteryBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.9f, 0.85f, 0.2f), false);
-
 		private static readonly Material BatteryBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.3f, 0.3f, 0.3f), false);
-
 		private float StoredEnergy = 0f;
 
 	}

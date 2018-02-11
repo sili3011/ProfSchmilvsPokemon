@@ -1,11 +1,14 @@
 ﻿<Properties StartupItem="ProfSchmilvsPokemon.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pokemon_Mareep.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Weapon_Pokeball_Full.cs">
     <Files>
-      <File FileName="Projectile_Pokeball.cs" Line="1" Column="1" />
-      <File FileName="Weapon_Pokeball_Full.cs" Line="32" Column="4" />
-      <File FileName="Pokemon_Mareep.cs" Line="53" Column="31" />
+      <File FileName="Weapon_Pokeball_Full.cs" Line="48" Column="3" />
+      <File FileName="Projectile_Pokeball.cs" Line="209" Column="28" />
+      <File FileName="Pokemon_Mareep.cs" Line="68" Column="9" />
+      <File FileName="CompPowerPlantMareep.cs" Line="45" Column="45" />
       <File FileName="ThingDef_Mareep.cs" Line="23" Column="39" />
+      <File FileName="HarmonyPatches.cs" Line="1" Column="1" />
+      <File FileName="ThingDef_Pokeball.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
