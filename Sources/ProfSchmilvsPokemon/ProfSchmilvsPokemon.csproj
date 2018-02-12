@@ -54,5 +54,7 @@
     <Compile Include="Pokemon_Magnemite.cs" />
     <Compile Include="HediffDefOf.cs" />
     <Compile Include="SkillDefOf.cs" />
+    <Compile Include="Spawner_WildPokemon.cs" />
+    <Compile Include="Spawner.cs" />
   </ItemGroup>
 </Project>

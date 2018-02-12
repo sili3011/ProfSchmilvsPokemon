@@ -174,6 +174,8 @@ namespace ProfSchmilvsPokemon
 											closest.DeSpawn ();
 											GenSpawn.Spawn (p, position, map);
 
+											l.skills.Learn(ProfSchmilvsPokemon.SkillDefOf.Pokemon, (1f-rec)*1000f);
+
 										}
 
 									}

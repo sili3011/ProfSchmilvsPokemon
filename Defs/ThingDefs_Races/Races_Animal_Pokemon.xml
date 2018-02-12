@@ -645,7 +645,7 @@
     <race>Pokemon_Magnemite</race>
     <combatPower>65</combatPower>
     <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>1</wildSpawn_EcoSystemWeight>
+    <wildSpawn_EcoSystemWeight>0</wildSpawn_EcoSystemWeight>
     <lifeStages>
       <li>
         <label>magnemite</label>

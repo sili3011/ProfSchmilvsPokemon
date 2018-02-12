@@ -20,7 +20,7 @@ namespace ProfSchmilvsPokemon
 			}
 		}
 
-		private float storedEnergyMax = 10000f;
+		private float storedEnergyMax = 250f;
 
 	}
 }

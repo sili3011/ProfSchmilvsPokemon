@@ -5,11 +5,11 @@ using RimWorld;
 namespace ProfSchmilvsPokemon
 {
 
-	[DefOf]
-	public static class SkillDefOf
+	public static class Spawner
 	{
 
-		public static SkillDef Pokemon;
+		public static Spawner_WildPokemon spawnerPokemon;
+
 	}
 
 }

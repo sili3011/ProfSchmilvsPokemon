@@ -89,6 +89,7 @@ namespace ProfSchmilvsPokemon
 				if (this.StoredEnergy <= this.Def.storedEnergyMaxUtility * 0.05f) {
 
 					this.closestDischarger = null;
+					this.jobs.ClearQueuedJobs();
 
 				}
 
@@ -96,7 +97,7 @@ namespace ProfSchmilvsPokemon
 
 					if (this.closestDischarger == null) {
 
-						for (int i = 0; i < 625; i++) {
+						for (int i = 0; i < 900; i++) {
 
 							IntVec3 intVec = this.Position + GenRadial.RadialPattern [i];
 							if (intVec.InBounds (base.Map)) {
@@ -141,6 +142,7 @@ namespace ProfSchmilvsPokemon
 
 					if (this.Position.IsInside (this.closestDischarger)) {
 
+						PawnUtility.ForceWait (this, 5);
 						List<ThingComp> lt = this.closestDischarger.AllComps;
 						CompPowerPlantMareep comp = (CompPowerPlantMareep)lt [0];
 						comp.addToStoredPower (1f);

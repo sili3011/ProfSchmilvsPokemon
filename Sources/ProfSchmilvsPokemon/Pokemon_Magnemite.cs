@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
+using Verse.AI;
 using RimWorld;
 
 namespace ProfSchmilvsPokemon
@@ -49,7 +50,7 @@ namespace ProfSchmilvsPokemon
 
 			if (this.StoredEnergy > 0) {
 			
-				--this.StoredEnergy;
+				this.StoredEnergy -= 0.01f;
 			
 			} else {
 
@@ -62,8 +63,69 @@ namespace ProfSchmilvsPokemon
 			
 			}
 
-		}
+			if (closestCompPower != null && this.StoredEnergy >= this.Def.storedEnergyMaxUtility) {
 
+				closestCompPower = null;
+				this.jobs.ClearQueuedJobs();
+			
+			}
+
+			if (closestCompPower == null) {
+
+				if (this.StoredEnergy > 0 && this.StoredEnergy < this.Def.storedEnergyMaxUtility * 0.2f) {
+
+					List<CompPower> dummylist = Spawner.spawnerPokemon.PowerComps;
+
+					if (!dummylist.NullOrEmpty ()) {
+
+						float distance = 999999f;
+
+						foreach (CompPower cp in dummylist) {
+
+							float compareDistance = this.Position.DistanceTo (cp.parent.Position);
+
+							if (compareDistance < distance) {
+
+								distance = compareDistance;
+								closestCompPower = cp;
+
+							}
+
+						}		
+
+						this.pather.StartPath (new LocalTargetInfo (this.closestCompPower.parent.Position), Verse.AI.PathEndMode.OnCell);
+
+					}
+
+				}
+				
+			} else {
+
+				if (this.Position.IsInside (this.closestCompPower.parent) || this.Position.AdjacentTo8Way (this.closestCompPower.parent.Position)) {
+
+					PowerNet pn = this.closestCompPower.PowerNet;
+					if(pn != null){
+						float currentEnergy = pn.CurrentStoredEnergy ();
+						if (currentEnergy >= 0.5f) {	
+							PawnUtility.ForceWait (this, 5);
+							this.StoredEnergy += 0.5f;
+							pn.batteryComps [0].DrawPower (0.5f);
+						}
+					}
+
+				} else {
+
+					if (this.pather.Destination != new LocalTargetInfo (this.closestCompPower.parent.Position)) {
+
+						new LocalTargetInfo (this.closestCompPower.parent.Position);
+
+					}
+
+				}
+
+			}
+
+		}
 
 		public override void ExposeData()
 		{
@@ -74,6 +136,7 @@ namespace ProfSchmilvsPokemon
 		private static readonly Vector2 BarSize = new Vector2(0.6f, 0.05f);
 		private static readonly Material BatteryBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.9f, 0.85f, 0.2f), false);
 		private static readonly Material BatteryBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.3f, 0.3f, 0.3f), false);
-		private float StoredEnergy = 10000f;
+		private float StoredEnergy = 250f;
+		private CompPower closestCompPower = null;
 	}
 }
