@@ -54,7 +54,7 @@ namespace ProfSchmilvsPokemon
 			
 			} else {
 
-				if (!this.Downed && this.Faction != null) {
+				if (!this.Downed) {
 
 					Hediff hediff = HediffMaker.MakeHediff(ProfSchmilvsPokemon.HediffDefOf.OutOfPower, this);
 					this.health.AddHediff (hediff);
@@ -63,6 +63,48 @@ namespace ProfSchmilvsPokemon
 			
 			}
 
+			if (closestCompPower == null && this.StoredEnergy >= this.Def.storedEnergyMaxUtility*0.21f && this.Faction != null){
+
+				if (this.repairJob == null) {
+
+					List<Thing> toRepair = base.Map.listerBuildingsRepairable.RepairableBuildings (this.Faction);
+
+					if (!toRepair.NullOrEmpty ()) { 
+
+						this.repairJob = toRepair[0];
+						this.jobs.ClearQueuedJobs();
+						this.pather.StartPath (new LocalTargetInfo (this.repairJob.Position), Verse.AI.PathEndMode.Touch);
+	
+					}
+
+				} else {
+
+					if (this.repairJob.MaxHitPoints == this.repairJob.HitPoints) {
+
+						base.Map.listerBuildingsRepairable.Notify_BuildingRepaired ((Building)this.repairJob);
+						this.repairJob = null;
+						this.jobs.ClearQueuedJobs();
+
+					} else {
+				
+						if (this.Position.AdjacentTo8WayOrInside (this.repairJob.Position)) {
+
+							this.repairJob.HitPoints++;
+							this.StoredEnergy--;
+							base.Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
+
+						} else if (this.pather.Destination != new LocalTargetInfo (this.repairJob.Position)) {
+							
+							this.pather.StartPath (new LocalTargetInfo (this.repairJob.Position), Verse.AI.PathEndMode.Touch);
+
+						}
+
+					}
+				
+				}
+
+			}
+				
 			if (closestCompPower != null && this.StoredEnergy >= this.Def.storedEnergyMaxUtility) {
 
 				closestCompPower = null;
@@ -70,9 +112,9 @@ namespace ProfSchmilvsPokemon
 			
 			}
 
-			if (closestCompPower == null) {
+			if (this.Downed) {
 
-				if (this.StoredEnergy > 0 && this.StoredEnergy < this.Def.storedEnergyMaxUtility * 0.2f) {
+				if (this.StoredEnergy < this.Def.storedEnergyMaxUtility * 0.2f) {
 
 					List<CompPower> dummylist = Spawner.spawnerPokemon.PowerComps;
 
@@ -93,31 +135,106 @@ namespace ProfSchmilvsPokemon
 
 						}		
 
-						this.pather.StartPath (new LocalTargetInfo (this.closestCompPower.parent.Position), Verse.AI.PathEndMode.OnCell);
-
 					}
 
 				}
-				
-			} else {
 
-				if (this.Position.IsInside (this.closestCompPower.parent) || this.Position.AdjacentTo8Way (this.closestCompPower.parent.Position)) {
-
+				if (this.Position.AdjacentTo8WayOrInside (this.closestCompPower.parent.Position)) {
 					PowerNet pn = this.closestCompPower.PowerNet;
-					if(pn != null){
+					if (pn != null) {
 						float currentEnergy = pn.CurrentStoredEnergy ();
-						if (currentEnergy >= 0.5f) {	
-							PawnUtility.ForceWait (this, 5);
-							this.StoredEnergy += 0.5f;
-							pn.batteryComps [0].DrawPower (0.5f);
+						if (currentEnergy >= 0.5f) {
+							List<CompPowerBattery> cpb = pn.batteryComps;
+							CompPowerBattery bat = null;
+							foreach (CompPowerBattery c in cpb) {
+								if (c.StoredEnergy >= 0.5f) {
+									bat = c;
+									break;
+								}
+							}
+							if (bat != null) {
+								this.StoredEnergy += 0.5f;
+								bat.DrawPower (0.5f);
+							}
 						}
 					}
+				}
 
+				if (this.StoredEnergy > this.Def.storedEnergyMaxUtility * 0.2f) {
+
+					List<Hediff> heds = this.health.hediffSet.hediffs;
+					if (!heds.NullOrEmpty ()) {
+						Hediff oop = null;
+						foreach (Hediff h in heds) {
+							if (h.def.Equals (ProfSchmilvsPokemon.HediffDefOf.OutOfPower)) {
+								oop = h;
+							}
+						}
+						if (oop != null) {
+							this.health.RemoveHediff (oop);
+						}
+					}
+				}
+
+			} else {
+				
+				if (closestCompPower == null) {
+
+					if (this.StoredEnergy > 0 && this.StoredEnergy < this.Def.storedEnergyMaxUtility * 0.2f) {
+
+						List<CompPower> dummylist = Spawner.spawnerPokemon.PowerComps;
+
+						if (!dummylist.NullOrEmpty ()) {
+
+							float distance = 999999f;
+
+							foreach (CompPower cp in dummylist) {
+
+								float compareDistance = this.Position.DistanceTo (cp.parent.Position);
+
+								if (compareDistance < distance) {
+
+									distance = compareDistance;
+									closestCompPower = cp;
+
+								}
+
+							}		
+
+							this.pather.StartPath (new LocalTargetInfo (this.closestCompPower.parent.Position), Verse.AI.PathEndMode.OnCell);
+
+						}
+
+					}
+					
 				} else {
 
-					if (this.pather.Destination != new LocalTargetInfo (this.closestCompPower.parent.Position)) {
+					if (this.Position.AdjacentTo8WayOrInside (this.closestCompPower.parent.Position)) {
+						PowerNet pn = this.closestCompPower.PowerNet;
+						if (pn != null) {
+							float currentEnergy = pn.CurrentStoredEnergy ();
+							if (currentEnergy >= 0.5f) {
+								List<CompPowerBattery> cpb = pn.batteryComps;
+								CompPowerBattery bat = null;
+								foreach (CompPowerBattery c in cpb) {
+									if (c.StoredEnergy >= 0.5f) {
+										bat = c;
+										break;
+									}
+								}
+								if (bat != null) {
+									this.StoredEnergy += 0.5f;
+									bat.DrawPower (0.5f);
+								}
+							}
+						}
+					} else {
 
-						new LocalTargetInfo (this.closestCompPower.parent.Position);
+						if (this.pather.Destination != new LocalTargetInfo (this.closestCompPower.parent.Position)) {
+
+							this.pather.StartPath (new LocalTargetInfo (this.closestCompPower.parent.Position), Verse.AI.PathEndMode.Touch);
+
+						}
 
 					}
 
@@ -126,11 +243,12 @@ namespace ProfSchmilvsPokemon
 			}
 
 		}
-
+			
 		public override void ExposeData()
 		{
 			base.ExposeData ();
-			Scribe_Values.Look<float>(ref this.StoredEnergy, "storedEnergy", 0f);
+			Scribe_Values.Look<float>(ref this.StoredEnergy, "storedEnergy", 250f);
+			Scribe_Deep.Look<Thing>(ref this.repairJob, "repairJob", new object[0]);
 		}
 			
 		private static readonly Vector2 BarSize = new Vector2(0.6f, 0.05f);
@@ -138,5 +256,7 @@ namespace ProfSchmilvsPokemon
 		private static readonly Material BatteryBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.3f, 0.3f, 0.3f), false);
 		private float StoredEnergy = 250f;
 		private CompPower closestCompPower = null;
+		private Thing repairJob = null;
+
 	}
 }

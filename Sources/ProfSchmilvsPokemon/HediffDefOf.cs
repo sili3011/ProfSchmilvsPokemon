@@ -8,7 +8,6 @@ namespace ProfSchmilvsPokemon
 	[DefOf]
 	public static class HediffDefOf
 	{
-
 		public static HediffDef OutOfPower;
 	}
 }
