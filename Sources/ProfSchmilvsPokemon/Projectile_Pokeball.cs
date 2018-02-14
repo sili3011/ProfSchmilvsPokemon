@@ -5,6 +5,7 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 using RimWorld.Planet;
+using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
@@ -155,10 +156,10 @@ namespace ProfSchmilvsPokemon
 										Pawn l = (Pawn)launcher;
 
 										float rec = (float)closest.kindDef.baseRecruitDifficulty;
-										float prob = ((((3 * (float)closest.MaxHitPoints - 2 * ((float)closest.MaxHitPoints)*closest.HealthScale) * rec * pStrength)/100f)*downed) + ((float)l.skills.GetSkill(ProfSchmilvsPokemon.SkillDefOf.Pokemon).Level)/20f;
+										float prob = ((((3 * (float)closest.MaxHitPoints - 2 * ((float)closest.MaxHitPoints)*closest.HealthScale) * rec * pStrength)/100f)*downed) + ((float)l.skills.GetSkill(ProfSchmilvsPokemon.DefOfs.SkillDefOf.Pokemon).Level)/20f;
 										var rand = Rand.Value;
 
-										Log.Message ("Catch Probability: " + prob.ToString() + "\n Recruitment difficulty: " + rec + "\n Dice roll: " + rand.ToString() + "\n MaxHitpoints: " + closest.MaxHitPoints + "\n Current Hitpoints: " + (closest.MaxHitPoints*closest.HealthScale) + "\n Current Pokemon skill level: " + (((float)l.skills.GetSkill(ProfSchmilvsPokemon.SkillDefOf.Pokemon).Level)/20f));
+										Log.Message ("Catch Probability: " + prob.ToString() + "\n Recruitment difficulty: " + rec + "\n Dice roll: " + rand.ToString() + "\n MaxHitpoints: " + closest.MaxHitPoints + "\n Current Hitpoints: " + (closest.MaxHitPoints*closest.HealthScale) + "\n Current Pokemon skill level: " + (((float)l.skills.GetSkill(ProfSchmilvsPokemon.DefOfs.SkillDefOf.Pokemon).Level)/20f));
 
 										if (rand <= prob) {			
 
@@ -173,7 +174,7 @@ namespace ProfSchmilvsPokemon
 											closest.DeSpawn ();
 											GenSpawn.Spawn (p, position, map);
 
-											l.skills.Learn(ProfSchmilvsPokemon.SkillDefOf.Pokemon, (1f-rec)*1000f);
+											l.skills.Learn(ProfSchmilvsPokemon.DefOfs.SkillDefOf.Pokemon, (1f-rec)*1000f);
 
 										}
 

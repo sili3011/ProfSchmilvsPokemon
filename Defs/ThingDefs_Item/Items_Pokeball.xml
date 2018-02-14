@@ -48,7 +48,7 @@
     </statBases>
   </ThingDef>
 
-  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball" ParentName="BasePokeballProjectile">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Pokeball" ParentName="BasePokeballProjectile">
     <defName>PokeballProjectile</defName>
     <label>pokéball</label>
     <graphicData>
@@ -63,7 +63,7 @@
     <thingClass>ProfSchmilvsPokemon.Projectile_Pokeball</thingClass>
   </ThingDef>
 
-  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball" ParentName="BasePokeballProjectile">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Pokeball" ParentName="BasePokeballProjectile">
     <defName>GreatballProjectile</defName>
     <label>greatball</label>
     <graphicData>
@@ -78,7 +78,7 @@
     <thingClass>ProfSchmilvsPokemon.Projectile_Pokeball</thingClass>
   </ThingDef>
 
-  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball" ParentName="BasePokeballProjectile">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Pokeball" ParentName="BasePokeballProjectile">
     <defName>UltraballProjectile</defName>
     <label>ultraball</label>
     <graphicData>
@@ -95,7 +95,7 @@
 
   <!-- full -->
 
-  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball_Full" ParentName="PokeballFullBase">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Pokeball_Full" ParentName="PokeballFullBase">
     <defName>Pokeball_Full</defName>
     <label>pokéball</label>
     <description>A Pokéball with a Pokémon in it. Throw to release caught Pokémon.</description>
@@ -112,7 +112,7 @@
     <thingClass>ProfSchmilvsPokemon.Weapon_Pokeball_Full</thingClass>
   </ThingDef>
 
-  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball_Full" ParentName="GreatballFullBase">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Pokeball_Full" ParentName="GreatballFullBase">
     <defName>Greatball_Full</defName>
     <label>greatball</label>
     <description>A Greatball with a Pokémon in it. Throw to release caught Pokémon.</description>
@@ -128,7 +128,7 @@
     <thingClass>ProfSchmilvsPokemon.Weapon_Pokeball_Full</thingClass>
   </ThingDef>
 
-  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Pokeball_Full" ParentName="UltraballFullBase">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Pokeball_Full" ParentName="UltraballFullBase">
     <defName>Ultraball_Full</defName>
     <label>ultraball</label>
     <description>An Ultraball with a Pokémon in it. Throw to release caught Pokémon.</description>

@@ -4,6 +4,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 using RimWorld;
+using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {

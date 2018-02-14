@@ -2,7 +2,7 @@
 using Verse;
 using RimWorld;
 
-namespace ProfSchmilvsPokemon
+namespace ProfSchmilvsPokemon.DefOfs
 {
 
 	[DefOf]

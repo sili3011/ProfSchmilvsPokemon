@@ -2,6 +2,7 @@
 using UnityEngine;
 using Verse;
 using RimWorld;
+using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {

@@ -3,10 +3,10 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 
-namespace ProfSchmilvsPokemon
+namespace ProfSchmilvsPokemon.ThingDefs
 {
 	
-	public class ThingDef_Mareep : ThingDef
+	public class ThingDef_Magnemite : ThingDef
 	{
 		public float storedEnergyMaxUtility
 		{
@@ -20,7 +20,7 @@ namespace ProfSchmilvsPokemon
 			}
 		}
 
-		private float storedEnergyMax = 1000f;
+		private float storedEnergyMax = 250f;
 
 	}
 }

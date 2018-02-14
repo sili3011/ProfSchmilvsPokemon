@@ -5,10 +5,11 @@ using Verse;
 using Verse.Sound;
 using Verse.AI;
 using RimWorld;
+using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
-
+	[StaticConstructorOnStartup]
 	public class Pokemon_Magnemite : Pawn
 	{
 
@@ -56,7 +57,7 @@ namespace ProfSchmilvsPokemon
 
 				if (!this.Downed) {
 
-					Hediff hediff = HediffMaker.MakeHediff(ProfSchmilvsPokemon.HediffDefOf.OutOfPower, this);
+					Hediff hediff = HediffMaker.MakeHediff(ProfSchmilvsPokemon.DefOfs.HediffDefOf.OutOfPower, this);
 					this.health.AddHediff (hediff);
 
 				}
@@ -164,7 +165,7 @@ namespace ProfSchmilvsPokemon
 					if (!heds.NullOrEmpty ()) {
 						Hediff oop = null;
 						foreach (Hediff h in heds) {
-							if (h.def.Equals (ProfSchmilvsPokemon.HediffDefOf.OutOfPower)) {
+							if (h.def.Equals (ProfSchmilvsPokemon.DefOfs.HediffDefOf.OutOfPower)) {
 								oop = h;
 							}
 						}

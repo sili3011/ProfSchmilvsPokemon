@@ -55,8 +55,19 @@
     <defName>MagnemiteStages</defName>
     <label>adult</label>
     <visible>false</visible>
-    <reproductive>true</reproductive>
+    <reproductive>false</reproductive>
     <milkable>false</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+
+  <!-- Grimer, Muk -->
+
+  <LifeStageDef>
+    <defName>GrimerStages</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
     <shearable>false</shearable>
   </LifeStageDef>
 

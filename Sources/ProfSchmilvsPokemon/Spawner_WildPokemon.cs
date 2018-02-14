@@ -22,12 +22,14 @@ namespace ProfSchmilvsPokemon
 
 			if (currentTick == 250) {
 
-				float prob = (0.01f * this.powerBuildingCount) / (Mathf.Pow(spawnedMagnemites, spawnedMagnemites));
-				float roll = Rand.Value;
+				//MAGNEMITES
 
-				//Log.Message ("Tick: " + prob + " rolled: " + roll);
+				float probMags = (0.01f * this.powerBuildingCount) / (Mathf.Pow(spawnedMagnemites, spawnedMagnemites));
+				float rollMags = Rand.Value;
 
-				if (roll < prob) {
+				//Log.Message ("Probability: " + prob + " rolled: " + roll);
+
+				if (rollMags < probMags) {
 
 					Pawn mag = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Magnemite"));
 					IntVec3 loc;
@@ -36,11 +38,46 @@ namespace ProfSchmilvsPokemon
 					GenSpawn.Spawn (mag, loc2, this.map);
 					++spawnedMagnemites;
 
-					//Log.Message ("Spawned a Magnemite at: " + loc.ToString());
+					//Log.Message ("Spawned a Magnemite at: " + loc2.ToString());
 				
 				}
 
 				currentTick = 0;
+
+				//MAGNEMITES_END
+
+				//GRIMERS
+
+				if (!map.listerFilthInHomeArea.FilthInHomeArea.NullOrEmpty ()) {
+
+					Log.Message (map.listerFilthInHomeArea.FilthInHomeArea.Count.ToString());
+
+					float probGrimer = ((float)map.listerFilthInHomeArea.FilthInHomeArea.Count/40f);
+					float rollGrimer = Rand.Value;
+
+					Log.Message ("Probability: " + probGrimer + " rolled: " + rollGrimer);
+
+					if (rollGrimer < probGrimer) {
+
+						Pawn grimer = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Grimer"));
+						IntVec3 loc2 = CellFinder.RandomClosewalkCellNear (map.areaManager.Home.ActiveCells.RandomElement (), this.map, 8, null);
+						GenSpawn.Spawn (grimer, loc2, this.map);
+
+						List<Thing> filth = map.listerFilthInHomeArea.FilthInHomeArea;
+
+						map.listerFilthInHomeArea.FilthInHomeArea.Clear ();
+						foreach (Thing f in filth) {
+								f.DeSpawn ();
+
+						}
+
+						Log.Message ("Spawned a Grimer at: " + loc2.ToString ());
+
+					}
+
+				}
+					
+				//GRIMERS_END
 			
 			}
 

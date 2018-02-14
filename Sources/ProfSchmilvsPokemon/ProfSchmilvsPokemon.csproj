@@ -42,23 +42,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ThingDef_Pokeball.cs" />
     <Compile Include="Projectile_Pokeball.cs" />
-    <Compile Include="ThingDef_Pokeball_Full.cs" />
     <Compile Include="Weapon_Pokeball_Full.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="Pokemon_Mareep.cs" />
-    <Compile Include="ThingDef_Mareep.cs" />
     <Compile Include="CompPowerPlantMareep.cs" />
-    <Compile Include="ThingDef_Magnemite.cs" />
     <Compile Include="Pokemon_Magnemite.cs" />
-    <Compile Include="HediffDefOf.cs" />
-    <Compile Include="SkillDefOf.cs" />
     <Compile Include="Spawner_WildPokemon.cs" />
     <Compile Include="Spawner.cs" />
-    <Compile Include="ThingDef_Magneton.cs" />
     <Compile Include="Pokemon_Magneton.cs" />
     <Compile Include="Pokemon_Magnezone.cs" />
-    <Compile Include="ThingDef_Magnezone.cs" />
+    <Compile Include="ThingDefs\ThingDef_Magnemite.cs" />
+    <Compile Include="ThingDefs\ThingDef_Magneton.cs" />
+    <Compile Include="ThingDefs\ThingDef_Magnezone.cs" />
+    <Compile Include="ThingDefs\ThingDef_Mareep.cs" />
+    <Compile Include="ThingDefs\ThingDef_Pokeball.cs" />
+    <Compile Include="ThingDefs\ThingDef_Pokeball_Full.cs" />
+    <Compile Include="DefOfs\HediffDefOf.cs" />
+    <Compile Include="DefOfs\SkillDefOf.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ThingDefs\" />
+    <Folder Include="DefOfs\" />
   </ItemGroup>
 </Project>

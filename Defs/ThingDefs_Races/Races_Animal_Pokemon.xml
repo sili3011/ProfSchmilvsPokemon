@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   
-  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Mareep" ParentName="AnimalThingBase">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Mareep" ParentName="AnimalThingBase">
     <defName>Pokemon_Mareep</defName>
     <label>mareep</label>
     <description>A medium-sized sheep like electro Pokemon. Clothing made from Mareep's fleece is easily charged with static electricity, so a special process is used on it.</description>
@@ -565,7 +565,7 @@
     </race>
   </ThingDef> -->
 
-  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Magnemite" ParentName="AnimalThingBase">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Magnemite" ParentName="AnimalThingBase">
     <defName>Pokemon_Magnemite</defName>
     <label>magnemite</label>
     <description>It's frequently the cause of power outages, which is why some power plants send out electrical signals that it can't stand.</description>
@@ -645,7 +645,7 @@
     </lifeStages>
   </PawnKindDef>
 
-  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Magneton" ParentName="AnimalThingBase">
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Magneton" ParentName="AnimalThingBase">
     <defName>Pokemon_Magneton</defName>
     <label>magneton</label>
     <description>Delicate equipment can malfunction in areas inhabited by Magneton, which send out mysterious electrical signals.</description>
@@ -725,7 +725,7 @@
     </lifeStages>
   </PawnKindDef>
 
- <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Magnezone" ParentName="AnimalThingBase">
+ <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Magnezone" ParentName="AnimalThingBase">
     <defName>Pokemon_Magnezone</defName>
     <label>magnezone</label>
     <description>There are still people who believe that this Pokémon came from outer space. It emanates a powerful magnetic field.</description>
@@ -799,6 +799,123 @@
         <labelPlural>magnezones</labelPlural>
         <bodyGraphicData>
           <texPath>Things/Pawn/Pokemon/Magnezone/Magnezone</texPath>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ========================== Filth ================================= -->
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Pokemon_Grimer</defName>
+    <label>grimer</label>
+    <description>Appears in filthy areas. It thrives by sucking up polluted sludge that is pumped out of factories.</description>
+    <statBases>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MoveSpeed>1</MoveSpeed>
+      <MarketValue>0</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>1</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+      <li>
+        <label>bodycheck</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>5.0</cooldownTime>
+        <linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <comps>
+     <li Class="CompProperties_Milkable">
+        <milkDef>Chemfuel</milkDef>
+        <milkIntervalDays>4</milkIntervalDays>
+        <milkAmount>1</milkAmount>
+      </li>
+    </comps>
+    <race>
+      <trainableIntelligence>Simple</trainableIntelligence>
+      <body>Human</body>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <herdAnimal>false</herdAnimal>
+      <packAnimal>false</packAnimal>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0.0</baseHungerRate>
+      <foodType>OmnivoreHuman</foodType>
+      <wildness>0</wildness>
+      <gestationPeriodDays>25</gestationPeriodDays>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>GrimerStages</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+      <Chemfuel>4</Chemfuel>
+    </butcherProducts>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Grimer</defName>
+    <label>grimer</label>
+    <baseRecruitDifficulty>0.5</baseRecruitDifficulty>
+    <race>Pokemon_Grimer</race>
+    <combatPower>65</combatPower>
+    <wildSpawn_spawnWild>false</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0</wildSpawn_EcoSystemWeight>
+    <lifeStages>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
           <drawSize>1.4</drawSize>
         </bodyGraphicData>
       </li>
