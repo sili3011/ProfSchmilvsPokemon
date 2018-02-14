@@ -211,18 +211,69 @@ namespace ProfSchmilvsPokemon
 						PowerNet pn = this.closestCompPower.PowerNet;
 						if (pn != null) {
 							float currentEnergy = pn.CurrentStoredEnergy ();
-							if (currentEnergy >= 0.5f) {
+							if (currentEnergy >= 1.5f) {
 								List<CompPowerBattery> cpb = pn.batteryComps;
 								CompPowerBattery bat = null;
 								foreach (CompPowerBattery c in cpb) {
-									if (c.StoredEnergy >= 0.5f) {
+									if (c.StoredEnergy >= 1.5f) {
 										bat = c;
 										break;
 									}
 								}
 								if (bat != null) {
-									this.StoredEnergy += 0.5f;
-									bat.DrawPower (0.5f);
+									this.StoredEnergy += 1.5f;
+									bat.DrawPower (1.5f);
+
+									float bonusMagnetism = 0f;
+
+									for (int i = 0; i < 400; i++) {
+
+										IntVec3 intVec = this.Position + GenRadial.RadialPattern [i];
+										if (intVec.InBounds (base.Map)) {
+
+											Thing thing = intVec.GetThingList (base.Map).Find ((Thing x) => x is Pawn);
+											if (thing != null) {
+
+												if (thing is Pokemon_Magnemite) {
+												
+													bonusMagnetism += 25f;
+												
+												}else if (thing is Pokemon_Magneton) {
+
+													bonusMagnetism += 75f;
+
+												}else if (thing is Pokemon_Magnezone) {
+
+													bonusMagnetism += 125f;
+
+												}
+
+											}
+
+										}
+
+									}
+										
+									if ((Spawner.spawnerPokemon.powerBuildingCount + bonusMagnetism)/1000 > Rand.Value) {
+
+										Pawn zone = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Magnezone"));
+										if (this.Faction != null) {
+											if (this.playerSettings.master != null) {
+												zone.SetFaction (this.Faction, (Pawn)this.playerSettings.master);
+												zone.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)this.playerSettings.master);
+											} else {
+												zone.SetFaction (this.Faction, (Pawn)this.Faction.leader); //should not happen, just for debugging purposes
+											}
+											if (!this.Name.ToString().Split(' ')[0].Equals ("magneton")) {
+												zone.Name = this.Name;
+											}
+										}
+
+										GenSpawn.Spawn (zone, this.Position, base.Map);
+										this.DeSpawn ();
+									
+									}
+
 								}
 							}
 						}
@@ -253,7 +304,7 @@ namespace ProfSchmilvsPokemon
 		public override void ExposeData()
 		{
 			base.ExposeData ();
-			Scribe_Values.Look<float>(ref this.StoredEnergy, "storedEnergy", 250f);
+			Scribe_Values.Look<float>(ref this.StoredEnergy, "storedEnergy", 750f);
 			Scribe_Deep.Look<Thing>(ref this.repairJob, "repairJob", new object[0]);
 		}
 

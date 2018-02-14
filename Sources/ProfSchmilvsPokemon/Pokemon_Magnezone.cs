@@ -9,16 +9,16 @@ using RimWorld;
 namespace ProfSchmilvsPokemon
 {
 
-	public class Pokemon_Magnemite : Pawn
+	public class Pokemon_Magnezone : Pawn
 	{
 
 		#region Properties
 		//
-		public ThingDef_Magnemite Def
+		public ThingDef_Magnezone Def
 		{
 			get 
 			{
-				return this.def as ThingDef_Magnemite;
+				return this.def as ThingDef_Magnezone;
 			}
 		}
 		//
@@ -30,10 +30,10 @@ namespace ProfSchmilvsPokemon
 			if (this.Faction != null) {
 				GenDraw.FillableBarRequest r = default(GenDraw.FillableBarRequest);
 				r.center = this.DrawPos + Vector3.up * 0.1f - new Vector3 (0, 0, 0.5f);
-				r.size = Pokemon_Magnemite.BarSize;
+				r.size = Pokemon_Magnezone.BarSize;
 				r.fillPercent = this.StoredEnergy / this.Def.storedEnergyMaxUtility;
-				r.filledMat = Pokemon_Magnemite.BatteryBarFilledMat;
-				r.unfilledMat = Pokemon_Magnemite.BatteryBarUnfilledMat;
+				r.filledMat = Pokemon_Magnezone.BatteryBarFilledMat;
+				r.unfilledMat = Pokemon_Magnezone.BatteryBarUnfilledMat;
 				r.margin = 0.15f;
 				GenDraw.DrawFillableBar (r);
 			}
@@ -211,99 +211,18 @@ namespace ProfSchmilvsPokemon
 						PowerNet pn = this.closestCompPower.PowerNet;
 						if (pn != null) {
 							float currentEnergy = pn.CurrentStoredEnergy ();
-							if (currentEnergy >= 0.5f) {
+							if (currentEnergy >= 2.5f) {
 								List<CompPowerBattery> cpb = pn.batteryComps;
 								CompPowerBattery bat = null;
 								foreach (CompPowerBattery c in cpb) {
-									if (c.StoredEnergy >= 0.5f) {
+									if (c.StoredEnergy >= 2.5f) {
 										bat = c;
 										break;
 									}
 								}
 								if (bat != null) {
-									this.StoredEnergy += 0.5f;
-									bat.DrawPower (0.5f);
-
-									List<Pokemon_Magnemite> magnemitesInRange = new List<Pokemon_Magnemite>();
-									magnemitesInRange.Add (this);
-
-									for (int i = 0; i < 25; i++) {
-
-										IntVec3 intVec = this.Position + GenRadial.RadialPattern [i];
-										if (intVec.InBounds (base.Map)) {
-
-											Thing thing = intVec.GetThingList (base.Map).Find ((Thing x) => x is Pokemon_Magnemite);
-											if (thing != null) {
-
-												if (GenSight.LineOfSight (this.Position, intVec, base.Map, false, null, 0, 0)) {
-
-													Pokemon_Magnemite pDummy = (Pokemon_Magnemite)thing;
-													string d = thing.def.defName.ToString ();
-
-													if (d.Equals ("Pokemon_Magnemite") && pDummy.closestCompPower != null && pDummy != this) {
-
-														magnemitesInRange.Add (pDummy);
-
-													}
-
-													if (magnemitesInRange.Count == 3) {
-													
-														break;
-													
-													}
-
-												}
-
-											}
-
-										}
-
-									}
-
-									if (magnemitesInRange.Count == 3) {
-
-										Pokemon_Magnemite mag = this;
-
-										foreach(Pokemon_Magnemite m in magnemitesInRange){
-
-											mag = m;
-
-											if (m.Faction != null) {
-
-												break;
-											
-											}
-												
-										}
-
-										Pawn ton = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Magneton"));
-										if (mag.Faction != null) {
-											if (mag.playerSettings.master != null) {
-												ton.SetFaction (mag.Faction, (Pawn)mag.playerSettings.master);
-												ton.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)mag.playerSettings.master);
-											} else {
-												ton.SetFaction (mag.Faction, (Pawn)mag.Faction.leader); //should not happen, just for debugging purposes
-											}
-											if (!mag.Name.ToString().Split(' ')[0].Equals ("magnemite")) {
-												ton.Name = mag.Name;
-											}
-										}
-
-										foreach(Pokemon_Magnemite m in magnemitesInRange){
-
-											if (m.Spawned && m != this) {
-												m.DeSpawn ();
-											}
-
-										}
-
-										if (this.Spawned) {
-
-											GenSpawn.Spawn (ton, mag.Position, base.Map);
-											this.DeSpawn ();
-										}
-
-									}
+									this.StoredEnergy += 2.5f;
+									bat.DrawPower (2.5f);
 								}
 							}
 						}
@@ -325,7 +244,7 @@ namespace ProfSchmilvsPokemon
 
 		public virtual void repairing(){
 		
-			this.repairJob.HitPoints++;
+			this.repairJob.HitPoints += 5;
 			this.StoredEnergy--;
 			base.Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
 		
@@ -334,14 +253,14 @@ namespace ProfSchmilvsPokemon
 		public override void ExposeData()
 		{
 			base.ExposeData ();
-			Scribe_Values.Look<float>(ref this.StoredEnergy, "storedEnergy", 250f);
+			Scribe_Values.Look<float>(ref this.StoredEnergy, "storedEnergy", 1250f);
 			Scribe_Deep.Look<Thing>(ref this.repairJob, "repairJob", new object[0]);
 		}
 			
 		private static readonly Vector2 BarSize = new Vector2(0.6f, 0.05f);
 		private static readonly Material BatteryBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.9f, 0.85f, 0.2f), false);
 		private static readonly Material BatteryBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.3f, 0.3f, 0.3f), false);
-		private float StoredEnergy = 250f;
+		private float StoredEnergy = 1250f;
 		private CompPower closestCompPower = null;
 		public Thing repairJob = null;
 

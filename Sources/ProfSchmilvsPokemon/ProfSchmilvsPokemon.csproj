@@ -58,5 +58,7 @@
     <Compile Include="Spawner.cs" />
     <Compile Include="ThingDef_Magneton.cs" />
     <Compile Include="Pokemon_Magneton.cs" />
+    <Compile Include="Pokemon_Magnezone.cs" />
+    <Compile Include="ThingDef_Magnezone.cs" />
   </ItemGroup>
 </Project>

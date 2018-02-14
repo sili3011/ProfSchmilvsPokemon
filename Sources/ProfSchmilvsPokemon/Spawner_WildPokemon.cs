@@ -90,7 +90,7 @@ namespace ProfSchmilvsPokemon
 		}
 
 		private Map map;
-		private float powerBuildingCount = 0;
+		public float powerBuildingCount = 0;
 		private int spawnedMagnemites = 0;
 		private int currentTick = 0;
 		public List<CompPower> PowerComps = new List<CompPower>();
