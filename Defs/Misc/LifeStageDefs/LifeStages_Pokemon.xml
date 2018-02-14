@@ -52,7 +52,7 @@
   <!-- Magnemite, Magneton, Magnezone -->
   
 <LifeStageDef>
-    <defName>MagnemiteStage</defName>
+    <defName>MagnemiteStages</defName>
     <label>adult</label>
     <visible>false</visible>
     <reproductive>true</reproductive>

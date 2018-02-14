@@ -11,10 +11,13 @@
     	-Equip and throw Pokeballs
     	-The skill "Pokemon" (knowledge about and everything linked to Pokemon)
     	-The worktype "Pokemon handling" (needed for crafting Pokeballs)
-        -3 kinds of Pokemon (more to come):
+        -4 kinds of Pokemon (more to come):
             -> Mareep, Flaaffy, Ampharos
+                Mareeps yield wool and can be used as power source
             -> Houndour, Houndoom
             -> Larvitar, Pupitar, Tyranitar
+            -> Magnemite, ([WIP] Magneton, Magnezone)
+                Magnemites will repair damaged buildings
         -Catching Pokemon by throwing Pokeballs at them
         -Captured Pokemon get stored in Pokeballs
         -Captured Pokemon belong to the Pokeball thrower

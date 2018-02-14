@@ -168,8 +168,7 @@ namespace ProfSchmilvsPokemon
 											p.def.description = "A " + name.Split ('_') [0] + " with a Pokémon in it. Throw to release caught Pokémon. \n" +
 											closest.Label.CapitalizeFirst ();
 											closest.SetFaction (launcher.Faction, (Pawn)launcher);
-											List<TrainableDef> trainableDefsInListOrder = TrainableUtility.TrainableDefsInListOrder;
-											closest.training.Train (trainableDefsInListOrder [0], (Pawn)launcher);
+											closest.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)launcher);
 											p.Pokemon = closest;
 											closest.DeSpawn ();
 											GenSpawn.Spawn (p, position, map);

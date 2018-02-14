@@ -607,27 +607,14 @@
       <lifeExpectancy>1000</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>MagnemiteStage</def>
+          <def>MagnemiteStages</def>
           <minAge>0</minAge>
         </li>
       </lifeStageAges>
-      <!-- <wildBiomes>
-       <TemperateForest>0.1</TemperateForest>
-       <TropicalRainforest>0.1</TropicalRainforest>
-       <AridShrubland>0.1</AridShrubland>
-       <Desert>0.1</Desert>
-       <ExtremeDesert>0.1</ExtremeDesert>
-       <Tundra>0.1</Tundra>
-       <BorealForest>0.1</BorealForest>
-      </wildBiomes> -->
       <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
     </race>
-    <recipes>
-      <li>RemoveMechanoidBodyPart</li>
-      <li>ShutDownMechanoid</li>
-    </recipes>
     <butcherProducts>
       <Steel>10</Steel>
       <Component>1</Component>
@@ -652,6 +639,86 @@
         <labelPlural>magnemites</labelPlural>
         <bodyGraphicData>
           <texPath>Things/Pawn/Pokemon/Magnemite/Magnemite</texPath>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDef_Magneton" ParentName="AnimalThingBase">
+    <defName>Pokemon_Magneton</defName>
+    <label>magneton</label>
+    <description>Delicate equipment can malfunction in areas inhabited by Magneton, which send out mysterious electrical signals.</description>
+    <statBases>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MoveSpeed>9</MoveSpeed>
+      <MarketValue>2400</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <race>
+      <trainableIntelligence>Advanced</trainableIntelligence>
+      <body>MechanicalCentipede</body>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <herdAnimal>false</herdAnimal>
+      <packAnimal>false</packAnimal>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0.0</baseHungerRate>
+      <foodType>None</foodType>
+      <wildness>0</wildness>
+      <gestationPeriodDays>25</gestationPeriodDays>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>MagnemiteStages</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+      <Steel>30</Steel>
+      <Component>3</Component>
+    </butcherProducts>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+    <thingClass>ProfSchmilvsPokemon.Pokemon_Magneton</thingClass>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Magneton</defName>
+    <label>magneton</label>
+    <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
+    <race>Pokemon_Magneton</race>
+    <combatPower>65</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0</wildSpawn_EcoSystemWeight>
+    <lifeStages>
+      <li>
+        <label>magneton</label>
+        <labelPlural>magnetons</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Magneton/Magneton</texPath>
           <drawSize>1.4</drawSize>
         </bodyGraphicData>
       </li>
