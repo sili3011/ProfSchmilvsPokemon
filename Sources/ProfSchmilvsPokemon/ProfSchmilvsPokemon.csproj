@@ -60,6 +60,10 @@
     <Compile Include="ThingDefs\ThingDef_Pokeball_Full.cs" />
     <Compile Include="DefOfs\HediffDefOf.cs" />
     <Compile Include="DefOfs\SkillDefOf.cs" />
+    <Compile Include="ThingDefs\ThingDef_Grimer.cs" />
+    <Compile Include="Pokemon_Grimer.cs" />
+    <Compile Include="Pokemon_Muk.cs" />
+    <Compile Include="ThingDefs\ThingDef_Muk.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ThingDefs\" />

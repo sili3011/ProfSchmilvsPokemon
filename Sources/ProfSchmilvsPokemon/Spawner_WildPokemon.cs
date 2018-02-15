@@ -50,27 +50,24 @@ namespace ProfSchmilvsPokemon
 
 				if (!map.listerFilthInHomeArea.FilthInHomeArea.NullOrEmpty ()) {
 
-					Log.Message (map.listerFilthInHomeArea.FilthInHomeArea.Count.ToString());
-
 					float probGrimer = ((float)map.listerFilthInHomeArea.FilthInHomeArea.Count/40f);
 					float rollGrimer = Rand.Value;
 
-					Log.Message ("Probability: " + probGrimer + " rolled: " + rollGrimer);
-
 					if (rollGrimer < probGrimer) {
 
-						Pawn grimer = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Grimer"));
+						Pokemon_Grimer grimer = (Pokemon_Grimer )PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Grimer"));
 						IntVec3 loc2 = CellFinder.RandomClosewalkCellNear (map.areaManager.Home.ActiveCells.RandomElement (), this.map, 8, null);
-						GenSpawn.Spawn (grimer, loc2, this.map);
 
 						List<Thing> filth = map.listerFilthInHomeArea.FilthInHomeArea;
 
-						map.listerFilthInHomeArea.FilthInHomeArea.Clear ();
-						foreach (Thing f in filth) {
-								f.DeSpawn ();
-
+						for (int k = 0; k < filth.Count; k++) {
+							grimer.IncrementFilth ();
+							filth [k].DeSpawn ();
 						}
 
+						map.listerFilthInHomeArea.FilthInHomeArea.Clear ();
+
+						GenSpawn.Spawn (grimer, loc2, this.map);
 						Log.Message ("Spawned a Grimer at: " + loc2.ToString ());
 
 					}

@@ -63,12 +63,94 @@
   <!-- Grimer, Muk -->
 
   <LifeStageDef>
-    <defName>GrimerStages</defName>
+    <defName>GrimerStage1</defName>
     <label>adult</label>
     <visible>false</visible>
     <reproductive>false</reproductive>
     <milkable>true</milkable>
     <shearable>false</shearable>
+    <bodySizeFactor>0.1</bodySizeFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>GrimerStage2</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+    <bodySizeFactor>0.2</bodySizeFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>GrimerStage3</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+    <bodySizeFactor>0.3</bodySizeFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>GrimerStage4</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+    <bodySizeFactor>0.4</bodySizeFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>GrimerStage5</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+    <bodySizeFactor>0.5</bodySizeFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>GrimerStage6</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+    <bodySizeFactor>0.6</bodySizeFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>GrimerStage7</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+    <bodySizeFactor>0.7</bodySizeFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>GrimerStage8</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+    <bodySizeFactor>0.8</bodySizeFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>GrimerStage9</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+    <bodySizeFactor>0.9</bodySizeFactor>
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>GrimerStage10</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+    <bodySizeFactor>1.0</bodySizeFactor>
   </LifeStageDef>
 
 </Defs>

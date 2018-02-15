@@ -807,7 +807,7 @@
 
   <!-- ========================== Filth ================================= -->
 
-  <ThingDef ParentName="AnimalThingBase">
+  <ThingDef class="ProfSchmilvsPokemon.ThingDefs.Pokemon_Grimer" ParentName="AnimalThingBase">
     <defName>Pokemon_Grimer</defName>
     <label>grimer</label>
     <description>Appears in filthy areas. It thrives by sucking up polluted sludge that is pumped out of factories.</description>
@@ -886,8 +886,44 @@
       <lifeExpectancy>1000</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>GrimerStages</def>
+          <def>GrimerStage1</def>
           <minAge>0</minAge>
+        </li>
+        <li>
+          <def>GrimerStage2</def>
+          <minAge>300</minAge>
+        </li>
+        <li>
+          <def>GrimerStage3</def>
+          <minAge>600</minAge>
+        </li>
+        <li>
+          <def>GrimerStage4</def>
+          <minAge>900</minAge>
+        </li>
+        <li>
+          <def>GrimerStage5</def>
+          <minAge>1200</minAge>
+        </li>
+        <li>
+          <def>GrimerStage6</def>
+          <minAge>1500</minAge>
+        </li>
+        <li>
+          <def>GrimerStage7</def>
+          <minAge>1800</minAge>
+        </li>
+        <li>
+          <def>GrimerStage8</def>
+          <minAge>2100</minAge>
+        </li>
+        <li>
+          <def>GrimerStage9</def>
+          <minAge>2400</minAge>
+        </li>
+        <li>
+          <def>GrimerStage10</def>
+          <minAge>2700</minAge>
         </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
@@ -895,11 +931,13 @@
       <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
     </race>
     <butcherProducts>
+      <FilthDirt>30</FilthDirt>
       <Chemfuel>4</Chemfuel>
     </butcherProducts>
     <tradeTags>
       <li>StandardAnimal</li>
     </tradeTags>
+    <thingClass>ProfSchmilvsPokemon.Pokemon_Grimer</thingClass>
   </ThingDef>
 
   <PawnKindDef ParentName="AnimalKindBase">
@@ -916,11 +954,309 @@
         <labelPlural>grimers</labelPlural>
         <bodyGraphicData>
           <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
+          <drawSize>0.6</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
+          <drawSize>0.8</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
+          <drawSize>1.2</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
           <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
+          <drawSize>1.6</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
+          <drawSize>1.8</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
+          <drawSize>2.0</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
+          <drawSize>2.2</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>grimer</label>
+        <labelPlural>grimers</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Grimer/Grimer</texPath>
+          <drawSize>2.4</drawSize>
         </bodyGraphicData>
       </li>
     </lifeStages>
   </PawnKindDef>
+
+  <ThingDef class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Muk" ParentName="AnimalThingBase">
+    <defName>Pokemon_Muk</defName>
+    <label>muk</label>
+    <description>This Pokémon's favorite food is anything that is repugnantly filthy. In dirty towns where people think nothing of throwing away litter on the streets, Muk are certain to gather.</description>
+    <statBases>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MoveSpeed>1</MoveSpeed>
+      <MarketValue>0</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+      <li>
+        <label>bodycheck</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>5.0</cooldownTime>
+        <linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <comps>
+     <li Class="CompProperties_Milkable">
+        <milkDef>Chemfuel</milkDef>
+        <milkIntervalDays>4</milkIntervalDays>
+        <milkAmount>8</milkAmount>
+      </li>
+    </comps>
+    <race>
+      <trainableIntelligence>Simple</trainableIntelligence>
+      <body>Human</body>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <herdAnimal>false</herdAnimal>
+      <packAnimal>false</packAnimal>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0.0</baseHungerRate>
+      <foodType>OmnivoreHuman</foodType>
+      <wildness>0</wildness>
+      <gestationPeriodDays>25</gestationPeriodDays>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>GrimerStage1</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>GrimerStage2</def>
+          <minAge>300</minAge>
+        </li>
+        <li>
+          <def>GrimerStage3</def>
+          <minAge>600</minAge>
+        </li>
+        <li>
+          <def>GrimerStage4</def>
+          <minAge>900</minAge>
+        </li>
+        <li>
+          <def>GrimerStage5</def>
+          <minAge>1200</minAge>
+        </li>
+        <li>
+          <def>GrimerStage6</def>
+          <minAge>1500</minAge>
+        </li>
+        <li>
+          <def>GrimerStage7</def>
+          <minAge>1800</minAge>
+        </li>
+        <li>
+          <def>GrimerStage8</def>
+          <minAge>2100</minAge>
+        </li>
+        <li>
+          <def>GrimerStage9</def>
+          <minAge>2400</minAge>
+        </li>
+        <li>
+          <def>GrimerStage10</def>
+          <minAge>2700</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+      <FilthDirt>300</FilthDirt>
+      <Chemfuel>40</Chemfuel>
+    </butcherProducts>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+    <thingClass>ProfSchmilvsPokemon.Pokemon_Muk</thingClass>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Muk</defName>
+    <label>Muk</label>
+    <baseRecruitDifficulty>0.25</baseRecruitDifficulty>
+    <race>Pokemon_Muk</race>
+    <combatPower>150</combatPower>
+    <wildSpawn_spawnWild>false</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0</wildSpawn_EcoSystemWeight>
+    <lifeStages>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>0.6</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>0.8</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>1.2</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>1.6</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>1.8</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>2.0</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>2.2</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <label>muk</label>
+        <labelPlural>muks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Muk/Muk</texPath>
+          <drawSize>2.4</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
 
   <!-- ====================== BASES ===================== -->
 
