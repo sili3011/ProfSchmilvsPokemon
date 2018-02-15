@@ -39,7 +39,7 @@ namespace ProfSchmilvsPokemon
 
 				this.currentTick = 0;
 
-				float prob = this.amountOfFilth/100;
+				float prob = this.amountOfFilth/90;
 				float roll = Rand.Value;
 
 				if(roll < prob && this.amountOfFilth > 0){

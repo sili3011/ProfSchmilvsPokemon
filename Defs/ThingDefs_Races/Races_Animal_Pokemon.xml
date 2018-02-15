@@ -880,7 +880,6 @@
       <baseBodySize>1.0</baseBodySize>
       <baseHealthScale>1.0</baseHealthScale>
       <baseHungerRate>0.0</baseHungerRate>
-      <foodType>OmnivoreHuman</foodType>
       <wildness>0</wildness>
       <gestationPeriodDays>25</gestationPeriodDays>
       <lifeExpectancy>1000</lifeExpectancy>
@@ -1105,7 +1104,6 @@
       <baseBodySize>1.0</baseBodySize>
       <baseHealthScale>1.0</baseHealthScale>
       <baseHungerRate>0.0</baseHungerRate>
-      <foodType>OmnivoreHuman</foodType>
       <wildness>0</wildness>
       <gestationPeriodDays>25</gestationPeriodDays>
       <lifeExpectancy>1000</lifeExpectancy>
