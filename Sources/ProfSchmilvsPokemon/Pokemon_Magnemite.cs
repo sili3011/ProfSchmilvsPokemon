@@ -312,6 +312,7 @@ namespace ProfSchmilvsPokemon
 
 						if (this.pather.Destination != new LocalTargetInfo (this.closestCompPower.parent.Position)) {
 
+							this.jobs.ClearQueuedJobs();
 							this.pather.StartPath (new LocalTargetInfo (this.closestCompPower.parent.Position), Verse.AI.PathEndMode.Touch);
 
 						}
