@@ -52,7 +52,7 @@
     </tools>
     <comps>
       <li Class="CompProperties_Shearable">
-        <woolDef>WoolAlpaca</woolDef>
+        <woolDef>WoolMareep</woolDef>
         <shearIntervalDays>15</shearIntervalDays>
         <woolAmount>100</woolAmount>
       </li>
@@ -66,7 +66,7 @@
 			<baseHungerRate>0.45</baseHungerRate>
 			<foodType>VegetarianRoughAnimal</foodType>
       <leatherColor>(237,216,174)</leatherColor>
-      <leatherLabel>alpacahide</leatherLabel>
+      <leatherLabel>mareephide</leatherLabel>
       <leatherInsulation>1.1</leatherInsulation>
       <wildness>0</wildness>
       <nuzzleMtbHours>120</nuzzleMtbHours>
@@ -305,7 +305,7 @@
     <description>It cooperates with others skillfully. When it becomes your partner, it's very loyal to you as its Trainer and will obey your orders.</description>
     <race>
       <leatherColor>(200,200,200)</leatherColor>
-      <leatherLabel>arctic wolfskin</leatherLabel>
+      <leatherLabel>houndourskin</leatherLabel>
       <leatherInsulation>1.25</leatherInsulation>
       <useMeatFrom>WolfTimber</useMeatFrom>
     </race>
@@ -485,8 +485,6 @@
       <wildness>0.80</wildness>
       <leatherColor>(112,82,65)</leatherColor>
       <leatherInsulation>1.0</leatherInsulation>
-      <leatherLabel>bearskin</leatherLabel>
-      <meatLabel>bear meat</meatLabel>
     </race>
   </ThingDef>
 

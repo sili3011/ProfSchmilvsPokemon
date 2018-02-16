@@ -7,17 +7,9 @@ namespace ProfSchmilvsPokemon
 {
 	
 	[StaticConstructorOnStartup]
-	public class CompPowerPlantMareep : CompPowerPlant
+	public class CompPowerPlantMareep : CompPower
 	{
 		
-		protected override float DesiredPowerOutput
-		{
-			get
-			{
-				return this.storedMareepPower;
-			}
-		}
-			
 		public override void PostDraw()
 		{
 			base.PostDraw();
@@ -32,6 +24,25 @@ namespace ProfSchmilvsPokemon
 			rotation.Rotate(RotationDirection.Clockwise);
 			r.rotation = rotation;
 			GenDraw.DrawFillableBar(r);
+		}
+
+		public override void CompTick(){
+
+			base.CompTick ();
+
+			if (!this.PowerNet.batteryComps.NullOrEmpty()) {
+
+				CompPowerBattery bat = this.PowerNet.batteryComps.RandomElement ();
+
+				if (this.storedMareepPower > 0.5f && bat.AmountCanAccept >= 0.5f) {
+
+					bat.AddEnergy (0.5f);
+					this.storedMareepPower -= 0.5f;
+
+				}
+
+			}
+
 		}
 			
 		public void addToStoredPower(float discharge){
@@ -51,9 +62,10 @@ namespace ProfSchmilvsPokemon
 		}
 
 		public float storedMareepPower;
-		public float MaxStoredMareepPower = 50000f;
+		public float MaxStoredMareepPower = 20000f;
 		private static readonly Vector2 BarSize = new Vector2(2.3f, 0.14f);
 		private static readonly Material PowerPlantSolarBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.5f, 0.475f, 0.1f), false);
 		private static readonly Material PowerPlantSolarBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.15f, 0.15f, 0.15f), false);
+
 	}
 }

@@ -81,7 +81,7 @@ namespace ProfSchmilvsPokemon
 
 				}
 
-				this.StoredEnergy += (mareepCount/20) * Rand.Value;
+				this.StoredEnergy += (mareepCount/40) * Rand.Value;
 
 			}
 
@@ -98,7 +98,7 @@ namespace ProfSchmilvsPokemon
 
 					if (this.closestDischarger == null) {
 
-						for (int i = 0; i < 900; i++) {
+						for (int i = 0; i < 1200; i++) {
 
 							IntVec3 intVec = this.Position + GenRadial.RadialPattern [i];
 							if (intVec.InBounds (base.Map)) {
@@ -112,11 +112,11 @@ namespace ProfSchmilvsPokemon
 										string d = closest.def.defName.ToString ();
 										string[] splt = d.Split ('_');
 
-										Log.Message (d);
+										//Log.Message (d);
 
 										if (splt.Length == 2 && splt [0].Equals ("Mareep")) {
 
-											Log.Message ("Found discharging station");
+											//Log.Message ("Found discharging station");
 											this.closestDischarger = closest;
 											this.pather.StartPath (new LocalTargetInfo (this.closestDischarger), Verse.AI.PathEndMode.OnCell);
 											break;
@@ -184,14 +184,15 @@ namespace ProfSchmilvsPokemon
 		{
 			base.ExposeData ();
 			Scribe_Values.Look<float>(ref this.StoredEnergy, "storedEnergy", 0f);
+			Scribe_Deep.Look<Building>(ref this.closestDischarger, "closestDischarger", null);
 		}
-
-		public Building closestDischarger = null;
+			
 		public Sustainer wickSustainer;
 		private static readonly Vector2 BarSize = new Vector2(0.6f, 0.05f);
 		private static readonly Material BatteryBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.9f, 0.85f, 0.2f), false);
 		private static readonly Material BatteryBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.3f, 0.3f, 0.3f), false);
 		private float StoredEnergy = 0f;
+		private Building closestDischarger = null;
 
 	}
 }

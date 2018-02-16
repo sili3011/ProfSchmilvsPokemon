@@ -18,7 +18,7 @@
             -> Larvitar, Pupitar, Tyranitar
             -> Magnemite, Magneton, Magnezone
                 Magnemites will repair damaged buildings
-            -> Grimer, ([WIP] Muk)
+            -> Grimer, Muk
                 Grimers will it trash but create filth while moving
         -Catching Pokemon by throwing Pokeballs at them
         -Captured Pokemon get stored in Pokeballs
@@ -28,5 +28,6 @@
     	-Inventory for carrying more than one Pokeball
     	-More Pokemon
         -Redo textures
+        -Refactor code
 		</description>
 </ModMetaData>

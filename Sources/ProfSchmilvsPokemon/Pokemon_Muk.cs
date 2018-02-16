@@ -39,7 +39,7 @@ namespace ProfSchmilvsPokemon
 
 				this.currentTick = 0;
 
-				float prob = this.amountOfFilth/90;
+				float prob = this.amountOfFilth/150;
 				float roll = Rand.Value;
 
 				if(roll < prob && this.amountOfFilth > 0){
@@ -55,16 +55,20 @@ namespace ProfSchmilvsPokemon
 
 				if (currentDump == null) {
 
-					List<Zone> zones = base.Map.zoneManager.AllZones;
-					float nextDistance = 999999f;
+					if (!base.Map.zoneManager.AllZones.NullOrEmpty ()) {
 
-					foreach (Zone z in zones) {
+						List<Zone> zones = base.Map.zoneManager.AllZones;
+						float nextDistance = 999999f;
 
-						if (z.label.Split (' ') [0].Equals ("Dumping")) {
+						foreach (Zone z in zones) {
 
-							if (nextDistance > this.Position.DistanceTo (z.cells [0])) {
+							if (z.label.Split (' ') [0].Equals ("Dumping")) {
 
-								this.currentDump = z;
+								if (nextDistance > this.Position.DistanceTo (z.cells [0])) {
+
+									this.currentDump = z;
+
+								}
 
 							}
 
@@ -89,8 +93,18 @@ namespace ProfSchmilvsPokemon
 						IEnumerable<Thing> ts = this.currentDump.AllContainedThings;
 
 						foreach(Thing t in ts){
-							toBeDigested = t;
-							if(toBeDigested != null && toBeDigested != this){
+
+							if (t is Pokemon_Grimer && t.Faction == null) {
+
+								Pokemon_Grimer g = (Pokemon_Grimer)t;
+								for (int gi = (int)g.amountOfFilth; gi >= 0; gi--) {
+									this.IncrementFilth ();
+								}
+								t.DeSpawn ();
+								this.IncrementFilth ();
+
+							}else if(t != null && !(t is Pawn)){
+								toBeDigested = t;
 								break;
 							}
 						}
@@ -140,8 +154,8 @@ namespace ProfSchmilvsPokemon
 		{
 			base.ExposeData ();
 			Scribe_Values.Look<float>(ref this.amountOfFilth, "amountOfFilth", 0f);
-			Scribe_Deep.Look<Zone>(ref this.currentDump, "currentDump", new object[0]);
-			Scribe_Deep.Look<Thing>(ref this.digesting, "digesting", new object[0]);
+			Scribe_Deep.Look<Zone>(ref this.currentDump, "currentDump", null);
+			Scribe_Deep.Look<Thing>(ref this.digesting, "digesting", null);
 			Scribe_Values.Look<long>(ref this.digestingTicks, "digestingTicks", 0L);
 		}
 

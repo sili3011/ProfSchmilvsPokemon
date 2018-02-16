@@ -24,7 +24,7 @@ namespace ProfSchmilvsPokemon
 
 				//MAGNEMITES
 
-				float probMags = (0.01f * this.powerBuildingCount) / (Mathf.Pow(spawnedMagnemites, spawnedMagnemites));
+				float probMags = (0.005f * this.powerBuildingCount) / (Mathf.Pow(spawnedMagnemites, spawnedMagnemites));
 				float rollMags = Rand.Value;
 
 				//Log.Message ("Probability: " + prob + " rolled: " + roll);
@@ -50,7 +50,7 @@ namespace ProfSchmilvsPokemon
 
 				if (!map.listerFilthInHomeArea.FilthInHomeArea.NullOrEmpty ()) {
 
-					float probGrimer = ((float)map.listerFilthInHomeArea.FilthInHomeArea.Count/40f);
+					float probGrimer = ((float)map.listerFilthInHomeArea.FilthInHomeArea.Count/120f);
 					float rollGrimer = Rand.Value;
 
 					if (rollGrimer < probGrimer) {
@@ -68,7 +68,7 @@ namespace ProfSchmilvsPokemon
 						map.listerFilthInHomeArea.FilthInHomeArea.Clear ();
 
 						GenSpawn.Spawn (grimer, loc2, this.map);
-						Log.Message ("Spawned a Grimer at: " + loc2.ToString ());
+						//Log.Message ("Spawned a Grimer at: " + loc2.ToString ());
 
 					}
 
@@ -120,7 +120,7 @@ namespace ProfSchmilvsPokemon
 		{
 			Scribe_Values.Look<float>(ref this.powerBuildingCount, "powerBuildings", 0f);
 			Scribe_Values.Look<int>(ref this.spawnedMagnemites, "spawnedMagnemites", 0);
-			Scribe_Deep.Look<List<CompPower>>(ref this.PowerComps, "powerComps", new object[0]);
+			Scribe_Deep.Look<List<CompPower>>(ref this.PowerComps, "powerComps", new List<CompPower>());
 		}
 
 		private Map map;
