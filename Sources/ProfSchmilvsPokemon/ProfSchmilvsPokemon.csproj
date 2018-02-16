@@ -45,13 +45,9 @@
     <Compile Include="Projectile_Pokeball.cs" />
     <Compile Include="Weapon_Pokeball_Full.cs" />
     <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="Pokemon_Mareep.cs" />
     <Compile Include="CompPowerPlantMareep.cs" />
-    <Compile Include="Pokemon_Magnemite.cs" />
     <Compile Include="Spawner_WildPokemon.cs" />
     <Compile Include="Spawner.cs" />
-    <Compile Include="Pokemon_Magneton.cs" />
-    <Compile Include="Pokemon_Magnezone.cs" />
     <Compile Include="ThingDefs\ThingDef_Magnemite.cs" />
     <Compile Include="ThingDefs\ThingDef_Magneton.cs" />
     <Compile Include="ThingDefs\ThingDef_Magnezone.cs" />
@@ -61,12 +57,23 @@
     <Compile Include="DefOfs\HediffDefOf.cs" />
     <Compile Include="DefOfs\SkillDefOf.cs" />
     <Compile Include="ThingDefs\ThingDef_Grimer.cs" />
-    <Compile Include="Pokemon_Grimer.cs" />
-    <Compile Include="Pokemon_Muk.cs" />
     <Compile Include="ThingDefs\ThingDef_Muk.cs" />
+    <Compile Include="Pokemon\Pokemon_Abstract.cs" />
+    <Compile Include="Pokemon\Magnets\Pokemon_Abstract_Magnets.cs" />
+    <Compile Include="Pokemon\Magnets\Pokemon_Magnemite.cs" />
+    <Compile Include="Pokemon\Magnets\Pokemon_Magneton.cs" />
+    <Compile Include="Pokemon\Magnets\Pokemon_Magnezone.cs" />
+    <Compile Include="Pokemon\Slime\Pokemon_Grimer.cs" />
+    <Compile Include="Pokemon\Slime\Pokemon_Muk.cs" />
+    <Compile Include="Pokemon\Sheep\Pokemon_Mareep.cs" />
+    <Compile Include="Pokemon\Slime\Pokemon_Abstract_Slimes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ThingDefs\" />
     <Folder Include="DefOfs\" />
+    <Folder Include="Pokemon\" />
+    <Folder Include="Pokemon\Magnets\" />
+    <Folder Include="Pokemon\Slime\" />
+    <Folder Include="Pokemon\Sheep\" />
   </ItemGroup>
 </Project>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Professor Schmilv's Pokemon</name>
-	<author>Skili</author>
+	<name>[B18][WIP] Professor Schmilv's Pokemon</name>
+	<author>ProfSchmilv</author>
 	<targetVersion>0.18.0</targetVersion>
-	<description>v0.1
+	<description>v0.1p
     Features:
     	-Apricorn trees as growable crops
     	-Harvesting Apricorns from Apricorn trees
@@ -29,5 +29,7 @@
     	-More Pokemon
         -Redo textures
         -Refactor code
+
+    Next up: I will try to polish the current content before adding new things.
 		</description>
 </ModMetaData>

@@ -9,7 +9,7 @@ using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Grimer : Pawn
+	public class Pokemon_Grimer : Pokemon_Abstract_Slimes
 	{
 
 		#region Properties
@@ -23,11 +23,6 @@ namespace ProfSchmilvsPokemon
 		}
 		//
 		#endregion Properties
-
-		public override void Draw()
-		{
-			base.Draw();
-		}
 
 		public override void Tick()
 		{
@@ -168,33 +163,5 @@ namespace ProfSchmilvsPokemon
 			}
 
 		}
-
-		public void IncrementFilth()
-		{
-			++this.amountOfFilth;
-			this.ageTracker.AgeBiologicalTicks = (long)this.amountOfFilth * 3600000L * 150L;
-		}
-
-		public void DecrementFilth()
-		{
-			--this.amountOfFilth;
-			this.ageTracker.AgeBiologicalTicks = (long)this.amountOfFilth * 3600000L * 150L;
-		}
-			
-		public override void ExposeData()
-		{
-			base.ExposeData ();
-			Scribe_Values.Look<float>(ref this.amountOfFilth, "amountOfFilth", 0f);
-			Scribe_Deep.Look<Zone>(ref this.currentDump, "currentDump", null);
-			Scribe_Deep.Look<Thing>(ref this.digesting, "digesting", null);
-			Scribe_Values.Look<long>(ref this.digestingTicks, "digestingTicks", 0L);
-		}
-
-		public float amountOfFilth = 0f;
-		private int currentTick = 0;
-		private Zone currentDump = null;
-		private Thing digesting = null;
-		private long digestingTicks = 0L;
-
 	}
 }

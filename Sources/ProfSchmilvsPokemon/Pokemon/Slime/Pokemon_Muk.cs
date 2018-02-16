@@ -9,7 +9,7 @@ using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Muk : Pawn
+	public class Pokemon_Muk : Pokemon_Abstract_Slimes
 	{
 
 		#region Properties
@@ -23,11 +23,6 @@ namespace ProfSchmilvsPokemon
 		}
 		//
 		#endregion Properties
-
-		public override void Draw()
-		{
-			base.Draw();
-		}
 
 		public override void Tick()
 		{
@@ -84,8 +79,7 @@ namespace ProfSchmilvsPokemon
 					}
 
 				} else {
-
-
+					
 					if (this.Position.AdjacentTo8WayOrInside (this.currentDump.cells [0])) {
 
 						Thing toBeDigested = null;
@@ -94,9 +88,9 @@ namespace ProfSchmilvsPokemon
 
 						foreach(Thing t in ts){
 
-							if (t is Pokemon_Grimer && t.Faction == null) {
+							if (t is Pokemon_Abstract_Slimes && t.Faction == null) {
 
-								Pokemon_Grimer g = (Pokemon_Grimer)t;
+								Pokemon_Abstract_Slimes g = (Pokemon_Abstract_Slimes)t;
 								for (int gi = (int)g.amountOfFilth; gi >= 0; gi--) {
 									this.IncrementFilth ();
 								}
@@ -137,33 +131,5 @@ namespace ProfSchmilvsPokemon
 			}
 
 		}
-
-		public void IncrementFilth()
-		{
-			++this.amountOfFilth;
-			this.ageTracker.AgeBiologicalTicks = (long)this.amountOfFilth * 3600000L * 150L;
-		}
-
-		public void DecrementFilth()
-		{
-			--this.amountOfFilth;
-			this.ageTracker.AgeBiologicalTicks = (long)this.amountOfFilth * 3600000L * 150L;
-		}
-
-		public override void ExposeData()
-		{
-			base.ExposeData ();
-			Scribe_Values.Look<float>(ref this.amountOfFilth, "amountOfFilth", 0f);
-			Scribe_Deep.Look<Zone>(ref this.currentDump, "currentDump", null);
-			Scribe_Deep.Look<Thing>(ref this.digesting, "digesting", null);
-			Scribe_Values.Look<long>(ref this.digestingTicks, "digestingTicks", 0L);
-		}
-
-		public float amountOfFilth = 0f;
-		private int currentTick = 0;
-		private Zone currentDump = null;
-		private Thing digesting = null;
-		private long digestingTicks = 0L;
-
 	}
 }

@@ -9,7 +9,7 @@ using ProfSchmilvsPokemon.ThingDefs;
 namespace ProfSchmilvsPokemon
 {
 	[StaticConstructorOnStartup]
-	public class Pokemon_Mareep : Pawn
+	public class Pokemon_Mareep : Pokemon_Abstract
 	{
 
 		#region Properties
@@ -141,7 +141,7 @@ namespace ProfSchmilvsPokemon
 
 				if (this.closestDischarger != null) {
 
-					if (this.Position.IsInside (this.closestDischarger)) {
+					if (this.Position.AdjacentTo8WayOrInside (this.closestDischarger)) {
 
 						PawnUtility.ForceWait (this, 5);
 						List<ThingComp> lt = this.closestDischarger.AllComps;

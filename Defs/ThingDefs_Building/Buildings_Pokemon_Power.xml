@@ -12,13 +12,10 @@
       <damageData>
         <rect>(0,0.6,4,2.8)</rect>
       </damageData>
-      <shadowData>
-        <volume>(0.5, 0.02, 1.0)</volume>
-        <offset>(0,0,-2.0)</offset>
-      </shadowData>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>Standable</passability>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <passability>Impassable</passability>
     <pathCost>70</pathCost>
     <fillPercent>0.5</fillPercent>
     <canOverlapZones>false</canOverlapZones>
@@ -29,7 +26,7 @@
     </statBases>
     <tickerType>Normal</tickerType>
     <description>Discharges Mareeps and injects the power into the electricity network.</description>
-    <size>(4,4)</size>
+    <size>(1,3)</size>
     <costList>
       <Steel>50</Steel>
       <Component>2</Component>
