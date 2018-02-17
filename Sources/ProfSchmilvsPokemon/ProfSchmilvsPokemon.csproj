@@ -45,7 +45,6 @@
     <Compile Include="Projectile_Pokeball.cs" />
     <Compile Include="Weapon_Pokeball_Full.cs" />
     <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="CompPowerPlantMareep.cs" />
     <Compile Include="Spawner_WildPokemon.cs" />
     <Compile Include="Spawner.cs" />
     <Compile Include="ThingDefs\ThingDef_Magnemite.cs" />
@@ -67,6 +66,7 @@
     <Compile Include="Pokemon\Slime\Pokemon_Muk.cs" />
     <Compile Include="Pokemon\Sheep\Pokemon_Mareep.cs" />
     <Compile Include="Pokemon\Slime\Pokemon_Abstract_Slimes.cs" />
+    <Compile Include="Comps\CompPowerPlantMareep.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ThingDefs\" />
@@ -75,5 +75,6 @@
     <Folder Include="Pokemon\Magnets\" />
     <Folder Include="Pokemon\Slime\" />
     <Folder Include="Pokemon\Sheep\" />
+    <Folder Include="Comps\" />
   </ItemGroup>
 </Project>

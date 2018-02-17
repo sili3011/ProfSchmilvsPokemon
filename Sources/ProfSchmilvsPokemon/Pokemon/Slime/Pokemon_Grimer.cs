@@ -59,7 +59,7 @@ namespace ProfSchmilvsPokemon
 			
 			} else {
 
-				if (this.currentTick == 60) {
+				if (this.currentTick == 600) {
 
 					this.currentTick = 0;
 
