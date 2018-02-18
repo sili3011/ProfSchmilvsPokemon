@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+  <!-- ========================== Mareep, Flaaffy, Ampharos ========================== -->
   
   <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Mareep" ParentName="AnimalThingBase">
     <defName>Pokemon_Mareep</defName>
@@ -169,7 +171,8 @@
     </lifeStages>
   </PawnKindDef>
 
-   <!-- ========================== Wolvelike ================================= -->
+  <!-- ========================== Wolvelike ================================= -->
+  <!-- ========================== Houndour, Houndoom ================================= -->
 
   <ThingDef Name="ThingBaseWolf" ParentName="AnimalThingBase" Abstract="True">
     <statBases>
@@ -366,6 +369,7 @@
   </PawnKindDef>
 
   <!-- ========================== Bearlike ================================= -->
+  <!-- ========================== Larvitar, Pupitar, Tyranitar ================================= -->
 
   <ThingDef Abstract="True" ParentName="AnimalThingBase" Name="BaseBear">
     <statBases>
@@ -548,6 +552,7 @@
   </PawnKindDef>
 
   <!-- ========================== Mechanoid ================================= -->
+  <!-- ========================== Magnemite, Magneton, Magnezone ================================= -->
 
    <!-- <ThingDef ParentName="AnimalThingBase" Name="BaseMechanoidPokemon" Abstract="True">
     <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
@@ -803,7 +808,7 @@
     </lifeStages>
   </PawnKindDef>
 
-  <!-- ========================== Filth ================================= -->
+  <!-- ========================== Grimer, Muk ================================= -->
 
   <ThingDef class="ProfSchmilvsPokemon.ThingDefs.Pokemon_Grimer" ParentName="AnimalThingBase">
     <defName>Pokemon_Grimer</defName>
@@ -931,9 +936,6 @@
       <FilthDirt>30</FilthDirt>
       <Chemfuel>4</Chemfuel>
     </butcherProducts>
-    <tradeTags>
-      <li>StandardAnimal</li>
-    </tradeTags>
     <thingClass>ProfSchmilvsPokemon.Pokemon_Grimer</thingClass>
   </ThingDef>
 
@@ -1155,9 +1157,6 @@
       <FilthDirt>300</FilthDirt>
       <Chemfuel>40</Chemfuel>
     </butcherProducts>
-    <tradeTags>
-      <li>StandardAnimal</li>
-    </tradeTags>
     <thingClass>ProfSchmilvsPokemon.Pokemon_Muk</thingClass>
   </ThingDef>
 
@@ -1253,6 +1252,422 @@
     </lifeStages>
   </PawnKindDef>
 
+  <!-- ====================== Tauros ===================== -->
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Pokemon_Tauros</defName>
+    <label>tauros</label>
+    <description>They live in groups. The one with the longest, thickest, and most-scarred horns is the boss of the herd.</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+      <MarketValue>1100</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>horns</label>
+        <capacities>
+          <li>Scratch</li>
+          <li>Stab</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.4</cooldownTime>
+        <linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>left foot</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right foot</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <race>
+      <herdAnimal>true</herdAnimal>
+      <body>QuadrupedAnimalWithHoovesAndHorn</body>
+      <baseHungerRate>1.0</baseHungerRate>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHealthScale>3.6</baseHealthScale>
+      <foodType>VegetarianRoughAnimal</foodType>
+      <leatherLabel>tauros skin</leatherLabel>
+      <leatherColor>(130,126,119)</leatherColor>
+      <leatherInsulation>0.65</leatherInsulation>
+      <gestationPeriodDays>60</gestationPeriodDays>
+      <wildness>1.0</wildness>
+      <nuzzleMtbHours>120</nuzzleMtbHours>
+      <manhunterOnTameFailChance>0.025</manhunterOnTameFailChance>
+      <trainableIntelligence>Advanced</trainableIntelligence>
+      <lifeExpectancy>15</lifeExpectancy>
+      <!--<packAnimal>true</packAnimal>-->
+      <lifeStageAges>
+        <li>
+          <def>TaurosStage1</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>TaurosStage2</def>
+          <minAge>2.0</minAge>
+          <soundWounded>Pawn_Elephant_Injured</soundWounded>
+          <soundDeath>Pawn_Elephant_Dead</soundDeath>
+          <soundCall>Pawn_Elephant_Call</soundCall>
+          <soundAngry>Pawn_Elephant_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Tauros</defName>
+    <label>tauros</label>
+    <baseRecruitDifficulty>0.25</baseRecruitDifficulty>
+    <race>Pokemon_Tauros</race>
+    <combatPower>200</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>1</wildSpawn_EcoSystemWeight>
+    <wildSpawn_GroupSizeRange>
+      <min>4</min>
+      <max>12</max>
+    </wildSpawn_GroupSizeRange>
+    <lifeStages>
+      <li>
+        <label>tauros calf</label>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Tauros/Tauros</texPath>
+          <drawSize>2.0</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.3, 0.3)</volume>
+            <offset>(0,0,-0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+          <drawSize>1.4</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Tauros/Tauros</texPath>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.8, 0.6, 0.6)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+          <drawSize>2.2</drawSize>
+        </dessicatedBodyGraphicData>
+        <butcherBodyPart>
+          <bodyPartGroup>HornAttackTool</bodyPartGroup>
+          <thing>TaurosHorn</thing>
+        </butcherBodyPart>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ====================== BIRDS ===================== -->
+  <!-- ======================       ===================== -->
+
+  <ThingDef ParentName="AnimalThingBase" Name="BigBirdThingBase" Abstract="True">
+    <race>
+      <body>Bird</body>
+      <leatherInsulation>0.5</leatherInsulation>      
+      <gestationPeriodDays>20</gestationPeriodDays>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase" Name="BigBirdKindBase" Abstract="True">
+    <combatPower>70</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0.42</wildSpawn_EcoSystemWeight>
+  </PawnKindDef>
+
+  <!-- ====================== Doduo, Dodri ===================== -->
+
+  <ThingDef ParentName="BigBirdThingBase">
+    <defName>Pokemon_Doduo</defName>
+    <label>Doduo</label>
+    <description> Doduo's two heads never sleep at the same time. Its two heads take turns sleeping, so one head can always keep watch for enemies while the other one sleeps.</description>
+    <statBases>
+      <MoveSpeed>6.0</MoveSpeed>
+      <ComfyTemperatureMin>-8</ComfyTemperatureMin>
+      <MarketValue>360</MarketValue>
+    </statBases>
+    <race>
+      <herdAnimal>false</herdAnimal>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0.55</baseHungerRate>
+      <foodType>VegetarianRoughAnimal</foodType>
+      <wildness>0.95</wildness>
+      <lifeExpectancy>25</lifeExpectancy>
+      <leatherColor>(76,83,99)</leatherColor>
+      <useMeatFrom>Cassowary</useMeatFrom>
+      <manhunterOnTameFailChance>0.022</manhunterOnTameFailChance>
+      <lifeStageAges>
+        <li>
+          <def>DoduoStage</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>DodriStage</def>
+          <minAge>8.0</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="CompProperties_EggLayer">
+        <eggFertilizedDef>EggOstrichFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>23</eggLayIntervalDays>
+        <eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+        <eggCountRange>1</eggCountRange>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <label>claws</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.85</cooldownTime>
+        <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BigBirdKindBase">
+    <defName>Pokemon_Doduo</defName>
+    <label>doduo</label>
+    <labelPlural>doduos</labelPlural>
+    <race>Pokemon_Doduo</race>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Doduo/Doduo</texPath>
+          <drawSize>1.8</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.8</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Dodri/Dodri</texPath>
+          <drawSize>1.8</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.3, 0.3)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.8</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ====================== Ekans, Arbok ===================== -->
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Pokemon_Ekans</defName>
+    <label>ekans</label>
+    <description>Ekans curls itself up in a spiral while it rests. Assuming this position allows it to quickly respond to a threat from any direction with a glare from its upraised head.</description>
+    <statBases>
+      <MoveSpeed>4.84</MoveSpeed>
+      <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+      <MarketValue>400</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <capacities>
+          <li>ToxicBite</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>1</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_EggLayer">
+        <eggFertilizedDef>EggCobraFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>14.0</eggLayIntervalDays>
+        <eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+        <eggCountRange>
+          <min>1</min>
+          <max>3</max>
+        </eggCountRange>
+      </li>
+    </comps>
+    <race>
+      <body>Snake</body>
+      <predator>true</predator>
+      <maxPreyBodySize>0.35</maxPreyBodySize>
+      <baseBodySize>0.25</baseBodySize>
+      <baseHungerRate>0.07</baseHungerRate>
+      <baseHealthScale>0.5</baseHealthScale>
+      <foodType>CarnivoreAnimal, OvivoreAnimal</foodType>
+      <leatherColor>(113,98,87)</leatherColor>
+      <leatherLabel>cobraskin</leatherLabel>
+      <leatherInsulation>0.5</leatherInsulation>
+      <meatLabel>cobraflesh</meatLabel>
+      <wildness>0.75</wildness>
+      <manhunterOnTameFailChance>0.018</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <gestationPeriodDays>17.5</gestationPeriodDays>
+      <nameOnTameChance>1</nameOnTameChance>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(3, 1)</li>
+          <li>(3.5, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>20</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>EkansStage</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>ArbokStage</def>
+          <minAge>7</minAge>
+          <soundWounded>Pawn_Cobra_Wounded</soundWounded>
+          <soundDeath>Pawn_Cobra_Death</soundDeath>
+          <soundCall>Pawn_Cobra_Call</soundCall>
+          <soundAngry>Pawn_Cobra_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>StandardAnimal</li>
+      <li>BadassAnimal</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Ekans</defName>
+    <label>ekans</label>
+    <race>Pokemon_Ekans</race>
+    <combatPower>65</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0.6</wildSpawn_EcoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Ekans/Ekans</texPath>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSnake</texPath>
+          <drawSize>1.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Arbok/Arbok</texPath>
+          <drawSize>1.8</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSnake</texPath>
+          <drawSize>1.8</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
 
   <!-- ====================== BASES ===================== -->
 

@@ -108,8 +108,7 @@ namespace ProfSchmilvsPokemon
 						}
 
 					} else {
-
-
+						
 						if (this.Position.AdjacentTo8WayOrInside (this.currentDump.cells [0])) {
 
 							Thing toBeDigested = null;

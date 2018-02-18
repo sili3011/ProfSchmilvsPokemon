@@ -60,6 +60,66 @@
     <shearable>false</shearable>
   </LifeStageDef>
 
+  <!-- Tauros -->
+  
+<LifeStageDef>
+    <defName>TaurosStage1</defName>
+    <label>kid</label>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <milkable>false</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+
+  <LifeStageDef>
+    <defName>TaurosStage2</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <milkable>true</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+
+  <!-- Doduo, Dodri -->
+  
+<LifeStageDef>
+    <defName>DoduoStage</defName>
+    <label>duo</label>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <milkable>false</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+
+  <LifeStageDef>
+    <defName>DodriStage</defName>
+    <label>trio</label>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <milkable>false</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+
+   <!-- Doduo, Dodri -->
+  
+<LifeStageDef>
+    <defName>EkansStage</defName>
+    <label>duo</label>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <milkable>false</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+
+  <LifeStageDef>
+    <defName>ArbokStage</defName>
+    <label>trio</label>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <milkable>false</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+
   <!-- Grimer, Muk -->
 
   <LifeStageDef>

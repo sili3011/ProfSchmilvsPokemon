@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>[B18][WIP] Professor Schmilv's Pokemon</name>
+	<name>[B18][WIP] Professor Schmilv's RimMon</name>
 	<author>ProfSchmilv</author>
 	<targetVersion>0.18.0</targetVersion>
 	<description>v0.1p
@@ -11,7 +11,7 @@
     	-Equip and throw Pokeballs
     	-The skill "Pokemon" (knowledge about and everything linked to Pokemon)
     	-The worktype "Pokemon handling" (needed for crafting Pokeballs)
-        -5 kinds of Pokemon (more to come):
+        -8 kinds of Pokemon (more to come):
             -> Mareep, Flaaffy, Ampharos
                 Mareeps yield wool and can be used as power source
             -> Houndour, Houndoom
@@ -20,6 +20,10 @@
                 Magnemites will repair damaged buildings
             -> Grimer, Muk
                 Grimers will it trash but create filth while moving
+            -> Tauros
+                Milkabale and possible livestock
+            -> Doduo, Dodrio
+            -> Ekans, Arbok
         -Catching Pokemon by throwing Pokeballs at them
         -Captured Pokemon get stored in Pokeballs
         -Captured Pokemon belong to the Pokeball thrower
