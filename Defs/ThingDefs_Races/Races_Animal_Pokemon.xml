@@ -942,7 +942,7 @@
   <PawnKindDef ParentName="AnimalKindBase">
     <defName>Pokemon_Grimer</defName>
     <label>grimer</label>
-    <baseRecruitDifficulty>0.5</baseRecruitDifficulty>
+    <baseRecruitDifficulty>0.05</baseRecruitDifficulty>
     <race>Pokemon_Grimer</race>
     <combatPower>65</combatPower>
     <wildSpawn_spawnWild>false</wildSpawn_spawnWild>
@@ -1163,7 +1163,7 @@
   <PawnKindDef ParentName="AnimalKindBase">
     <defName>Pokemon_Muk</defName>
     <label>Muk</label>
-    <baseRecruitDifficulty>0.25</baseRecruitDifficulty>
+    <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
     <race>Pokemon_Muk</race>
     <combatPower>150</combatPower>
     <wildSpawn_spawnWild>false</wildSpawn_spawnWild>
@@ -1346,7 +1346,7 @@
   <PawnKindDef ParentName="AnimalKindBase">
     <defName>Pokemon_Tauros</defName>
     <label>tauros</label>
-    <baseRecruitDifficulty>0.25</baseRecruitDifficulty>
+    <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
     <race>Pokemon_Tauros</race>
     <combatPower>200</combatPower>
     <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
@@ -1507,6 +1507,7 @@
   <PawnKindDef ParentName="BigBirdKindBase">
     <defName>Pokemon_Doduo</defName>
     <label>doduo</label>
+    <baseRecruitDifficulty>0.05</baseRecruitDifficulty>
     <labelPlural>doduos</labelPlural>
     <race>Pokemon_Doduo</race>
     <lifeStages>
@@ -1641,6 +1642,7 @@
   <PawnKindDef ParentName="AnimalKindBase">
     <defName>Pokemon_Ekans</defName>
     <label>ekans</label>
+    <baseRecruitDifficulty>0.0125</baseRecruitDifficulty>
     <race>Pokemon_Ekans</race>
     <combatPower>65</combatPower>
     <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
