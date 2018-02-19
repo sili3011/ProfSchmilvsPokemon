@@ -1,0 +1,160 @@
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "BorealForest"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "Tundra"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "ColdBog"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "IceSheet"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "SeaIce"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "TemperateForest"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "TemperateSwamp"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "TropicalRainforest"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "TropicalSwamp"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "AridShrubland"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "Desert"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	   <xpath>*/BiomeDef[defName = "ExtremeDesert"]/wildAnimals</xpath>
+	   <value>
+	   		<Pokemon_Mareep>1</Pokemon_Mareep>
+	   		<Pokemon_Tauros>1</Pokemon_Tauros>
+	   		<Pokemon_Rattata>0.8</Pokemon_Rattata>
+	   		<Pokemon_Doduo>0.6</Pokemon_Doduo>
+	   		<Pokemon_Mankey>0.4</Pokemon_Mankey>
+	   		<Pokemon_Houndour>0.4</Pokemon_Houndour>
+	   		<Pokemon_Ekans>0.2</Pokemon_Ekans>
+	   		<Pokemon_Larvitar>0.01</Pokemon_Larvitar>
+	   </value>
+	</Operation>
+</Patch>

@@ -1,9 +1,12 @@
 ﻿<Properties StartupItem="ProfSchmilvsPokemon.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pokemon_Grimer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HarmonyPatches.cs">
     <Files>
-      <File FileName="Spawner_WildPokemon.cs" Line="63" Column="46" />
-      <File FileName="Pokemon_Grimer.cs" Line="40" Column="78" />
+      <File FileName="Spawner_WildPokemon.cs" Line="1" Column="1" />
+      <File FileName="Pokemon\Slime\Pokemon_Grimer.cs" Line="1" Column="1" />
+      <File FileName="Pokemon\Slime\Pokemon_Abstract_Slimes.cs" Line="1" Column="1" />
+      <File FileName="HarmonyPatches.cs" Line="82" Column="16" />
+      <File FileName="PokemonConfig.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

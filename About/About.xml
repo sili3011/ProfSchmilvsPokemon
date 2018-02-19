@@ -3,37 +3,46 @@
 	<name>[B18][WIP] Professor Schmilv's RimMon</name>
 	<author>ProfSchmilv</author>
 	<targetVersion>0.18.0</targetVersion>
-	<description>v0.1p
+	<description>v0.2
     Features:
     	-Apricorn trees as growable crops
     	-Harvesting Apricorns from Apricorn trees
     	-Crafting three different kinds of Pokeballs from Apricorns at a Pokeball crafting table
     	-Equip and throw Pokeballs
-    	-The skill "Pokemon" (knowledge about and everything linked to Pokemon)
+    	-The skill "Pokemon" (knowledge about and everything linked to RimMon)
     	-The worktype "Pokemon handling" (needed for crafting Pokeballs)
-        -8 kinds of Pokemon (more to come):
+        -10 kinds of RimMon (more to come):
             -> Mareep, Flaaffy, Ampharos
                 Mareeps yield wool and can be used as power source
             -> Houndour, Houndoom
+                main predators
             -> Larvitar, Pupitar, Tyranitar
             -> Magnemite, Magneton, Magnezone
                 Magnemites will repair damaged buildings
             -> Grimer, Muk
                 Grimers will it trash but create filth while moving
             -> Tauros
-                Milkabale and possible livestock
+                Milkabale and possible main livestock
             -> Doduo, Dodrio
+                replace emus
             -> Ekans, Arbok
-        -Catching Pokemon by throwing Pokeballs at them
-        -Captured Pokemon get stored in Pokeballs
-        -Captured Pokemon belong to the Pokeball thrower
+                replace cobras
+            -> Rattata, Raticate
+                replace rats
+            -> Mankey, Primeape
+                replace monkeys
+        -Catching RimMon by throwing Pokeballs at them
+        -Captured RimMon get stored in Pokeballs
+        -Captured RimMon belong to the Pokeball thrower
+        -You can choose between "spawning all kinds of animals" or "RimMon only"(checked by default) in the storyteller screen. Beware that playing with vanilla animals decreases the amount of RimMon you will encounter.
 
     To do:
     	-Inventory for carrying more than one Pokeball
-    	-More Pokemon
+        -Spawn RimMon biome dependent (once there are enough)
+    	-More RimMon
         -Redo textures
         -Refactor code
 
-    Next up: I will try to polish the current content before adding new things.
+    Next up: a huuuge one... beware of rock.
 		</description>
 </ModMetaData>

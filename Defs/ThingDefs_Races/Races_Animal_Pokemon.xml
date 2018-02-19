@@ -1392,6 +1392,153 @@
     </lifeStages>
   </PawnKindDef>
 
+  <!-- ====================== Mankey, Primeape ===================== -->
+  
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Pokemon_Mankey</defName>
+    <label>mankey</label>
+    <description>The smallest of things could cause it to lose its temper. Because it doesn't hold in its stress, this Pokémon can live a long time.</description>
+    <statBases>
+      <MoveSpeed>4.84</MoveSpeed>
+      <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+      <MarketValue>300</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.3</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.3</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>1</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <race>
+      <body>Monkey</body>
+      <petness>0.25</petness>
+      <baseBodySize>0.35</baseBodySize>
+      <baseHungerRate>0.25</baseHungerRate>
+      <baseHealthScale>0.45</baseHealthScale>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <leatherLabel>mankeyhide</leatherLabel>
+      <leatherColor>(124,53,29)</leatherColor>
+      <leatherInsulation>0.75</leatherInsulation>
+      <trainableIntelligence>Advanced</trainableIntelligence>
+      <wildness>0.80</wildness>
+      <nuzzleMtbHours>72</nuzzleMtbHours>
+      <gestationPeriodDays>16</gestationPeriodDays>
+      <lifeExpectancy>30</lifeExpectancy>
+      <manhunterOnTameFailChance>0.5</manhunterOnTameFailChance>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.2</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>10.0</minAge>
+          <soundWounded>Pawn_Monkey_Wounded</soundWounded>
+          <soundDeath>Pawn_Monkey_Death</soundDeath>
+          <soundCall>Pawn_Monkey_Call</soundCall>
+          <soundAngry>Pawn_Monkey_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>StandardAnimal</li>
+      <li>BadassAnimal</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Mankey</defName>
+    <label>mankey</label>
+    <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
+    <race>Pokemon_Mankey</race>
+    <combatPower>35</combatPower>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <wildSpawn_EcoSystemWeight>0.9</wildSpawn_EcoSystemWeight>
+    <wildSpawn_GroupSizeRange>
+      <min>3</min>
+      <max>7</max>
+    </wildSpawn_GroupSizeRange>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Mankey/Mankey</texPath>
+          <drawSize>0.7</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>0.7</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Mankey/Mankey</texPath>
+          <drawSize>1.0</drawSize>
+          <shadowData>
+            <volume>(0.2, 0.2, 0.2)</volume>
+            <offset>(0,0,-0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.0</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Primeape/Primeape</texPath>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.3, 0.3)</volume>
+            <offset>(0,0,-0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <drawSize>1.6</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
   <!-- ====================== BIRDS ===================== -->
   <!-- ======================       ===================== -->
 
@@ -1666,6 +1813,133 @@
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSnake</texPath>
           <drawSize>1.8</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+<!-- ====================== RODENTS ===================== -->
+<!-- ====================== Rattata, Raticate ===================== -->
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Pokemon_Rattata</defName>
+    <label>rattata</label>
+    <description>Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives—it will make its nest anywhere</description>
+    <statBases>
+      <MoveSpeed>3.6</MoveSpeed>
+      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+      <MarketValue>60</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>1</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <race>
+      <body>QuadrupedAnimalWithPaws</body>
+      <baseBodySize>0.15</baseBodySize>
+      <baseHungerRate>0.20</baseHungerRate>
+      <baseHealthScale>0.29</baseHealthScale>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <leatherColor>(110,95,82)</leatherColor>
+      <leatherInsulation>0.7</leatherInsulation>
+      <wildness>0.50</wildness>
+      <mateMtbHours>8</mateMtbHours>
+      <gestationPeriodDays>12</gestationPeriodDays>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(5, 1)</li>
+          <li>(5.5, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>8</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>3</minAge>
+          <soundWounded>Pawn_Boomrat_Wounded</soundWounded>
+          <soundDeath>Pawn_Boomrat_Death</soundDeath>
+          <soundCall>Pawn_Boomrat_Call</soundCall>
+          <soundAngry>Pawn_Boomrat_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Rattata</defName>
+    <label>rattata</label>
+    <baseRecruitDifficulty>0.066</baseRecruitDifficulty>
+    <race>Pokemon_Rattata</race>
+    <combatPower>30</combatPower>
+    <wildSpawn_EcoSystemWeight>0.25</wildSpawn_EcoSystemWeight>
+    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Rattata/Rattata</texPath>
+          <drawSize>1.0</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
+          <drawSize>1.0</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Raticate/Raticate</texPath>
+          <drawSize>1.1</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
+          <drawSize>1.1</drawSize>
         </dessicatedBodyGraphicData>
       </li>
     </lifeStages>
