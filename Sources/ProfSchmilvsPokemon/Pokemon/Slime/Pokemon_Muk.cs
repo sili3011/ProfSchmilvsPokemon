@@ -39,7 +39,7 @@ namespace ProfSchmilvsPokemon
 
 				if(roll < prob && this.amountOfFilth > 0){
 
-					FilthMaker.MakeFilth (this.Position, base.Map, ThingDefOf.FilthSlime);
+					FilthMaker.TryMakeFilth(this.Position, base.Map, ThingDefOf.Filth_Slime);
 					this.DecrementFilth ();
 
 				}

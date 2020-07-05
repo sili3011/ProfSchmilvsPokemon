@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -27,18 +27,14 @@ namespace ProfSchmilvsPokemon
 				float probMags = (0.005f * this.powerBuildingCount) / (Mathf.Pow(spawnedMagnemites, spawnedMagnemites));
 				float rollMags = Rand.Value;
 
-				//Log.Message ("Probability: " + prob + " rolled: " + roll);
-
 				if (rollMags < probMags) {
 
 					Pawn mag = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Magnemite"));
 					IntVec3 loc;
-					RCellFinder.TryFindRandomPawnEntryCell (out loc, this.map, CellFinder.EdgeRoadChance_Animal, null);
+					RCellFinder.TryFindRandomPawnEntryCell (out loc, this.map, CellFinder.EdgeRoadChance_Animal, true, null);
 					IntVec3 loc2 = CellFinder.RandomClosewalkCellNear(loc, this.map, 8, null);
 					GenSpawn.Spawn (mag, loc2, this.map);
 					++spawnedMagnemites;
-
-					//Log.Message ("Spawned a Magnemite at: " + loc2.ToString());
 				
 				}
 
@@ -68,7 +64,6 @@ namespace ProfSchmilvsPokemon
 						map.listerFilthInHomeArea.FilthInHomeArea.Clear ();
 
 						GenSpawn.Spawn (grimer, loc2, this.map);
-						//Log.Message ("Spawned a Grimer at: " + loc2.ToString ());
 
 					}
 

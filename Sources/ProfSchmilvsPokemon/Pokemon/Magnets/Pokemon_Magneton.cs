@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
-using Verse.Sound;
-using Verse.AI;
 using RimWorld;
 using ProfSchmilvsPokemon.ThingDefs;
 
@@ -83,9 +79,9 @@ namespace ProfSchmilvsPokemon
 
 				Pawn zone = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Magnezone"));
 				if (this.Faction != null) {
-					if (this.playerSettings.master != null) {
-						zone.SetFaction (this.Faction, (Pawn)this.playerSettings.master);
-						zone.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)this.playerSettings.master);
+					if (this.playerSettings.Master != null) {
+						zone.SetFaction (this.Faction, (Pawn)this.playerSettings.Master);
+						zone.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)this.playerSettings.Master);
 					} else {
 						zone.SetFaction (this.Faction, (Pawn)this.Faction.leader); //should not happen, just for debugging purposes
 					}

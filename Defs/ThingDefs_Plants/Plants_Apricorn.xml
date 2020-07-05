@@ -7,6 +7,7 @@
     <description>Yields Apricorn, a versatile material used to make Pokéballs.</description>
     <statBases>
       <MaxHitPoints>185</MaxHitPoints>
+      <Nutrition>0.01</Nutrition>
     </statBases>
     <graphicData>
       <texPath>Things/Plant/CottonPlant</texPath>
@@ -14,14 +15,10 @@
     </graphicData>
     <selectable>true</selectable>
     <pathCost>100</pathCost>
-    <ingestible>
-      <nutrition>0.01</nutrition>
-    </ingestible>
     <plant>
 			<fertilitySensitivity>1.0</fertilitySensitivity>
 			<growDays>3</growDays>
 			<dieIfLeafless>false</dieIfLeafless>
-      <reproduces>true</reproduces>
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>Apricorn</harvestedThingDef>
       <harvestYield>2</harvestYield>
@@ -29,7 +26,7 @@
         <li>Ground</li>
       </sowTags>
       <topWindExposure>0.1</topWindExposure>
-      <immatureGraphicPath>Things/Plant/CottonImmature</immatureGraphicPath>
+      <immatureGraphicPath>Things/Plant/CottonPlant_Immature</immatureGraphicPath>
       <visualSizeRange>
         <min>0.3</min>
         <max>1.05</max>

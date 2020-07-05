@@ -5,6 +5,7 @@
     <defName>OutOfPower</defName>
     <label>out of power</label>
     <labelNoun>no power</labelNoun>
+    <description>This poor RimMon is out of power.</description>
     <stages>
       <li>
         <capMods>

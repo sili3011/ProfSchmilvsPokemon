@@ -33,9 +33,9 @@ namespace ProfSchmilvsPokemon
 
 				Pokemon_Muk muk = (Pokemon_Muk)PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Muk"));
 				if (this.Faction != null) {
-					if (this.playerSettings.master != null) {
-						muk.SetFaction (this.Faction, (Pawn)this.playerSettings.master);
-						muk.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)this.playerSettings.master);
+					if (this.playerSettings.Master != null) {
+						muk.SetFaction (this.Faction, (Pawn)this.playerSettings.Master);
+						muk.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)this.playerSettings.Master);
 					} else {
 						muk.SetFaction (this.Faction, (Pawn)this.Faction.leader); //should not happen, just for debugging purposes
 					}
@@ -68,7 +68,7 @@ namespace ProfSchmilvsPokemon
 
 					if (roll < prob && this.amountOfFilth > 0) {
 
-						FilthMaker.MakeFilth (this.Position, base.Map, ThingDefOf.FilthSlime);
+						FilthMaker.TryMakeFilth (this.Position, base.Map, ThingDefOf.Filth_Slime);
 						this.DecrementFilth ();
 
 					}

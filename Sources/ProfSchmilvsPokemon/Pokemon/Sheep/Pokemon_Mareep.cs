@@ -146,7 +146,7 @@ namespace ProfSchmilvsPokemon
 						PawnUtility.ForceWait (this, 5);
 						List<ThingComp> lt = this.closestDischarger.AllComps;
 						CompPowerPlantMareep comp = (CompPowerPlantMareep)lt [0];
-						comp.addToStoredPower (1f);
+						comp.AddToStoredPower (1f);
 						this.StoredEnergy -= 1f;
 
 					}
@@ -167,7 +167,7 @@ namespace ProfSchmilvsPokemon
 				
 				IntVec3 randomCell = this.OccupiedRect ().RandomCell;
 				float radius = Rand.Range (0.5f, 1f) * 3f;
-				GenExplosion.DoExplosion (randomCell, base.Map, radius, DamageDefOf.EMP, null, -1, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+				GenExplosion.DoExplosion (randomCell, base.Map, radius, DamageDefOf.EMP, null, -1, 0f, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
 				this.StoredEnergy -= 800f;
 
 			}

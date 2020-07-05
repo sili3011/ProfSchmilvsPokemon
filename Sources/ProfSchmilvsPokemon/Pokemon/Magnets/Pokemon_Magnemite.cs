@@ -84,9 +84,9 @@ namespace ProfSchmilvsPokemon
 
 				Pawn ton = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Magneton"));
 				if (mag.Faction != null) {
-					if (mag.playerSettings.master != null) {
-						ton.SetFaction (mag.Faction, (Pawn)mag.playerSettings.master);
-						ton.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)mag.playerSettings.master);
+					if (mag.playerSettings.Master != null) {
+						ton.SetFaction (mag.Faction, (Pawn)mag.playerSettings.Master);
+						ton.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)mag.playerSettings.Master);
 					} else {
 						ton.SetFaction (mag.Faction, (Pawn)mag.Faction.leader); //should not happen, just for debugging purposes
 					}

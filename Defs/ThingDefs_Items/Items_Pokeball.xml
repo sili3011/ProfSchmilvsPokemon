@@ -99,7 +99,7 @@
     <defName>Pokeball_Full</defName>
     <label>pokéball</label>
     <description>A Pokéball with a Pokémon in it. Throw to release caught Pokémon.</description>
-    <tradeability>Never</tradeability>
+    <tradeability>None</tradeability>
     <graphicData>
       <texPath>Things/Items/Ball/Pokeball</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -461,7 +461,5 @@
       <flyOverhead>false</flyOverhead>
     </projectile>
   </ThingDef>
-
-
 
 </Defs>

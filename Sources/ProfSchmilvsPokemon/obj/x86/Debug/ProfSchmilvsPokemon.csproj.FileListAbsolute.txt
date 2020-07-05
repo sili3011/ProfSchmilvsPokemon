@@ -3,3 +3,10 @@ D:\Programme\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Assemblies
 D:\Programme\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Assemblies\ProfSchmilvsPokemon.pdb
 D:\Programme\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.dll
 D:\Programme\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.pdb
+D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.csproj.CoreCompileInputs.cache
+D:\Programs\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Assemblies\ProfSchmilvsPokemon.dll
+D:\Programs\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Assemblies\ProfSchmilvsPokemon.pdb
+D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.csproj.CopyComplete
+D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.dll
+D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.pdb
+D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.csprojAssemblyReference.cache

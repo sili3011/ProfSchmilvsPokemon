@@ -14,7 +14,6 @@
 		<harmsHealth>false</harmsHealth>
 		<impactSoundType>Electric</impactSoundType>
 		<armorCategory>Electric</armorCategory>
-		<explosionDamage>0</explosionDamage>
 		<explosionSnowMeltAmount>0</explosionSnowMeltAmount>
 		<explosionCellMote>Mote_BlastEMP</explosionCellMote>
 		<explosionColorEdge>(0.8, 0.8, 0.8, 0.8)</explosionColorEdge>

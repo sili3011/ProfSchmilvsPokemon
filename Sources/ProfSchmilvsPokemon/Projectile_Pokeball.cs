@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using Verse;
 using RimWorld;
-using RimWorld.Planet;
 using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
@@ -24,17 +20,20 @@ namespace ProfSchmilvsPokemon
 		//
 		#endregion Properties
 
+        private int _ticksToDetonation;
+        private Thing _weaponDummy;
+
 		#region Overrides
 		//
 		public override void Tick()
 		{
 			base.Tick();
-			if (this.ticksToDetonation > 0)
+			if (_ticksToDetonation > 0)
 			{
-				this.ticksToDetonation--;
-				if (this.ticksToDetonation <= 0)
+				_ticksToDetonation--;
+				if (_ticksToDetonation <= 0)
 				{
-					this.Explode();
+					Explode();
 				}
 			}
 		}
@@ -42,18 +41,18 @@ namespace ProfSchmilvsPokemon
 		protected override void Impact(Thing hitThing)
 		{
 
-			Pawn l = (Pawn)this.launcher;
+			var l = (Pawn)launcher;
 
 			if (l.equipment != null)
 			{
 				List<ThingWithComps> allEquipmentListForReading = l.equipment.AllEquipmentListForReading;
-				weaponDummy = allEquipmentListForReading [0];
+				_weaponDummy = allEquipmentListForReading [0];
 
-				bool isEmpty = true;
+				var isEmpty = true;
 
-				string[] splitteddummy = weaponDummy.def.ToString ().Split ('_');
+				var splitdummy = _weaponDummy.def.ToString ().Split ('_');
 
-				if (splitteddummy.Length > 1) {
+				if (splitdummy.Length > 1) {
 					isEmpty = false;
 					l.jobs.StopAll (true);
 				}
@@ -63,45 +62,67 @@ namespace ProfSchmilvsPokemon
 				}
 			}
 
-			if (this.def.projectile.explosionDelay == 0)
+			if (def.projectile.explosionDelay == 0)
 			{
-				this.Explode();
+				Explode();
 				return;
 			}
-			this.landed = true;
-			this.ticksToDetonation = this.def.projectile.explosionDelay;
+			landed = true;
+			_ticksToDetonation = def.projectile.explosionDelay;
 		}
 
 		protected override void Explode()
 		{
-			Map map = base.Map;
-			this.Destroy (DestroyMode.Vanish);
+			Map map = Map;
+			Destroy (DestroyMode.Vanish);
 			if (this.def.projectile.explosionEffect != null) {
-				Effecter effecter = this.def.projectile.explosionEffect.Spawn ();
-				effecter.Trigger (new TargetInfo (base.Position, map, false), new TargetInfo (base.Position, map, false));
+				var effecter = this.def.projectile.explosionEffect.Spawn();
+				effecter.Trigger (new TargetInfo (Position, map, false), new TargetInfo (Position, map, false));
 				effecter.Cleanup ();
 			}
-			IntVec3 position = base.Position;
-			Map map2 = map;
-			float explosionRadius = this.def.projectile.explosionRadius;
-			DamageDef damageDef = this.def.projectile.damageDef;
-			Thing launcher = this.launcher;
-			int damageAmountBase = this.def.projectile.damageAmountBase;
-			SoundDef soundExplode = this.def.projectile.soundExplode;
-			ThingDef equipmentDef = this.equipmentDef;
-			ThingDef def = this.def;
-			ThingDef postExplosionSpawnThingDef = this.def.projectile.postExplosionSpawnThingDef;
-			float postExplosionSpawnChance = this.def.projectile.postExplosionSpawnChance;
-			int postExplosionSpawnThingCount = this.def.projectile.postExplosionSpawnThingCount;
-			ThingDef preExplosionSpawnThingDef = this.def.projectile.preExplosionSpawnThingDef;
-			GenExplosion.DoExplosion (position, map2, explosionRadius, damageDef, launcher, damageAmountBase, soundExplode, equipmentDef, def, postExplosionSpawnThingDef, postExplosionSpawnChance, postExplosionSpawnThingCount, this.def.projectile.applyDamageToExplosionCellsNeighbors, preExplosionSpawnThingDef, this.def.projectile.preExplosionSpawnChance, this.def.projectile.preExplosionSpawnThingCount, this.def.projectile.explosionChanceToStartFire, this.def.projectile.explosionDealMoreDamageAtCenter);
+			var position = Position;
+			var map2 = map;
+            var explosionRadius = this.def.projectile.explosionRadius;
+            var damageDef = this.def.projectile.damageDef;
+            var launcher = this.launcher;
+            var damageAmountBase = this.def.projectile.GetDamageAmount(0f, null);
+            var soundExplode = this.def.projectile.soundExplode;
+            var equipmentDef = this.equipmentDef;
+            var def = this.def;
+            var postExplosionSpawnThingDef = this.def.projectile.postExplosionSpawnThingDef;
+            var postExplosionSpawnChance = this.def.projectile.postExplosionSpawnChance;
+            var postExplosionSpawnThingCount = this.def.projectile.postExplosionSpawnThingCount;
+            var preExplosionSpawnThingDef = this.def.projectile.preExplosionSpawnThingDef;
+			GenExplosion.DoExplosion (
+                position,
+                map2,
+                explosionRadius,
+                damageDef,
+                launcher,
+                damageAmountBase,
+                0f,
+                soundExplode,
+                equipmentDef,
+                def, 
+                null,
+                postExplosionSpawnThingDef,
+                postExplosionSpawnChance,
+                postExplosionSpawnThingCount,
+                this.def.projectile.applyDamageToExplosionCellsNeighbors,
+                preExplosionSpawnThingDef,
+                this.def.projectile.preExplosionSpawnChance,
+                0,
+                this.def.projectile.explosionChanceToStartFire,
+                this.def.projectile.explosionDamageFalloff,
+				null
+                );
 
-			bool used = false;
+            var used = false;
 
 			//is it a Pokeball with an already captured Pokemon?
-			bool isEmpty = true;
-			string[] splitteddummy = weaponDummy.def.ToString ().Split ('_');
-			if (splitteddummy.Length > 1) {
+            var isEmpty = true;
+			var splitdummy = _weaponDummy.def.ToString ().Split ('_');
+			if (splitdummy.Length > 1) {
 			
 				isEmpty = false;
 			
@@ -122,8 +143,8 @@ namespace ProfSchmilvsPokemon
 							if (GenSight.LineOfSight (position, intVec, map, false, null, 0, 0)) {
 								
 								Pawn closest = (Pawn)thing;
-								string d = closest.def.ToString ();
-								string[] splt = d.Split ('_');
+								var d = closest.def.ToString ();
+								var splt = d.Split ('_');
 
 								//if it is, check if it is an already captured Pokemon
 								if (splt [0].Equals ("Pokemon")) {
@@ -133,19 +154,19 @@ namespace ProfSchmilvsPokemon
 									//if it is not, capture it
 									if (closest.Faction == null) {
 
-										string name = "Pokeball_Full";
-										float pStrength = 1f;
+										var name = "Pokeball_Full";
+										var pStrength = 1f;
 
-										if (weaponDummy.def.ToString ().Equals ("Greatball")) {
+										if (_weaponDummy.def.ToString ().Equals ("Greatball")) {
 											name = "Greatball_Full";
 											pStrength = 2f;
 										}
-										if (weaponDummy.def.ToString ().Equals ("Ultraball")) {
+										if (_weaponDummy.def.ToString ().Equals ("Ultraball")) {
 											name = "Ultraball_Full";
 											pStrength = 4f;
 										}
 
-										int downed = 1;
+										var downed = 1;
 
 										if (closest.health.Downed) {
 
@@ -155,8 +176,8 @@ namespace ProfSchmilvsPokemon
 
 										Pawn l = (Pawn)launcher;
 
-										float rec = (float)closest.kindDef.baseRecruitDifficulty;
-										float prob = ((((3 * (float)closest.MaxHitPoints - 2 * ((float)closest.MaxHitPoints)*closest.HealthScale) * rec * pStrength)/100f)*downed) + ((float)l.skills.GetSkill(ProfSchmilvsPokemon.DefOfs.SkillDefOf.Pokemon).Level)/20f;
+										var rec = (float)closest.kindDef.baseRecruitDifficulty;
+										var prob = ((((3 * (float)closest.MaxHitPoints - 2 * ((float)closest.MaxHitPoints)*closest.HealthScale) * rec * pStrength)/100f)*downed) + ((float)l.skills.GetSkill(ProfSchmilvsPokemon.DefOfs.SkillDefOf.Pokemon).Level)/20f;
 										var rand = Rand.Value;
 
 										Log.Message ("Catch Probability: " + prob.ToString() + "\n Recruitment difficulty: " + rec + "\n Dice roll: " + rand.ToString() + "\n MaxHitpoints: " + closest.MaxHitPoints + "\n Current Hitpoints: " + (closest.MaxHitPoints*closest.HealthScale) + "\n Current Pokemon skill level: " + (((float)l.skills.GetSkill(ProfSchmilvsPokemon.DefOfs.SkillDefOf.Pokemon).Level)/20f));
@@ -165,7 +186,7 @@ namespace ProfSchmilvsPokemon
 
 											used = true;
 												
-											Weapon_Pokeball_Full p = (Weapon_Pokeball_Full)ThingMaker.MakeThing (ThingDef.Named (name));
+											var p = (Weapon_Pokeball_Full)ThingMaker.MakeThing (ThingDef.Named (name));
 											p.def.description = "A " + name.Split ('_') [0] + " with a Pokémon in it. Throw to release caught Pokémon. \n" +
 											closest.Label.CapitalizeFirst ();
 											closest.SetFaction (launcher.Faction, (Pawn)launcher);
@@ -203,10 +224,10 @@ namespace ProfSchmilvsPokemon
 
 					float r = 0.5f;
 
-					if (weaponDummy.def.ToString ().Equals ("Greatball")) {
+					if (_weaponDummy.def.ToString ().Equals ("Greatball")) {
 						r = 0.33f;
 					}
-					if (weaponDummy.def.ToString ().Equals ("Ultraball")) {
+					if (_weaponDummy.def.ToString ().Equals ("Ultraball")) {
 						r = 0.125f;
 					}
 
@@ -217,15 +238,15 @@ namespace ProfSchmilvsPokemon
 
 					//if the Pokeball does not get destroyed with no capturable Pokemon in range, spawn a new one
 					if (!used) {
-						GenSpawn.Spawn (weaponDummy.def, position, map);
+						GenSpawn.Spawn (_weaponDummy.def, position, map);
 					}
 
 				}
 			
 			//if the thrown Pokeball is already home to a Pokemon
-			}else{
+			} else {
 
-				Weapon_Pokeball_Full p = (Weapon_Pokeball_Full)weaponDummy;
+				Weapon_Pokeball_Full p = (Weapon_Pokeball_Full)_weaponDummy;
 				Pawn pok = p.Pokemon;
 
 				//check if it is currently empty, if so, check if the Pokemon that belongs to it is in capture range
@@ -233,17 +254,17 @@ namespace ProfSchmilvsPokemon
 
 					for (int i = 0; i < 24; i++) {
 
-						IntVec3 intVec = position + GenRadial.RadialPattern [i];
+						var intVec = position + GenRadial.RadialPattern [i];
 						if (intVec.InBounds (map)) {
 
-							Thing thing = intVec.GetThingList (map).Find ((Thing x) => x is Pawn);
+							var thing = intVec.GetThingList (map).Find ((Thing x) => x is Pawn);
 							if (thing != null) {
 
 								if (GenSight.LineOfSight (position, intVec, map, false, null, 0, 0)) {
 
-									Pawn closest = (Pawn)thing;
-									string d = closest.def.ToString ();
-									string[] splt = d.Split ('_');
+									var closest = (Pawn)thing;
+									var d = closest.def.ToString ();
+									var splt = d.Split ('_');
 
 									//if it is, get it back into the ball
 									if (splt [0].Equals ("Pokemon")) {
@@ -280,16 +301,12 @@ namespace ProfSchmilvsPokemon
 
 				}
 
-				weaponDummy = null;
+				_weaponDummy = null;
 
 			}
 
 		}
 		//
 		#endregion Overrides
-
-		private int ticksToDetonation;
-		private Thing weaponDummy;
-
-	}
+    }
 }

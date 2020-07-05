@@ -6,17 +6,11 @@
 			<categories>
 				<li>Apricorn</li>
 			</categories>
-			<disallowedSpecialFilters>
-			</disallowedSpecialFilters>
 		</fixedIngredientFilter>
 		<defaultIngredientFilter>
 			<categories>
 				<li>Apricorn</li>
 			</categories>
-			<exceptedCategories>
-			</exceptedCategories>
-			<exceptedThingDefs>
-			</exceptedThingDefs>
 		</defaultIngredientFilter>
 		<workSkill>Pokemon</workSkill>
 	</RecipeDef>
@@ -42,7 +36,7 @@
 	      <li>
 	        <filter>
 	        	<thingDefs>
-					<li>Component</li>
+					<li>ComponentIndustrial</li>
 				</thingDefs>
 			</filter>
 	        <count>1</count>
@@ -78,7 +72,7 @@
 	      <li>
 	        <filter>
 	        	<thingDefs>
-					<li>Component</li>
+					<li>ComponentIndustrial</li>
 				</thingDefs>
 			</filter>
 	        <count>1</count>
@@ -117,7 +111,7 @@
 	      <li>
 	      	<filter>
 	        	<thingDefs>
-					<li>Component</li>
+					<li>ComponentIndustrial</li>
 				</thingDefs>
 			</filter>
 	        <count>1</count>

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>[B18][WIP] Professor Schmilv's RimMon</name>
+	<name>[1.1][WIP] Professor Schmilv's RimMon</name>
 	<author>ProfSchmilv</author>
-	<targetVersion>0.18.0</targetVersion>
+	<supportedVersions>
+        <li>1.1</li>
+    </supportedVersions>
+    <packageId>
+        ProfSchmilv.ProfSchmilvsRimMon.v0.2
+    </packageId>
 	<description>v0.2
     Features:
     	-Apricorn trees as growable crops

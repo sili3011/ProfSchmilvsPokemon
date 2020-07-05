@@ -65,10 +65,6 @@
     <castEdgeShadows>true</castEdgeShadows>
     <staticSunShadowHeight>0.20</staticSunShadowHeight>
     <canOverlapZones>false</canOverlapZones>
-    <building>
-      <workSpeedPenaltyOutdoors>true</workSpeedPenaltyOutdoors>
-      <workSpeedPenaltyTemperature>true</workSpeedPenaltyTemperature>
-    </building>
     <comps>
       <li>
         <compClass>CompReportWorkSpeed</compClass>
@@ -82,13 +78,13 @@
   <ThingDef Name="BuildingBase" Abstract="True">
     <category>Building</category>
     <thingClass>Building</thingClass>
-    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <selectable>true</selectable>
     <drawerType>MapMeshAndRealTime</drawerType>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <repairEffect>Repair</repairEffect>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-    <filthLeaving>BuildingRubble</filthLeaving>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
     <statBases>
       <SellPriceFactor>0.70</SellPriceFactor>
     </statBases>

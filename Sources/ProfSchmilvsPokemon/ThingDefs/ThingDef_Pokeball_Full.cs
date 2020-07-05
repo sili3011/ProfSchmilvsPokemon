@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-using Verse;
-using RimWorld;
+﻿using Verse;
 
 namespace ProfSchmilvsPokemon.ThingDefs
 {

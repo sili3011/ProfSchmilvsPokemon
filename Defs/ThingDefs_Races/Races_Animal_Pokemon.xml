@@ -49,7 +49,6 @@
         <power>3</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <comps>
@@ -67,13 +66,12 @@
 			<baseHealthScale>1.0</baseHealthScale>
 			<baseHungerRate>0.45</baseHungerRate>
 			<foodType>VegetarianRoughAnimal</foodType>
-      <leatherColor>(237,216,174)</leatherColor>
-      <leatherLabel>mareephide</leatherLabel>
-      <leatherInsulation>1.1</leatherInsulation>
+      <leatherDef>Leather_Mareep</leatherDef>
       <wildness>0</wildness>
       <nuzzleMtbHours>120</nuzzleMtbHours>
       <gestationPeriodDays>25</gestationPeriodDays>
       <lifeExpectancy>25</lifeExpectancy>
+      <trainability>Simple</trainability>
       <lifeStageAges>
         <li>
           <def>MareepStage</def>
@@ -117,12 +115,11 @@
     <baseRecruitDifficulty>0.05</baseRecruitDifficulty>
     <race>Pokemon_Mareep</race>
     <combatPower>65</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>1</wildSpawn_EcoSystemWeight>
-    <wildSpawn_GroupSizeRange>
+    <ecoSystemWeight>1</ecoSystemWeight>
+    <wildGroupSize>
       <min>3</min>
       <max>9</max>
-    </wildSpawn_GroupSizeRange>
+    </wildGroupSize>
     <lifeStages>
       <li>
         <label>mareep</label>
@@ -132,7 +129,7 @@
           <drawSize>1.4</drawSize>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Sheep/Dessicated_SheepMale</texPath>
           <drawSize>1.3</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -148,7 +145,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Sheep/Dessicated_SheepMale</texPath>
           <drawSize>2.25</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -164,7 +161,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Sheep/Dessicated_SheepMale</texPath>
           <drawSize>3</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -239,7 +236,6 @@
         <power>3</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <race>
@@ -250,10 +246,10 @@
       <baseHungerRate>0.18</baseHungerRate>
       <baseHealthScale>0.99</baseHealthScale>
       <foodType>CarnivoreAnimal</foodType>
-      <leatherInsulation>1.0</leatherInsulation>
+      <leatherDef>Leather_Houndour</leatherDef>
       <gestationPeriodDays>22.5</gestationPeriodDays>
       <nameOnTameChance>1</nameOnTameChance>
-      <trainableIntelligence>Advanced</trainableIntelligence>
+      <trainability>Advanced</trainability>
       <wildness>0.75</wildness>
       <nuzzleMtbHours>120</nuzzleMtbHours>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
@@ -298,8 +294,7 @@
 
   <PawnKindDef ParentName="AnimalKindBase" Name="AnimalKindBaseWolf" Abstract="True">
     <combatPower>75</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0.9</wildSpawn_EcoSystemWeight>
+    <ecoSystemWeight>0.9</ecoSystemWeight>
   </PawnKindDef>
 
   <ThingDef ParentName="ThingBaseWolf">
@@ -307,10 +302,8 @@
     <label>houndour</label>
     <description>It cooperates with others skillfully. When it becomes your partner, it's very loyal to you as its Trainer and will obey your orders.</description>
     <race>
-      <leatherColor>(200,200,200)</leatherColor>
-      <leatherLabel>houndourskin</leatherLabel>
-      <leatherInsulation>1.25</leatherInsulation>
-      <useMeatFrom>WolfTimber</useMeatFrom>
+      <leatherDef>Leather_Houndour</leatherDef>
+      <useMeatFrom>Wolf_Timber</useMeatFrom>
     </race>
   </ThingDef>
 
@@ -329,7 +322,7 @@
           <drawSize>0.85</drawSize>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Wolf_Timber/Dessicated_Wolf_Timber</texPath>
           <drawSize>1.05</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -345,7 +338,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Wolf_Timber/Dessicated_Wolf_Timber</texPath>
           <drawSize>1.5</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -361,7 +354,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Wolf_Timber/Dessicated_Wolf_Timber</texPath>
           <drawSize>1.95</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -436,7 +429,6 @@
         <power>6</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <race>
@@ -450,7 +442,7 @@
       <gestationPeriodDays>30</gestationPeriodDays>
       <wildness>0.80</wildness>
       <lifeExpectancy>150</lifeExpectancy>
-      <trainableIntelligence>Advanced</trainableIntelligence>
+      <trainability>Advanced</trainability>
       <manhunterOnTameFailChance>0.018</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
       <lifeStageAges>
@@ -484,18 +476,15 @@
   <ThingDef ParentName="BaseBear">
     <defName>Pokemon_Larvitar</defName>
     <label>larvitar</label>
-    <description> Born underground, it eats its way through dirt to the surface, where its parents are. It doesn't deal well with the bright light it finds there.</description>
+    <description>Born underground, it eats its way through dirt to the surface, where its parents are. It doesn't deal well with the bright light it finds there.</description>
     <race>
       <wildness>0.80</wildness>
-      <leatherColor>(112,82,65)</leatherColor>
-      <leatherInsulation>1.0</leatherInsulation>
     </race>
   </ThingDef>
 
   <PawnKindDef Abstract="True" ParentName="AnimalKindBase" Name="BearBase">
     <combatPower>200</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0.3</wildSpawn_EcoSystemWeight>
+    <ecoSystemWeight>0.3</ecoSystemWeight>
   </PawnKindDef>
 
   <PawnKindDef ParentName="BearBase">
@@ -512,7 +501,7 @@
           <drawSize>1.00</drawSize>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Bear/Dessicated_Bear</texPath>
           <drawSize>1.05</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -528,7 +517,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Bear/Dessicated_Bear</texPath>
           <drawSize>1.2</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -544,7 +533,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Bear/Dessicated_Bear</texPath>
           <drawSize>1.95</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -555,7 +544,7 @@
   <!-- ========================== Magnemite, Magneton, Magnezone ================================= -->
 
    <!-- <ThingDef ParentName="AnimalThingBase" Name="BaseMechanoidPokemon" Abstract="True">
-    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <statBases>
       <PsychicSensitivity>0</PsychicSensitivity>
       <ToxicSensitivity>0</ToxicSensitivity>
@@ -590,11 +579,10 @@
         <power>5</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <race>
-      <trainableIntelligence>Advanced</trainableIntelligence>
+      <trainability>Advanced</trainability>
       <body>MechanicalCentipede</body>
       <needsRest>false</needsRest>
       <hasGenders>false</hasGenders>
@@ -604,7 +592,6 @@
       <baseBodySize>1.0</baseBodySize>
       <baseHealthScale>1.0</baseHealthScale>
       <baseHungerRate>0.0</baseHungerRate>
-      <foodType>None</foodType>
       <wildness>0</wildness>
       <gestationPeriodDays>25</gestationPeriodDays>
       <lifeExpectancy>1000</lifeExpectancy>
@@ -620,7 +607,7 @@
     </race>
     <butcherProducts>
       <Steel>10</Steel>
-      <Component>1</Component>
+      <ComponentIndustrial>1</ComponentIndustrial>
     </butcherProducts>
     <tradeTags>
       <li>StandardAnimal</li>
@@ -634,8 +621,7 @@
     <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
     <race>Pokemon_Magnemite</race>
     <combatPower>65</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0</wildSpawn_EcoSystemWeight>
+    <ecoSystemWeight>0</ecoSystemWeight>
     <lifeStages>
       <li>
         <label>magnemite</label>
@@ -670,11 +656,10 @@
         <power>15</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <race>
-      <trainableIntelligence>Advanced</trainableIntelligence>
+      <trainability>Advanced</trainability>
       <body>MechanicalCentipede</body>
       <needsRest>false</needsRest>
       <hasGenders>false</hasGenders>
@@ -684,7 +669,6 @@
       <baseBodySize>1.0</baseBodySize>
       <baseHealthScale>1.0</baseHealthScale>
       <baseHungerRate>0.0</baseHungerRate>
-      <foodType>None</foodType>
       <wildness>0</wildness>
       <gestationPeriodDays>25</gestationPeriodDays>
       <lifeExpectancy>1000</lifeExpectancy>
@@ -700,7 +684,7 @@
     </race>
     <butcherProducts>
       <Steel>30</Steel>
-      <Component>3</Component>
+      <ComponentIndustrial>3</ComponentIndustrial>
     </butcherProducts>
     <tradeTags>
       <li>StandardAnimal</li>
@@ -714,8 +698,7 @@
     <baseRecruitDifficulty>0.005</baseRecruitDifficulty>
     <race>Pokemon_Magneton</race>
     <combatPower>195</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0</wildSpawn_EcoSystemWeight>
+    <ecoSystemWeight>0</ecoSystemWeight>
     <lifeStages>
       <li>
         <label>magneton</label>
@@ -750,11 +733,10 @@
         <power>25</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <race>
-      <trainableIntelligence>Advanced</trainableIntelligence>
+      <trainability>Advanced</trainability>
       <body>MechanicalCentipede</body>
       <needsRest>false</needsRest>
       <hasGenders>false</hasGenders>
@@ -764,7 +746,6 @@
       <baseBodySize>1.0</baseBodySize>
       <baseHealthScale>1.0</baseHealthScale>
       <baseHungerRate>0.0</baseHungerRate>
-      <foodType>None</foodType>
       <wildness>0</wildness>
       <gestationPeriodDays>25</gestationPeriodDays>
       <lifeExpectancy>1000</lifeExpectancy>
@@ -780,7 +761,7 @@
     </race>
     <butcherProducts>
       <Steel>50</Steel>
-      <Component>5</Component>
+      <ComponentIndustrial>5</ComponentIndustrial>
     </butcherProducts>
     <tradeTags>
       <li>StandardAnimal</li>
@@ -794,8 +775,7 @@
     <baseRecruitDifficulty>0.0025</baseRecruitDifficulty>
     <race>Pokemon_Magneton</race>
     <combatPower>325</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0</wildSpawn_EcoSystemWeight>
+    <ecoSystemWeight>0</ecoSystemWeight>
     <lifeStages>
       <li>
         <label>magnezone</label>
@@ -832,7 +812,6 @@
         <power>1</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
       <li>
         <label>right fist</label>
@@ -842,7 +821,6 @@
         <power>3</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
       <li>
         <label>left fist</label>
@@ -852,7 +830,6 @@
         <power>3</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
       <li>
         <label>bodycheck</label>
@@ -862,7 +839,6 @@
         <power>15</power>
         <cooldownTime>5.0</cooldownTime>
         <linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <comps>
@@ -873,7 +849,7 @@
       </li>
     </comps>
     <race>
-      <trainableIntelligence>Simple</trainableIntelligence>
+      <trainability>Simple</trainability>
       <body>Human</body>
       <needsRest>false</needsRest>
       <hasGenders>false</hasGenders>
@@ -933,7 +909,7 @@
       <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
     </race>
     <butcherProducts>
-      <FilthDirt>30</FilthDirt>
+      <Filth_Slime>30</Filth_Slime>
       <Chemfuel>4</Chemfuel>
     </butcherProducts>
     <thingClass>ProfSchmilvsPokemon.Pokemon_Grimer</thingClass>
@@ -945,8 +921,7 @@
     <baseRecruitDifficulty>0.05</baseRecruitDifficulty>
     <race>Pokemon_Grimer</race>
     <combatPower>65</combatPower>
-    <wildSpawn_spawnWild>false</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0</wildSpawn_EcoSystemWeight>
+    <ecoSystemWeight>0</ecoSystemWeight>
     <lifeStages>
       <li>
         <label>grimer</label>
@@ -1053,7 +1028,6 @@
         <power>5</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
       <li>
         <label>right fist</label>
@@ -1063,7 +1037,6 @@
         <power>8</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
       <li>
         <label>left fist</label>
@@ -1073,7 +1046,6 @@
         <power>8</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
       <li>
         <label>bodycheck</label>
@@ -1083,7 +1055,6 @@
         <power>35</power>
         <cooldownTime>5.0</cooldownTime>
         <linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <comps>
@@ -1094,7 +1065,7 @@
       </li>
     </comps>
     <race>
-      <trainableIntelligence>Simple</trainableIntelligence>
+      <trainability>Simple</trainability>
       <body>Human</body>
       <needsRest>false</needsRest>
       <hasGenders>false</hasGenders>
@@ -1154,7 +1125,7 @@
       <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
     </race>
     <butcherProducts>
-      <FilthDirt>300</FilthDirt>
+      <Filth_Slime>300</Filth_Slime>
       <Chemfuel>40</Chemfuel>
     </butcherProducts>
     <thingClass>ProfSchmilvsPokemon.Pokemon_Muk</thingClass>
@@ -1166,8 +1137,7 @@
     <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
     <race>Pokemon_Muk</race>
     <combatPower>150</combatPower>
-    <wildSpawn_spawnWild>false</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0</wildSpawn_EcoSystemWeight>
+    <ecoSystemWeight>0</ecoSystemWeight>
     <lifeStages>
       <li>
         <label>muk</label>
@@ -1300,7 +1270,6 @@
         <power>12</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <race>
@@ -1310,14 +1279,12 @@
       <baseBodySize>1.2</baseBodySize>
       <baseHealthScale>3.6</baseHealthScale>
       <foodType>VegetarianRoughAnimal</foodType>
-      <leatherLabel>tauros skin</leatherLabel>
-      <leatherColor>(130,126,119)</leatherColor>
-      <leatherInsulation>0.65</leatherInsulation>
+      <leatherDef>Leather_Tauros</leatherDef>
       <gestationPeriodDays>60</gestationPeriodDays>
       <wildness>1.0</wildness>
       <nuzzleMtbHours>120</nuzzleMtbHours>
       <manhunterOnTameFailChance>0.025</manhunterOnTameFailChance>
-      <trainableIntelligence>Advanced</trainableIntelligence>
+      <trainability>Advanced</trainability>
       <lifeExpectancy>15</lifeExpectancy>
       <!--<packAnimal>true</packAnimal>-->
       <lifeStageAges>
@@ -1349,12 +1316,11 @@
     <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
     <race>Pokemon_Tauros</race>
     <combatPower>200</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>1</wildSpawn_EcoSystemWeight>
-    <wildSpawn_GroupSizeRange>
+    <ecoSystemWeight>1</ecoSystemWeight>
+    <wildGroupSize>
       <min>4</min>
       <max>12</max>
-    </wildSpawn_GroupSizeRange>
+    </wildGroupSize>
     <lifeStages>
       <li>
         <label>tauros calf</label>
@@ -1367,7 +1333,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+          <texPath>Things/Pawn/Animal/Muffalo/Dessicated_Muffalo</texPath>
           <drawSize>1.4</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1381,7 +1347,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+          <texPath>Things/Pawn/Animal/Muffalo/Dessicated_Muffalo</texPath>
           <drawSize>2.2</drawSize>
         </dessicatedBodyGraphicData>
         <butcherBodyPart>
@@ -1438,7 +1404,6 @@
         <power>1</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <race>
@@ -1448,10 +1413,7 @@
       <baseHungerRate>0.25</baseHungerRate>
       <baseHealthScale>0.45</baseHealthScale>
       <foodType>OmnivoreRoughAnimal</foodType>
-      <leatherLabel>mankeyhide</leatherLabel>
-      <leatherColor>(124,53,29)</leatherColor>
-      <leatherInsulation>0.75</leatherInsulation>
-      <trainableIntelligence>Advanced</trainableIntelligence>
+      <trainability>Advanced</trainability>
       <wildness>0.80</wildness>
       <nuzzleMtbHours>72</nuzzleMtbHours>
       <gestationPeriodDays>16</gestationPeriodDays>
@@ -1491,12 +1453,11 @@
     <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
     <race>Pokemon_Mankey</race>
     <combatPower>35</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0.9</wildSpawn_EcoSystemWeight>
-    <wildSpawn_GroupSizeRange>
+    <ecoSystemWeight>0.9</ecoSystemWeight>
+    <wildGroupSize>
       <min>3</min>
       <max>7</max>
-    </wildSpawn_GroupSizeRange>
+    </wildGroupSize>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -1504,7 +1465,7 @@
           <drawSize>0.7</drawSize>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Monkey/Dessicated_Monkey</texPath>
           <drawSize>0.7</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1518,7 +1479,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Monkey/Dessicated_Monkey</texPath>
           <drawSize>1.0</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1532,7 +1493,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Monkey/Dessicated_Monkey</texPath>
           <drawSize>1.6</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1544,8 +1505,7 @@
 
   <ThingDef ParentName="AnimalThingBase" Name="BigBirdThingBase" Abstract="True">
     <race>
-      <body>Bird</body>
-      <leatherInsulation>0.5</leatherInsulation>      
+      <body>Bird</body>   
       <gestationPeriodDays>20</gestationPeriodDays>
       <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
@@ -1558,8 +1518,7 @@
 
   <PawnKindDef ParentName="AnimalKindBase" Name="BigBirdKindBase" Abstract="True">
     <combatPower>70</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0.42</wildSpawn_EcoSystemWeight>
+    <ecoSystemWeight>0.42</ecoSystemWeight>
   </PawnKindDef>
 
   <!-- ====================== Doduo, Dodri ===================== -->
@@ -1567,7 +1526,7 @@
   <ThingDef ParentName="BigBirdThingBase">
     <defName>Pokemon_Doduo</defName>
     <label>Doduo</label>
-    <description> Doduo's two heads never sleep at the same time. Its two heads take turns sleeping, so one head can always keep watch for enemies while the other one sleeps.</description>
+    <description>Doduo's two heads never sleep at the same time. Its two heads take turns sleeping, so one head can always keep watch for enemies while the other one sleeps.</description>
     <statBases>
       <MoveSpeed>6.0</MoveSpeed>
       <ComfyTemperatureMin>-8</ComfyTemperatureMin>
@@ -1581,9 +1540,9 @@
       <foodType>VegetarianRoughAnimal</foodType>
       <wildness>0.95</wildness>
       <lifeExpectancy>25</lifeExpectancy>
-      <leatherColor>(76,83,99)</leatherColor>
       <useMeatFrom>Cassowary</useMeatFrom>
       <manhunterOnTameFailChance>0.022</manhunterOnTameFailChance>
+      <trainability>Intermediate</trainability>
       <lifeStageAges>
         <li>
           <def>DoduoStage</def>
@@ -1646,7 +1605,6 @@
         <power>4</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
   </ThingDef>
@@ -1664,7 +1622,7 @@
           <drawSize>1.8</drawSize>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Emu/Dessicated_Emu</texPath>
           <drawSize>1.8</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1678,7 +1636,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+          <texPath>Things/Pawn/Animal/Emu/Dessicated_Emu</texPath>
           <drawSize>1.8</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1721,7 +1679,6 @@
         <power>1</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <comps>
@@ -1744,15 +1701,13 @@
       <baseHungerRate>0.07</baseHungerRate>
       <baseHealthScale>0.5</baseHealthScale>
       <foodType>CarnivoreAnimal, OvivoreAnimal</foodType>
-      <leatherColor>(113,98,87)</leatherColor>
-      <leatherLabel>cobraskin</leatherLabel>
-      <leatherInsulation>0.5</leatherInsulation>
       <meatLabel>cobraflesh</meatLabel>
       <wildness>0.75</wildness>
       <manhunterOnTameFailChance>0.018</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
       <gestationPeriodDays>17.5</gestationPeriodDays>
       <nameOnTameChance>1</nameOnTameChance>
+      <trainability>Simple</trainability>
       <litterSizeCurve>
         <points>
           <li>(0.5, 0)</li>
@@ -1792,8 +1747,7 @@
     <baseRecruitDifficulty>0.0125</baseRecruitDifficulty>
     <race>Pokemon_Ekans</race>
     <combatPower>65</combatPower>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-    <wildSpawn_EcoSystemWeight>0.6</wildSpawn_EcoSystemWeight>
+    <ecoSystemWeight>0.6</ecoSystemWeight>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -1801,7 +1755,7 @@
           <drawSize>1.3</drawSize>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSnake</texPath>
+          <texPath>Things/Pawn/Animal/Cobra/Dessicated_Cobra</texPath>
           <drawSize>1.3</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1811,7 +1765,7 @@
           <drawSize>1.8</drawSize>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSnake</texPath>
+          <texPath>Things/Pawn/Animal/Cobra/Dessicated_Cobra</texPath>
           <drawSize>1.8</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1865,7 +1819,6 @@
         <power>1</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
       </li>
     </tools>
     <race>
@@ -1874,11 +1827,11 @@
       <baseHungerRate>0.20</baseHungerRate>
       <baseHealthScale>0.29</baseHealthScale>
       <foodType>OmnivoreRoughAnimal</foodType>
-      <leatherColor>(110,95,82)</leatherColor>
-      <leatherInsulation>0.7</leatherInsulation>
+      <leatherDef>Leather_Rattata</leatherDef>
       <wildness>0.50</wildness>
       <mateMtbHours>8</mateMtbHours>
       <gestationPeriodDays>12</gestationPeriodDays>
+      <trainability>Simple</trainability>
       <litterSizeCurve>
         <points>
           <li>(0.5, 0)</li>
@@ -1917,8 +1870,7 @@
     <baseRecruitDifficulty>0.066</baseRecruitDifficulty>
     <race>Pokemon_Rattata</race>
     <combatPower>30</combatPower>
-    <wildSpawn_EcoSystemWeight>0.25</wildSpawn_EcoSystemWeight>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <ecoSystemWeight>0.25</ecoSystemWeight>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -1927,7 +1879,7 @@
           <shaderType>CutoutComplex</shaderType>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
+          <texPath>Things/Pawn/Animal/Rat/Dessicated_Rat</texPath>
           <drawSize>1.0</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1938,7 +1890,7 @@
           <shaderType>CutoutComplex</shaderType>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
+          <texPath>Things/Pawn/Animal/Rat/Dessicated_Rat</texPath>
           <drawSize>1.1</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -1955,7 +1907,7 @@
     <altitudeLayer>Pawn</altitudeLayer>
     <useHitPoints>false</useHitPoints>
     <hasTooltip>true</hasTooltip>
-    <soundImpactDefault>BulletImpactFlesh</soundImpactDefault>
+    <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
     <statBases>
       <Mass>70</Mass>
     </statBases>
@@ -1968,7 +1920,6 @@
       <li>ITab_Pawn_Guest</li>
       <li>ITab_Pawn_Prisoner</li>
       <li>ITab_Pawn_Social</li>
-      <li>ITab_Pawn_Combat</li>
     </inspectorTabs>
     <comps>
       <li>

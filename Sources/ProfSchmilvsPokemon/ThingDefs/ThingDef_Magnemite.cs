@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-using Verse;
-using RimWorld;
+﻿using Verse;
 
 namespace ProfSchmilvsPokemon.ThingDefs
 {
@@ -12,15 +9,15 @@ namespace ProfSchmilvsPokemon.ThingDefs
 		{
 			get 
 			{
-				return storedEnergyMax;
+				return _storedEnergyMax;
 			}
 			set
 			{
-				this.storedEnergyMax = value;
+				this._storedEnergyMax = value;
 			}
 		}
 
-		private float storedEnergyMax = 250f;
+		private float _storedEnergyMax = 250f;
 
 	}
 }

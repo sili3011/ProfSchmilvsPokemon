@@ -13,6 +13,12 @@ namespace ProfSchmilvsPokemon
 	public class Pokemon_Abstract_Slimes : Pokemon_Abstract
 	{
 
+		public float amountOfFilth = 0f;
+		protected int currentTick = 0;
+		protected Zone currentDump = null;
+		protected Thing digesting = null;
+		protected long digestingTicks = 0L;
+
 		public override void Tick()
 		{
 			base.Tick ();
@@ -38,12 +44,6 @@ namespace ProfSchmilvsPokemon
 			Scribe_Deep.Look<Thing>(ref this.digesting, "digesting", null);
 			Scribe_Values.Look<long>(ref this.digestingTicks, "digestingTicks", 0L);
 		}
-
-		public float amountOfFilth = 0f;
-		protected int currentTick = 0;
-		protected Zone currentDump = null;
-		protected Thing digesting = null;
-		protected long digestingTicks = 0L;
 
 	}
 

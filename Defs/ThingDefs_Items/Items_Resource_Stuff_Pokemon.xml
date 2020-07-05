@@ -23,9 +23,9 @@
         <li>Fabric</li>
       </categories>
       <commonality>0.12</commonality>
-      <statFactors>
+      <!-- <statFactors>
         <ArmorRating_Electric>1.2</ArmorRating_Electric>
-      </statFactors>
+      </statFactors> -->
     </stuffProps>
     <thingCategories>
       <li>Textiles</li>
@@ -43,7 +43,7 @@
       <color>(255,255,51)</color>
       <statOffsets>
         <ArmorRating_Heat>0.08</ArmorRating_Heat>
-        <ArmorRating_Electric>0.08</ArmorRating_Electric>
+        <!-- <ArmorRating_Electric>0.08</ArmorRating_Electric> -->
       </statOffsets>
       <statFactors>
         <ArmorRating_Sharp>1.3</ArmorRating_Sharp>
