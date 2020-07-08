@@ -1,0 +1,2 @@
+remove-item D:\Programs\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon -recurse -force
+xcopy D:\Projects\ProfSchmilvsPokemon D:\Programs\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon /I /Y /S /exclude:$PSScriptRoot\ExcludePatterns.txt

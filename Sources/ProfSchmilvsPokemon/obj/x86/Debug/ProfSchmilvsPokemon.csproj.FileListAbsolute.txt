@@ -9,4 +9,5 @@ D:\Programs\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Assemblies\
 D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.csproj.CopyComplete
 D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.dll
 D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.pdb
-D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.csprojAssemblyReference.cache
+D:\Projects\ProfSchmilvsPokemon\Assemblies\ProfSchmilvsPokemon.dll
+D:\Projects\ProfSchmilvsPokemon\Assemblies\ProfSchmilvsPokemon.pdb

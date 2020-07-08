@@ -12,7 +12,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\Programs\Steam\steamapps\common\RimWorld\Mods\ProfSchmilvsPokemon\Assemblies\</OutputPath>
+    <OutputPath>..\..\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>1</WarningLevel>
@@ -257,4 +257,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -file "D:\Projects\ProfSchmilvsPokemon\CopyScript\GitToMods.ps1"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
