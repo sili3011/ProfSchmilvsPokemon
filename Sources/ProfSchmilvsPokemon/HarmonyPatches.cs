@@ -23,7 +23,7 @@ namespace ProfSchmilvsPokemon
 			var targetMethod2 = AccessTools.Method(typeof(Map),"ConstructComponents");
 			var targetMethod3 = AccessTools.Method(typeof(Map),"MapPostTick");
 			var targetMethod4 = AccessTools.Method(typeof(CompPower),"PostSpawnSetup");
-			//var targetMethod5 = AccessTools.Method(typeof(StorytellerUI),"DrawStorytellerSelectionInterface");
+			var targetMethod5 = AccessTools.Method(typeof(StorytellerUI),"DrawStorytellerSelectionInterface");
 			var targetMethod6 = AccessTools.Method(typeof(Page_SelectStoryteller),"CanDoNext");
 
 			//patch methods
@@ -42,7 +42,7 @@ namespace ProfSchmilvsPokemon
 			harmony.Patch( targetMethod4, prefixMethod4, null ) ;
 			harmony.Patch( targetMethod6, prefixMethod5, null ) ;
 
-			//harmony.Patch( targetMethod5, null, postfixMethod1 ) ;
+			harmony.Patch( targetMethod5, null, postfixMethod1 ) ;
 		}
 			
 		public static void FillTab_Prefix() {
@@ -67,9 +67,8 @@ namespace ProfSchmilvsPokemon
 			Spawner.spawnerPokemon.InkrementPower (__instance);
 		}
 
-		public static void DrawStorytellerSelectionInterface_Postfix(Rect rect, ref StorytellerDef chosenStoryteller, ref DifficultyDef difficulty, Listing_Standard selectedStorytellerInfoListing) {
-			var rect2 = new Rect(rect.width-410f, 10f, 400f, 50f);
-			Widgets.CheckboxLabeled (rect2, "Completely replace vanilla animals with RimMon", ref PokemonConfig.startWith);
+		public static void DrawStorytellerSelectionInterface_Postfix(Rect rect, ref StorytellerDef chosenStoryteller, ref DifficultyDef difficulty, Listing_Standard infoListing) {
+			Widgets.CheckboxLabeled (new Rect(140f, 610f, 400f, 30f), "Completely replace vanilla animals with RimMon", ref PokemonConfig.startWith, false, null, null, true);
 		}
 
 		public static void CanDoNext_Prefix() {
