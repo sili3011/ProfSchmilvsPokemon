@@ -5,10 +5,9 @@
 	<supportedVersions>
         <li>1.1</li>
     </supportedVersions>
-    <packageId>
-        ProfSchmilv.ProfSchmilvsRimMon.v0.2
-    </packageId>
-	<description>v0.2
+    <packageId>ProfSchmilv.ProfSchmilvsRimMon</packageId>
+	<description>
+    v0.2
     Features:
     	-Apricorn trees as growable crops
     	-Harvesting Apricorns from Apricorn trees

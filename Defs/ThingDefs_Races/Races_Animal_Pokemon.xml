@@ -1281,7 +1281,7 @@
       <foodType>VegetarianRoughAnimal</foodType>
       <leatherDef>Leather_Tauros</leatherDef>
       <gestationPeriodDays>60</gestationPeriodDays>
-      <wildness>1.0</wildness>
+      <wildness>0.99</wildness>
       <nuzzleMtbHours>120</nuzzleMtbHours>
       <manhunterOnTameFailChance>0.025</manhunterOnTameFailChance>
       <trainability>Advanced</trainability>
