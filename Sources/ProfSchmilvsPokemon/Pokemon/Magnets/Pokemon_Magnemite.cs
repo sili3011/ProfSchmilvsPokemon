@@ -85,10 +85,10 @@ namespace ProfSchmilvsPokemon
 				Pawn ton = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Magneton"));
 				if (mag.Faction != null) {
 					if (mag.playerSettings.Master != null) {
-						ton.SetFaction (mag.Faction, (Pawn)mag.playerSettings.Master);
-						ton.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)mag.playerSettings.Master);
+						ton.SetFaction (mag.Faction, mag.playerSettings.Master);
+						ton.training.Train (TrainableUtility.TrainableDefsInListOrder [0], mag.playerSettings.Master);
 					} else {
-						ton.SetFaction (mag.Faction, (Pawn)mag.Faction.leader); //should not happen, just for debugging purposes
+						ton.SetFaction (mag.Faction, mag.Faction.leader); //should not happen, just for debugging purposes
 					}
 					if (!mag.Name.ToString ().Split (' ') [0].Equals ("magnemite")) {
 						ton.Name = mag.Name;
@@ -105,7 +105,7 @@ namespace ProfSchmilvsPokemon
 
 				if (this.Spawned) {
 
-					GenSpawn.Spawn (ton, mag.Position, base.Map);
+					GenSpawn.Spawn (ton, mag.Position, Map);
 					this.DeSpawn ();
 				}
 
@@ -115,9 +115,9 @@ namespace ProfSchmilvsPokemon
 			
 		public override void repairing(){
 		
-			base.repairJob.HitPoints++;
-			base.StoredEnergy--;
-			base.Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
+			repairJob.HitPoints++;
+			StoredEnergy--;
+			Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
 		
 		}
 	}

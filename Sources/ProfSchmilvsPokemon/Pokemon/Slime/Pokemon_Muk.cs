@@ -9,8 +9,7 @@ using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Muk : Pokemon_Abstract_Slimes
-	{
+	public class Pokemon_Muk : Pokemon_Abstract_Slimes {
 
 		#region Properties
 		//
@@ -24,8 +23,8 @@ namespace ProfSchmilvsPokemon
 		//
 		#endregion Properties
 
-		public override void Tick()
-		{
+		public override void Tick() {
+
 			base.Tick ();
 
 			++this.currentTick;
@@ -34,8 +33,8 @@ namespace ProfSchmilvsPokemon
 
 				this.currentTick = 0;
 
-				float prob = this.amountOfFilth/150;
-				float roll = Rand.Value;
+				var prob = this.amountOfFilth/150;
+				var roll = Rand.Value;
 
 				if(roll < prob && this.amountOfFilth > 0){
 
@@ -43,19 +42,18 @@ namespace ProfSchmilvsPokemon
 					this.DecrementFilth ();
 
 				}
-
 			}
 
 			if (digesting == null) {
 
 				if (currentDump == null) {
 
-					if (!base.Map.zoneManager.AllZones.NullOrEmpty ()) {
+					if (!Map.zoneManager.AllZones.NullOrEmpty ()) {
 
-						List<Zone> zones = base.Map.zoneManager.AllZones;
-						float nextDistance = 999999f;
+						var zones = Map.zoneManager.AllZones;
+						var nextDistance = 999999f;
 
-						foreach (Zone z in zones) {
+						foreach (var z in zones) {
 
 							if (z.label.Split (' ') [0].Equals ("Dumping")) {
 
@@ -64,18 +62,13 @@ namespace ProfSchmilvsPokemon
 									this.currentDump = z;
 
 								}
-
 							}
-
 						}
-
 					}
 
 					if (this.currentDump != null) {
-
 						this.jobs.ClearQueuedJobs ();
-						this.pather.StartPath (new LocalTargetInfo (this.currentDump.cells [0]), Verse.AI.PathEndMode.OnCell);
-
+						this.pather.StartPath (new LocalTargetInfo (this.currentDump.cells [0]), PathEndMode.OnCell);
 					}
 
 				} else {
@@ -84,14 +77,14 @@ namespace ProfSchmilvsPokemon
 
 						Thing toBeDigested = null;
 
-						IEnumerable<Thing> ts = this.currentDump.AllContainedThings;
+						var ts = this.currentDump.AllContainedThings;
 
-						foreach(Thing t in ts){
+						foreach(var t in ts){
 
 							if (t is Pokemon_Abstract_Slimes && t.Faction == null) {
 
 								Pokemon_Abstract_Slimes g = (Pokemon_Abstract_Slimes)t;
-								for (int gi = (int)g.amountOfFilth; gi >= 0; gi--) {
+								for (var gi = (int)g.amountOfFilth; gi >= 0; gi--) {
 									this.IncrementFilth ();
 								}
 								t.DeSpawn ();
@@ -114,7 +107,6 @@ namespace ProfSchmilvsPokemon
 						this.pather.StartPath (new LocalTargetInfo (this.currentDump.cells [0]), Verse.AI.PathEndMode.OnCell);
 
 					}
-
 				}
 
 			} else {
@@ -122,14 +114,10 @@ namespace ProfSchmilvsPokemon
 				--this.digestingTicks;
 
 				if (this.digestingTicks <= 0) {
-
 					++this.amountOfFilth;
 					this.digesting = null;
-
 				}
-
 			}
-
 		}
 	}
 }

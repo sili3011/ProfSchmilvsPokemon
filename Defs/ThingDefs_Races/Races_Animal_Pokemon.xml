@@ -788,6 +788,238 @@
     </lifeStages>
   </PawnKindDef>
 
+  <!-- ========================== Honedge, Doublade, Aegislash ================================= -->
+
+  <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Honedge" ParentName="AnimalThingBase">
+    <defName>Pokemon_Honedge</defName>
+    <label>honedge</label>
+    <description>Apparently this Pokémon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.</description>
+    <statBases>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MoveSpeed>7</MoveSpeed>
+      <MarketValue>8000</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <race>
+      <trainability>Advanced</trainability>
+      <body>MechanicalCentipede</body>
+      <needsRest>false</needsRest>
+      <hasGenders>true</hasGenders>
+      <foodType>None</foodType>
+      <herdAnimal>false</herdAnimal>
+      <packAnimal>false</packAnimal>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0.0</baseHungerRate>
+      <wildness>0.99</wildness>
+      <gestationPeriodDays>25</gestationPeriodDays>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>HonedgeStages</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+      <Steel>10</Steel>
+    </butcherProducts>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+    <thingClass>ProfSchmilvsPokemon.Pokemon_Honedge</thingClass>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Honedge</defName>
+    <label>honedge</label>
+    <baseRecruitDifficulty>0.025</baseRecruitDifficulty>
+    <race>Pokemon_Honedge</race>
+    <combatPower>90</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <label>honedge</label>
+        <labelPlural>honedges</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Honedge/Honedge</texPath>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Magneton" ParentName="AnimalThingBase">
+    <defName>Pokemon_Magneton</defName>
+    <label>magneton</label>
+    <description>Delicate equipment can malfunction in areas inhabited by Magneton, which send out mysterious electrical signals.</description>
+    <statBases>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MoveSpeed>9</MoveSpeed>
+      <MarketValue>2400</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <race>
+      <trainability>Advanced</trainability>
+      <body>MechanicalCentipede</body>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <herdAnimal>false</herdAnimal>
+      <packAnimal>false</packAnimal>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0.0</baseHungerRate>
+      <wildness>0</wildness>
+      <gestationPeriodDays>25</gestationPeriodDays>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>MagnemiteStages</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+      <Steel>30</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </butcherProducts>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+    <thingClass>ProfSchmilvsPokemon.Pokemon_Magneton</thingClass>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Magneton</defName>
+    <label>magneton</label>
+    <baseRecruitDifficulty>0.005</baseRecruitDifficulty>
+    <race>Pokemon_Magneton</race>
+    <combatPower>195</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <label>magneton</label>
+        <labelPlural>magnetons</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Magneton/Magneton</texPath>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+ <ThingDef Class="ProfSchmilvsPokemon.ThingDefs.ThingDef_Magnezone" ParentName="AnimalThingBase">
+    <defName>Pokemon_Magnezone</defName>
+    <label>magnezone</label>
+    <description>There are still people who believe that this Pokémon came from outer space. It emanates a powerful magnetic field.</description>
+    <statBases>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MoveSpeed>14</MoveSpeed>
+      <MarketValue>5000</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <race>
+      <trainability>Advanced</trainability>
+      <body>MechanicalCentipede</body>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <herdAnimal>false</herdAnimal>
+      <packAnimal>false</packAnimal>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0.0</baseHungerRate>
+      <wildness>0</wildness>
+      <gestationPeriodDays>25</gestationPeriodDays>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>MagnemiteStages</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </butcherProducts>
+    <tradeTags>
+      <li>StandardAnimal</li>
+    </tradeTags>
+    <thingClass>ProfSchmilvsPokemon.Pokemon_Magnezone</thingClass>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Pokemon_Magnezone</defName>
+    <label>magneton</label>
+    <baseRecruitDifficulty>0.0025</baseRecruitDifficulty>
+    <race>Pokemon_Magneton</race>
+    <combatPower>325</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <label>magnezone</label>
+        <labelPlural>magnezones</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Pokemon/Magnezone/Magnezone</texPath>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef> -->
+
   <!-- ========================== Grimer, Muk ================================= -->
 
   <ThingDef class="ProfSchmilvsPokemon.ThingDefs.Pokemon_Grimer" ParentName="AnimalThingBase">

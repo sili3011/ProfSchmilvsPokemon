@@ -5,12 +5,7 @@ using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Magneton : Pokemon_Abstract_Magnets
-	{
-
-		public Pokemon_Magneton(){
-			base.storedEnergyMax = this.Def.storedEnergyMaxUtility;
-		}
+	public class Pokemon_Magneton : Pokemon_Abstract_Magnets {
 
 		#region Properties
 		//
@@ -24,16 +19,21 @@ namespace ProfSchmilvsPokemon
 		//
 		#endregion Properties
 
-		public override void Draw()
-		{
+
+		public Pokemon_Magneton() {
+			storedEnergyMax = this.Def.storedEnergyMaxUtility;
+		}
+
+		public override void Draw() {
+
 			base.Draw();
 			if (this.Faction != null) {
-				GenDraw.FillableBarRequest r = default(GenDraw.FillableBarRequest);
+				GenDraw.FillableBarRequest r = default;
 				r.center = this.DrawPos + Vector3.up * 0.1f - new Vector3 (0, 0, 0.5f);
-				r.size = Pokemon_Magneton.BarSize;
+				r.size = BarSize;
 				r.fillPercent = this.StoredEnergy / this.Def.storedEnergyMaxUtility;
-				r.filledMat = Pokemon_Magneton.BatteryBarFilledMat;
-				r.unfilledMat = Pokemon_Magneton.BatteryBarUnfilledMat;
+				r.filledMat = BatteryBarFilledMat;
+				r.unfilledMat = BatteryBarUnfilledMat;
 				r.margin = 0.15f;
 				GenDraw.DrawFillableBar (r);
 			}
@@ -49,10 +49,10 @@ namespace ProfSchmilvsPokemon
 
 			for (int i = 0; i < 400; i++) {
 
-				IntVec3 intVec = this.Position + GenRadial.RadialPattern [i];
-				if (intVec.InBounds (base.Map)) {
+				var intVec = this.Position + GenRadial.RadialPattern [i];
+				if (intVec.InBounds (Map)) {
 
-					Thing thing = intVec.GetThingList (base.Map).Find ((Thing x) => x is Pawn);
+					Thing thing = intVec.GetThingList (Map).Find((Thing x) => x is Pawn);
 					if (thing != null) {
 
 						if (thing is Pokemon_Magnemite) {
@@ -68,42 +68,35 @@ namespace ProfSchmilvsPokemon
 							bonusMagnetism += 125f;
 
 						}
-
 					}
-
 				}
-
 			}
 
 			if ((Spawner.spawnerPokemon.powerBuildingCount + bonusMagnetism)/1000 > Rand.Value) {
 
-				Pawn zone = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Magnezone"));
+				var zone = PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Magnezone"));
 				if (this.Faction != null) {
 					if (this.playerSettings.Master != null) {
-						zone.SetFaction (this.Faction, (Pawn)this.playerSettings.Master);
-						zone.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)this.playerSettings.Master);
+						zone.SetFaction (this.Faction, this.playerSettings.Master);
+						zone.training.Train (TrainableUtility.TrainableDefsInListOrder [0], this.playerSettings.Master);
 					} else {
-						zone.SetFaction (this.Faction, (Pawn)this.Faction.leader); //should not happen, just for debugging purposes
+						zone.SetFaction (this.Faction, this.Faction.leader); //should not happen, just for debugging purposes
 					}
 					if (!this.Name.ToString().Split(' ')[0].Equals ("magneton")) {
 						zone.Name = this.Name;
 					}
 				}
 
-				GenSpawn.Spawn (zone, this.Position, base.Map);
+				GenSpawn.Spawn (zone, this.Position, Map);
 				this.DeSpawn ();
 
 			}
-
 		}
 
-
 		public override void repairing(){
-
 			this.repairJob.HitPoints += 3;
 			this.StoredEnergy--;
-			base.Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
-
+			Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
 		}
 	}
 }

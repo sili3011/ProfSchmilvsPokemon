@@ -10,8 +10,7 @@ using ProfSchmilvsPokemon.ThingDefs;
 namespace ProfSchmilvsPokemon
 {
 	[StaticConstructorOnStartup]
-	public class Pokemon_Abstract_Slimes : Pokemon_Abstract
-	{
+	public class Pokemon_Abstract_Slimes : Pokemon_Abstract {
 
 		public float amountOfFilth = 0f;
 		protected int currentTick = 0;
@@ -19,25 +18,21 @@ namespace ProfSchmilvsPokemon
 		protected Thing digesting = null;
 		protected long digestingTicks = 0L;
 
-		public override void Tick()
-		{
+		public override void Tick() {
 			base.Tick ();
 		}
 
-		public void IncrementFilth()
-		{
+		public void IncrementFilth() {
 			++this.amountOfFilth;
 			this.ageTracker.AgeBiologicalTicks = (long)this.amountOfFilth * 3600000L * 150L;
 		}
 
-		public void DecrementFilth()
-		{
+		public void DecrementFilth() {
 			--this.amountOfFilth;
 			this.ageTracker.AgeBiologicalTicks = (long)this.amountOfFilth * 3600000L * 150L;
 		}
 
-		public override void ExposeData()
-		{
+		public override void ExposeData() {
 			base.ExposeData ();
 			Scribe_Values.Look<float>(ref this.amountOfFilth, "amountOfFilth", 0f);
 			Scribe_Deep.Look<Zone>(ref this.currentDump, "currentDump", null);

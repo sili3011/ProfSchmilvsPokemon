@@ -1,5 +1,6 @@
 .git/
 .vs/
 CopyScript/
+Assets/
 .gitattributes
 README.md

@@ -13,16 +13,24 @@ namespace ProfSchmilvsPokemon
 	public abstract class Pokemon_Abstract_Magnets : Pokemon_Abstract
 	{
 
+		protected static readonly Vector2 BarSize = new Vector2(0.6f, 0.05f);
+		protected static readonly Material BatteryBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.9f, 0.85f, 0.2f), false);
+		protected static readonly Material BatteryBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.3f, 0.3f, 0.3f), false);
+		protected float StoredEnergy = 250f;
+		protected CompPower closestCompPower = null;
+		protected Thing repairJob = null;
+		protected float storedEnergyMax = 0f;
+
 		public override void Draw()
 		{
 			base.Draw();
 			if (this.Faction != null) {
-				GenDraw.FillableBarRequest r = default(GenDraw.FillableBarRequest);
+				GenDraw.FillableBarRequest r = default;
 				r.center = this.DrawPos + Vector3.up * 0.1f - new Vector3 (0, 0, 0.5f);
-				r.size = Pokemon_Abstract_Magnets.BarSize;
+				r.size = BarSize;
 				r.fillPercent = this.StoredEnergy / this.storedEnergyMax;
-				r.filledMat = Pokemon_Abstract_Magnets.BatteryBarFilledMat;
-				r.unfilledMat = Pokemon_Abstract_Magnets.BatteryBarUnfilledMat;
+				r.filledMat = BatteryBarFilledMat;
+				r.unfilledMat = BatteryBarUnfilledMat;
 				r.margin = 0.15f;
 				GenDraw.DrawFillableBar (r);
 			}
@@ -45,7 +53,7 @@ namespace ProfSchmilvsPokemon
 
 				if (!this.Downed) {
 
-					Hediff hediff = HediffMaker.MakeHediff(ProfSchmilvsPokemon.DefOfs.HediffDefOf.OutOfPower, this);
+					Hediff hediff = HediffMaker.MakeHediff(DefOfs.HediffDefOf.OutOfPower, this);
 					this.health.AddHediff (hediff);
 
 				}
@@ -242,18 +250,10 @@ namespace ProfSchmilvsPokemon
 		public override void ExposeData()
 		{
 			base.ExposeData ();
-			Scribe_Values.Look<float>(ref this.StoredEnergy, "storedEnergy", this.storedEnergyMax);
-			Scribe_Deep.Look<Thing>(ref this.repairJob, "repairJob", new object[0]);
-			Scribe_Values.Look<float>(ref this.storedEnergyMax, "storedEnergyMax", 0f);
+			Scribe_Values.Look(ref this.StoredEnergy, "storedEnergy", this.storedEnergyMax);
+			Scribe_Deep.Look(ref this.repairJob, "repairJob", new object[0]);
+			Scribe_Values.Look(ref this.storedEnergyMax, "storedEnergyMax", 0f);
 		}
-
-		protected static readonly Vector2 BarSize = new Vector2(0.6f, 0.05f);
-		protected static readonly Material BatteryBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.9f, 0.85f, 0.2f), false);
-		protected static readonly Material BatteryBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.3f, 0.3f, 0.3f), false);
-		protected float StoredEnergy = 250f;
-		protected CompPower closestCompPower = null;
-		protected Thing repairJob = null;
-		protected float storedEnergyMax = 0f;
 
 	}
 }

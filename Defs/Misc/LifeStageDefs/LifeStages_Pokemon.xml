@@ -51,8 +51,19 @@
 
   <!-- Magnemite, Magneton, Magnezone -->
   
-<LifeStageDef>
+  <LifeStageDef>
     <defName>MagnemiteStages</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>false</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+
+  <!-- Honedge, Doublade, Aegislash -->
+  
+  <LifeStageDef>
+    <defName>HonedgeStages</defName>
     <label>adult</label>
     <visible>false</visible>
     <reproductive>false</reproductive>
@@ -62,7 +73,7 @@
 
   <!-- Tauros -->
   
-<LifeStageDef>
+  <LifeStageDef>
     <defName>TaurosStage1</defName>
     <label>kid</label>
     <visible>false</visible>
@@ -82,7 +93,7 @@
 
   <!-- Doduo, Dodri -->
   
-<LifeStageDef>
+  <LifeStageDef>
     <defName>DoduoStage</defName>
     <label>duo</label>
     <visible>false</visible>
@@ -102,7 +113,7 @@
 
    <!-- Doduo, Dodri -->
   
-<LifeStageDef>
+  <LifeStageDef>
     <defName>EkansStage</defName>
     <label>duo</label>
     <visible>false</visible>

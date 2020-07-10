@@ -9,12 +9,7 @@ using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Magnezone : Pokemon_Abstract_Magnets
-	{
-
-		public Pokemon_Magnezone(){
-			base.storedEnergyMax = this.Def.storedEnergyMaxUtility;
-		}
+	public class Pokemon_Magnezone : Pokemon_Abstract_Magnets {
 
 		#region Properties
 		//
@@ -28,13 +23,18 @@ namespace ProfSchmilvsPokemon
 		//
 		#endregion Properties
 
-		public override void evolve(){}
+		public Pokemon_Magnezone()
+		{
+			base.storedEnergyMax = this.Def.storedEnergyMaxUtility;
+		}
 
-		public override void repairing(){
+		public override void evolve() {}
+
+		public override void repairing() {
 		
 			this.repairJob.HitPoints += 5;
 			this.StoredEnergy--;
-			base.Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
+			Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
 		
 		}
 	}

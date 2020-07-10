@@ -227,7 +227,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pokemon\Swords\Pokemon_Abstract_Swords.cs" />
+    <Compile Include="Pokemon\Swords\Pokemon_Honedge.cs" />
+    <Compile Include="Pokemon\Swords\Pokemon_Doublade.cs" />
+    <Compile Include="Pokemon\Swords\Pokemon_Aegislash.cs" />
     <Compile Include="Projectile_Pokeball.cs" />
+    <Compile Include="ThingDefs\ThingDef_Aegislash.cs" />
+    <Compile Include="ThingDefs\ThingDef_Doublade.cs" />
+    <Compile Include="ThingDefs\ThingDef_Honedge.cs" />
     <Compile Include="Weapon_Pokeball_Full.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="Spawner_WildPokemon.cs" />
@@ -257,6 +264,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>

@@ -9,8 +9,7 @@ using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Grimer : Pokemon_Abstract_Slimes
-	{
+	public class Pokemon_Grimer : Pokemon_Abstract_Slimes {
 
 		#region Properties
 		//
@@ -24,35 +23,34 @@ namespace ProfSchmilvsPokemon
 		//
 		#endregion Properties
 
-		public override void Tick()
-		{
+		public override void Tick() {
+
 			base.Tick ();
 			++this.currentTick;
 
 			if (this.amountOfFilth > 20) {
 
 				Pokemon_Muk muk = (Pokemon_Muk)PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Muk"));
+
 				if (this.Faction != null) {
+
 					if (this.playerSettings.Master != null) {
-						muk.SetFaction (this.Faction, (Pawn)this.playerSettings.Master);
-						muk.training.Train (TrainableUtility.TrainableDefsInListOrder [0], (Pawn)this.playerSettings.Master);
+						muk.SetFaction (this.Faction, this.playerSettings.Master);
+						muk.training.Train (TrainableUtility.TrainableDefsInListOrder [0], this.playerSettings.Master);
 					} else {
-						muk.SetFaction (this.Faction, (Pawn)this.Faction.leader); //should not happen, just for debugging purposes
+						muk.SetFaction (this.Faction, this.Faction.leader); //should not happen, just for debugging purposes
 					}
+
 					if (!this.Name.ToString ().Split (' ') [0].Equals ("grimer")) {
 						muk.Name = this.Name;
 					}
-
 				}
 
 				for (int i = (int)this.amountOfFilth; i >= 0; i--) {
-
 					muk.IncrementFilth ();
-
 				}
 
 				if (this.Spawned) {
-					
 					GenSpawn.Spawn (muk, this.Position, base.Map);
 					this.DeSpawn ();
 				}
@@ -67,12 +65,9 @@ namespace ProfSchmilvsPokemon
 					float roll = Rand.Value;
 
 					if (roll < prob && this.amountOfFilth > 0) {
-
 						FilthMaker.TryMakeFilth (this.Position, base.Map, ThingDefOf.Filth_Slime);
 						this.DecrementFilth ();
-
 					}
-				
 				}
 
 				if (digesting == null) {
@@ -93,18 +88,13 @@ namespace ProfSchmilvsPokemon
 										this.currentDump = z;
 									
 									}
-								
 								}
-
 							}
-						
 						}
 
 						if (this.currentDump != null) {
-						
 							this.jobs.ClearQueuedJobs ();
 							this.pather.StartPath (new LocalTargetInfo (this.currentDump.cells [0]), Verse.AI.PathEndMode.OnCell);
-						
 						}
 
 					} else {
@@ -113,14 +103,14 @@ namespace ProfSchmilvsPokemon
 
 							Thing toBeDigested = null;
 
-							IEnumerable<Thing> ts = this.currentDump.AllContainedThings;
+							var ts = this.currentDump.AllContainedThings;
 
-							foreach(Thing t in ts){
+							foreach(var t in ts){
 								
 								if (t is Pokemon_Grimer && t.Faction == null && t != this) {
 									
-									Pokemon_Grimer g = (Pokemon_Grimer)t;
-									for (int gi = (int)g.amountOfFilth; gi >= 0; gi--) {
+									var g = (Pokemon_Grimer)t;
+									for (var gi = (int)g.amountOfFilth; gi >= 0; gi--) {
 										this.IncrementFilth ();
 									}
 									t.DeSpawn ();
@@ -151,16 +141,11 @@ namespace ProfSchmilvsPokemon
 					--this.digestingTicks;
 
 					if (this.digestingTicks <= 0) {
-					
 						++this.amountOfFilth;
 						this.digesting = null;
-					
 					}
-				
 				}
-
 			}
-
 		}
 	}
 }
