@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using Verse;
-using Verse.Sound;
-using Verse.AI;
-using RimWorld;
+﻿using ProfSchmilvsPokemon.Pokemon.Slime;
 using ProfSchmilvsPokemon.ThingDefs;
+using RimWorld;
+using Verse;
+using Verse.AI;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Muk : Pokemon_Abstract_Slimes {
+	public class Pokemon_Muk : PokemonAbstractSlimes {
 
 		#region Properties
 		//
 		public ThingDef_Muk Def
 		{
-			get 
-			{
-				return this.def as ThingDef_Muk;
+			get {
+				return def as ThingDef_Muk;
 			}
 		}
 		//
@@ -27,26 +23,26 @@ namespace ProfSchmilvsPokemon
 
 			base.Tick ();
 
-			++this.currentTick;
+			++CurrentTick;
 
-			if (this.currentTick == 60) {
+			if (CurrentTick == 60) {
 
-				this.currentTick = 0;
+				CurrentTick = 0;
 
-				var prob = this.amountOfFilth/150;
+				var prob = AmountOfFilth/150;
 				var roll = Rand.Value;
 
-				if(roll < prob && this.amountOfFilth > 0){
+				if(roll < prob && AmountOfFilth > 0){
 
-					FilthMaker.TryMakeFilth(this.Position, base.Map, ThingDefOf.Filth_Slime);
+					FilthMaker.TryMakeFilth(Position, base.Map, ThingDefOf.Filth_Slime);
 					this.DecrementFilth ();
 
 				}
 			}
 
-			if (digesting == null) {
+			if (Digesting == null) {
 
-				if (currentDump == null) {
+				if (CurrentDump == null) {
 
 					if (!Map.zoneManager.AllZones.NullOrEmpty ()) {
 
@@ -57,38 +53,38 @@ namespace ProfSchmilvsPokemon
 
 							if (z.label.Split (' ') [0].Equals ("Dumping")) {
 
-								if (nextDistance > this.Position.DistanceTo (z.cells [0])) {
+								if (nextDistance > Position.DistanceTo (z.cells [0])) {
 
-									this.currentDump = z;
+									CurrentDump = z;
 
 								}
 							}
 						}
 					}
 
-					if (this.currentDump != null) {
-						this.jobs.ClearQueuedJobs ();
-						this.pather.StartPath (new LocalTargetInfo (this.currentDump.cells [0]), PathEndMode.OnCell);
+					if (CurrentDump != null) {
+						jobs.ClearQueuedJobs ();
+						pather.StartPath (new LocalTargetInfo (CurrentDump.cells [0]), PathEndMode.OnCell);
 					}
 
 				} else {
 					
-					if (this.Position.AdjacentTo8WayOrInside (this.currentDump.cells [0])) {
+					if (Position.AdjacentTo8WayOrInside (CurrentDump.cells [0])) {
 
 						Thing toBeDigested = null;
 
-						var ts = this.currentDump.AllContainedThings;
+						var ts = CurrentDump.AllContainedThings;
 
 						foreach(var t in ts){
 
-							if (t is Pokemon_Abstract_Slimes && t.Faction == null) {
+							if (t is PokemonAbstractSlimes && t.Faction == null) {
 
-								Pokemon_Abstract_Slimes g = (Pokemon_Abstract_Slimes)t;
-								for (var gi = (int)g.amountOfFilth; gi >= 0; gi--) {
-									this.IncrementFilth ();
+								PokemonAbstractSlimes g = (PokemonAbstractSlimes)t;
+								for (var gi = (int)g.AmountOfFilth; gi >= 0; gi--) {
+									IncrementFilth ();
 								}
 								t.DeSpawn ();
-								this.IncrementFilth ();
+								IncrementFilth ();
 
 							}else if(t != null && !(t is Pawn)){
 								toBeDigested = t;
@@ -96,26 +92,26 @@ namespace ProfSchmilvsPokemon
 							}
 						}
 
-						this.digestingTicks = 15000L;
+						DigestingTicks = 15000L;
 						toBeDigested.DeSpawn ();
-						this.currentDump = null;
-						this.digesting = toBeDigested;
+						CurrentDump = null;
+						Digesting = toBeDigested;
 
-					} else if (this.pather.Destination != new LocalTargetInfo (this.currentDump.cells [0])) {
+					} else if (pather.Destination != new LocalTargetInfo (CurrentDump.cells [0])) {
 
-						this.jobs.ClearQueuedJobs ();
-						this.pather.StartPath (new LocalTargetInfo (this.currentDump.cells [0]), Verse.AI.PathEndMode.OnCell);
+						jobs.ClearQueuedJobs ();
+						pather.StartPath (new LocalTargetInfo (CurrentDump.cells [0]), Verse.AI.PathEndMode.OnCell);
 
 					}
 				}
 
 			} else {
 
-				--this.digestingTicks;
+				--DigestingTicks;
 
-				if (this.digestingTicks <= 0) {
-					++this.amountOfFilth;
-					this.digesting = null;
+				if (DigestingTicks <= 0) {
+					++AmountOfFilth;
+					Digesting = null;
 				}
 			}
 		}

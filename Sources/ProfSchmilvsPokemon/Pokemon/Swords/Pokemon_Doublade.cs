@@ -1,11 +1,9 @@
-﻿using UnityEngine;
-using Verse;
-using RimWorld;
+﻿using ProfSchmilvsPokemon.Pokemon.Swords;
 using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Doublade : Pokemon_Abstract_Swords
+	public class Pokemon_Doublade : PokemonAbstractSwords
 	{
 
 		#region Properties
@@ -20,12 +18,7 @@ namespace ProfSchmilvsPokemon
 		//
 		#endregion Properties
 
-		public override void Draw()
-		{
-			base.Draw();
-		}
-
-		public override void evolve(){
+		public override void Evolve(){
 
 		}
 	}

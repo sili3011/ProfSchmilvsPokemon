@@ -3,6 +3,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using System.Collections.Generic;
+using ProfSchmilvsPokemon.Pokemon.Slime;
 
 namespace ProfSchmilvsPokemon
 {

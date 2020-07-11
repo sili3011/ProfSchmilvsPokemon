@@ -825,7 +825,7 @@
       <baseBodySize>1.0</baseBodySize>
       <baseHealthScale>1.0</baseHealthScale>
       <baseHungerRate>0.0</baseHungerRate>
-      <wildness>0.99</wildness>
+      <wildness>1</wildness>
       <gestationPeriodDays>25</gestationPeriodDays>
       <lifeExpectancy>1000</lifeExpectancy>
       <lifeStageAges>

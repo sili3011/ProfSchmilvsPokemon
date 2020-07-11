@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using Verse;
-using Verse.Sound;
-using Verse.AI;
-using RimWorld;
+﻿using ProfSchmilvsPokemon.Pokemon.Magnets;
 using ProfSchmilvsPokemon.ThingDefs;
+using RimWorld;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Magnezone : Pokemon_Abstract_Magnets {
+	public class Pokemon_Magnezone : PokemonAbstractMagnets {
 
 		#region Properties
 		//
 		public ThingDef_Magnezone Def
 		{
-			get 
-			{
-				return this.def as ThingDef_Magnezone;
+			get {
+				return def as ThingDef_Magnezone;
 			}
 		}
 		//
@@ -25,16 +19,16 @@ namespace ProfSchmilvsPokemon
 
 		public Pokemon_Magnezone()
 		{
-			base.storedEnergyMax = this.Def.storedEnergyMaxUtility;
+			StoredEnergyMax = Def.storedEnergyMaxUtility;
 		}
 
-		public override void evolve() {}
+		public override void Evolve() {}
 
-		public override void repairing() {
+		public override void Repairing() {
 		
-			this.repairJob.HitPoints += 5;
-			this.StoredEnergy--;
-			Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
+			RepairJob.HitPoints += 5;
+			StoredEnergy--;
+			Map.overlayDrawer.DrawOverlay(RepairJob, OverlayTypes.BurningWick);
 		
 		}
 	}

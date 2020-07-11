@@ -1,27 +1,26 @@
-﻿using UnityEngine;
-using Verse;
-using RimWorld;
+﻿using ProfSchmilvsPokemon.Pokemon.Magnets;
 using ProfSchmilvsPokemon.ThingDefs;
+using RimWorld;
+using UnityEngine;
+using Verse;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Magneton : Pokemon_Abstract_Magnets {
+	public class Pokemon_Magneton : PokemonAbstractMagnets {
 
 		#region Properties
 		//
 		public ThingDef_Magneton Def
 		{
-			get 
-			{
-				return this.def as ThingDef_Magneton;
+			get {
+				return def as ThingDef_Magneton;
 			}
 		}
 		//
 		#endregion Properties
 
-
 		public Pokemon_Magneton() {
-			storedEnergyMax = this.Def.storedEnergyMaxUtility;
+			StoredEnergyMax = this.Def.storedEnergyMaxUtility;
 		}
 
 		public override void Draw() {
@@ -43,7 +42,7 @@ namespace ProfSchmilvsPokemon
 			}*/
 		}
 
-		public override void evolve(){
+		public override void Evolve(){
 
 			float bonusMagnetism = 0f;
 
@@ -93,10 +92,10 @@ namespace ProfSchmilvsPokemon
 			}
 		}
 
-		public override void repairing(){
-			this.repairJob.HitPoints += 3;
+		public override void Repairing(){
+			this.RepairJob.HitPoints += 3;
 			this.StoredEnergy--;
-			Map.overlayDrawer.DrawOverlay(this.repairJob, OverlayTypes.BurningWick);
+			Map.overlayDrawer.DrawOverlay(this.RepairJob, OverlayTypes.BurningWick);
 		}
 	}
 }

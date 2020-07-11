@@ -11,4 +11,3 @@ D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSc
 D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.pdb
 D:\Projects\ProfSchmilvsPokemon\Assemblies\ProfSchmilvsPokemon.dll
 D:\Projects\ProfSchmilvsPokemon\Assemblies\ProfSchmilvsPokemon.pdb
-D:\Projects\ProfSchmilvsPokemon\Sources\ProfSchmilvsPokemon\obj\x86\Debug\ProfSchmilvsPokemon.csprojAssemblyReference.cache

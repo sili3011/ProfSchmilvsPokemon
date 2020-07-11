@@ -227,7 +227,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pokemon\Swords\Pokemon_Abstract_Swords.cs" />
+    <Compile Include="Pokemon\Swords\PokemonAbstractSwords.cs" />
     <Compile Include="Pokemon\Swords\Pokemon_Honedge.cs" />
     <Compile Include="Pokemon\Swords\Pokemon_Doublade.cs" />
     <Compile Include="Pokemon\Swords\Pokemon_Aegislash.cs" />
@@ -249,15 +249,15 @@
     <Compile Include="DefOfs\SkillDefOf.cs" />
     <Compile Include="ThingDefs\ThingDef_Grimer.cs" />
     <Compile Include="ThingDefs\ThingDef_Muk.cs" />
-    <Compile Include="Pokemon\Pokemon_Abstract.cs" />
-    <Compile Include="Pokemon\Magnets\Pokemon_Abstract_Magnets.cs" />
+    <Compile Include="Pokemon\PokemonAbstract.cs" />
+    <Compile Include="Pokemon\Magnets\PokemonAbstractMagnets.cs" />
     <Compile Include="Pokemon\Magnets\Pokemon_Magnemite.cs" />
     <Compile Include="Pokemon\Magnets\Pokemon_Magneton.cs" />
     <Compile Include="Pokemon\Magnets\Pokemon_Magnezone.cs" />
     <Compile Include="Pokemon\Slime\Pokemon_Grimer.cs" />
     <Compile Include="Pokemon\Slime\Pokemon_Muk.cs" />
     <Compile Include="Pokemon\Sheep\Pokemon_Mareep.cs" />
-    <Compile Include="Pokemon\Slime\Pokemon_Abstract_Slimes.cs" />
+    <Compile Include="Pokemon\Slime\PokemonAbstractSlimes.cs" />
     <Compile Include="Comps\CompPowerPlantMareep.cs" />
     <Compile Include="PokemonConfig.cs" />
   </ItemGroup>

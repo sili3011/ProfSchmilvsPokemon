@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using Verse;
-using Verse.Sound;
-using Verse.AI;
-using RimWorld;
+﻿using ProfSchmilvsPokemon.Pokemon.Swords;
 using ProfSchmilvsPokemon.ThingDefs;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Aegislash : Pokemon_Abstract_Swords
+	public class Pokemon_Aegislash : PokemonAbstractSwords
 	{
 
 		#region Properties
@@ -24,7 +18,7 @@ namespace ProfSchmilvsPokemon
 		//
 		#endregion Properties
 
-		public override void evolve(){}
+		public override void Evolve(){}
 
 	}
 }

@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using Verse;
-using Verse.Sound;
-using Verse.AI;
-using RimWorld;
+﻿using System.Collections.Generic;
+using ProfSchmilvsPokemon.Pokemon.Slime;
 using ProfSchmilvsPokemon.ThingDefs;
+using RimWorld;
+using Verse;
 
 namespace ProfSchmilvsPokemon
 {
-	public class Pokemon_Grimer : Pokemon_Abstract_Slimes {
+	public class Pokemon_Grimer : PokemonAbstractSlimes {
 
 		#region Properties
 		//
 		public ThingDef_Grimer Def
 		{
-			get 
-			{
-				return this.def as ThingDef_Grimer;
+			get {
+				return def as ThingDef_Grimer;
 			}
 		}
 		//
@@ -26,9 +22,9 @@ namespace ProfSchmilvsPokemon
 		public override void Tick() {
 
 			base.Tick ();
-			++this.currentTick;
+			++this.CurrentTick;
 
-			if (this.amountOfFilth > 20) {
+			if (this.AmountOfFilth > 20) {
 
 				Pokemon_Muk muk = (Pokemon_Muk)PawnGenerator.GeneratePawn (PawnKindDef.Named ("Pokemon_Muk"));
 
@@ -46,7 +42,7 @@ namespace ProfSchmilvsPokemon
 					}
 				}
 
-				for (int i = (int)this.amountOfFilth; i >= 0; i--) {
+				for (int i = (int)this.AmountOfFilth; i >= 0; i--) {
 					muk.IncrementFilth ();
 				}
 
@@ -57,22 +53,22 @@ namespace ProfSchmilvsPokemon
 			
 			} else {
 
-				if (this.currentTick == 600) {
+				if (this.CurrentTick == 600) {
 
-					this.currentTick = 0;
+					this.CurrentTick = 0;
 
-					float prob = this.amountOfFilth / 200;
+					float prob = this.AmountOfFilth / 200;
 					float roll = Rand.Value;
 
-					if (roll < prob && this.amountOfFilth > 0) {
+					if (roll < prob && this.AmountOfFilth > 0) {
 						FilthMaker.TryMakeFilth (this.Position, base.Map, ThingDefOf.Filth_Slime);
 						this.DecrementFilth ();
 					}
 				}
 
-				if (digesting == null) {
+				if (Digesting == null) {
 
-					if (currentDump == null) {
+					if (CurrentDump == null) {
 
 						if(!base.Map.zoneManager.AllZones.NullOrEmpty()){
 
@@ -85,32 +81,32 @@ namespace ProfSchmilvsPokemon
 								
 									if (nextDistance > this.Position.DistanceTo (z.cells [0])) {
 									
-										this.currentDump = z;
+										this.CurrentDump = z;
 									
 									}
 								}
 							}
 						}
 
-						if (this.currentDump != null) {
+						if (this.CurrentDump != null) {
 							this.jobs.ClearQueuedJobs ();
-							this.pather.StartPath (new LocalTargetInfo (this.currentDump.cells [0]), Verse.AI.PathEndMode.OnCell);
+							this.pather.StartPath (new LocalTargetInfo (this.CurrentDump.cells [0]), Verse.AI.PathEndMode.OnCell);
 						}
 
 					} else {
 						
-						if (this.Position.AdjacentTo8WayOrInside (this.currentDump.cells [0])) {
+						if (this.Position.AdjacentTo8WayOrInside (this.CurrentDump.cells [0])) {
 
 							Thing toBeDigested = null;
 
-							var ts = this.currentDump.AllContainedThings;
+							var ts = this.CurrentDump.AllContainedThings;
 
 							foreach(var t in ts){
 								
 								if (t is Pokemon_Grimer && t.Faction == null && t != this) {
 									
 									var g = (Pokemon_Grimer)t;
-									for (var gi = (int)g.amountOfFilth; gi >= 0; gi--) {
+									for (var gi = (int)g.AmountOfFilth; gi >= 0; gi--) {
 										this.IncrementFilth ();
 									}
 									t.DeSpawn ();
@@ -122,15 +118,15 @@ namespace ProfSchmilvsPokemon
 								}
 							}
 
-							this.digestingTicks = 30000L;
+							this.DigestingTicks = 30000L;
 							toBeDigested.DeSpawn ();
-							this.currentDump = null;
-							this.digesting = toBeDigested;
+							this.CurrentDump = null;
+							this.Digesting = toBeDigested;
 
-						} else if (this.pather.Destination != new LocalTargetInfo (this.currentDump.cells [0])) {
+						} else if (this.pather.Destination != new LocalTargetInfo (this.CurrentDump.cells [0])) {
 
 							this.jobs.ClearQueuedJobs ();
-							this.pather.StartPath (new LocalTargetInfo (this.currentDump.cells [0]), Verse.AI.PathEndMode.OnCell);
+							this.pather.StartPath (new LocalTargetInfo (this.CurrentDump.cells [0]), Verse.AI.PathEndMode.OnCell);
 
 						}
 
@@ -138,11 +134,11 @@ namespace ProfSchmilvsPokemon
 							
 				} else {
 				
-					--this.digestingTicks;
+					--this.DigestingTicks;
 
-					if (this.digestingTicks <= 0) {
-						++this.amountOfFilth;
-						this.digesting = null;
+					if (this.DigestingTicks <= 0) {
+						++this.AmountOfFilth;
+						this.Digesting = null;
 					}
 				}
 			}
